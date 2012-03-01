@@ -1,0 +1,1572 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.23)  1 MAR 2012 18:58
+entering extended mode
+**NaT2.tex NaT2.tex
+(C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\NaT2.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+\@input{header/header.aux}
+(C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\header/header.tex
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fleqn.clo"
+File: fleqn.clo 1998/08/17 v1.1c Standard LaTeX option (flush left equations)
+\mathindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen103
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen104
+\Gm@wd@mp=\dimen105
+\Gm@odd@mp=\dimen106
+\Gm@even@mp=\dimen107
+\Gm@layoutwidth=\dimen108
+\Gm@layoutheight=\dimen109
+\Gm@layouthoffset=\dimen110
+\Gm@layoutvoffset=\dimen111
+\Gm@dimlist=\toks17
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\ngermanb.ldf"
+Language: ngermanb 2008/07/06 v2.6n new German support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count90
+\U@D=\dimen112
+)
+\l@naustrian = a dialect from \language\l@ngerman 
+Package babel Info: Making " an active character on input line 92.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\varioref.sty"
+Package: varioref 2011/10/02 v1.4z package for extended references (FMi)
+\c@vrcnt=\count91
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen113
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen114
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen115
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks20
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks21
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
+\@envbody=\toks22
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(C:\Users\dkoeppel.VIRTUALNETWORKS\AppData\Roaming\MiKTeX\2.9\tex\latex\fancybo
+x\fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box28
+\shadowsize=\dimen122
+\@Sbox=\box29
+\do@VerbBox=\toks24
+\the@fancyput=\toks25
+\this@fancyput=\toks26
+\EndVerbatimTokens=\toks27
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read1
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count104
+))
+\Gin@req@height=\dimen123
+\Gin@req@width=\dimen124
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lastpage\lastpage.sty"
+Package: lastpage 2011/09/01 v1.2k Refers to last page's name (HMM; JPG)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty"
+\wrapoverhang=\dimen125
+\WF@size=\dimen126
+\c@WF@wrappedlines=\count105
+\WF@box=\box30
+\WF@everypar=\toks28
+Package: wrapfig 2003/01/31  v 3.6
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip46
+\f@ncyO@elh=\skip47
+\f@ncyO@erh=\skip48
+\f@ncyO@olh=\skip49
+\f@ncyO@orh=\skip50
+\f@ncyO@elf=\skip51
+\f@ncyO@erf=\skip52
+\f@ncyO@olf=\skip53
+\f@ncyO@orf=\skip54
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2011/12/04 v6.82m Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
+Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
+Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provides unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/01/30 v1.0 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
+Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+)
+\@linkdim=\dimen127
+\Hy@linkcounter=\count106
+\Hy@pagecounter=\count107
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2011/12/04 v6.82m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count108
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4046.
+Package hyperref Info: Link nesting OFF on input line 4051.
+Package hyperref Info: Hyper index ON on input line 4054.
+Package hyperref Info: Plain pages OFF on input line 4061.
+Package hyperref Info: Backreferencing OFF on input line 4066.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4284.
+\c@Hy@tempcnt=\count109
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4637.
+\Fld@menulength=\count110
+\Field@Width=\dimen128
+\Fld@charsize=\dimen129
+Package hyperref Info: Hyper figures OFF on input line 5757.
+Package hyperref Info: Link nesting OFF on input line 5762.
+Package hyperref Info: Hyper index ON on input line 5765.
+Package hyperref Info: backreferencing OFF on input line 5772.
+Package hyperref Info: Link coloring OFF on input line 5777.
+Package hyperref Info: Link coloring with OCG OFF on input line 5782.
+Package hyperref Info: PDF/A mode OFF on input line 5787.
+LaTeX Info: Redefining \ref on input line 5827.
+LaTeX Info: Redefining \pageref on input line 5831.
+\Hy@abspage=\count111
+\c@Item=\count112
+\c@Hfootnote=\count113
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2011/12/04 v6.82m Hyperref driver for pdfTeX
+\Fld@listcount=\count114
+\c@bookmark@seq@number=\count115
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip55
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks29
+\verbatim@line=\toks30
+\verbatim@in@stream=\read2
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\floatflt\floatflt.sty"
+Package: floatflt 1997/07/16 v. 1.31
+\c@OptionTest=\count116
+\figbox=\box31
+\tabbox=\box32
+\pagebox=\box33
+\ffigcount=\count117
+\ftabcount=\count118
+\fftest=\count119
+\hangcount=\count120
+\nosuccesstryfig=\count121
+\nosuccesstrytab=\count122
+\figgutter=\dimen130
+\tabgutter=\dimen131
+\htdone=\dimen132
+\pageht=\dimen133
+\startpageht=\dimen134
+\tabbredd=\dimen135
+\floatfltwidth=\dimen136
+\fltitemwidth=\dimen137
+\outputpretest=\toks31
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count123
+\mult@box=\box34
+\multicol@leftmargin=\dimen138
+\c@unbalance=\count124
+\c@collectmore=\count125
+\doublecol@number=\count126
+\multicoltolerance=\count127
+\multicolpretolerance=\count128
+\full@width=\dimen139
+\page@free=\dimen140
+\premulticols=\dimen141
+\postmulticols=\dimen142
+\multicolsep=\skip56
+\multicolbaselineskip=\skip57
+\partial@page=\box35
+\last@line=\box36
+\mult@rightbox=\box37
+\mult@grightbox=\box38
+\mult@gfirstbox=\box39
+\mult@firstbox=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\c@columnbadness=\count129
+\c@finalcolumnbadness=\count130
+\last@try=\dimen143
+\multicolovershoot=\dimen144
+\multicolundershoot=\dimen145
+\mult@nat@firstbox=\box58
+\colbreak@box=\box59
+\multicol@sort@counter=\count131
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen146
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\rotating\rotating.sty"
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count132
+\rotFPtop=\skip58
+\rotFPbot=\skip59
+\rot@float@box=\box60
+\rot@mess@toks=\toks32
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\slashbox\slashbox.sty"
+slashbox style by K.Yasuoka, May 1993.
+\@slashboxa=\box61
+\@slashboxb=\box62
+\@slashboxc=\box63
+\@slashboxwd=\count133
+\@slashboxht=\count134
+\@slashsepl=\dimen147
+\@slashsepr=\dimen148
+)
+Package color Info: Redefining color black on input line 36.
+Package color Info: Redefining color red on input line 37.
+Package color Info: Redefining color white on input line 38.
+Package color Info: Redefining color green on input line 40.
+Package hyperref Info: Option `colorlinks' set `false' on input line 93.
+) (C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\NaT2.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot twoside 
+* h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
+* v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=540.60239pt
+* \textheight=721.14136pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-43.81725pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=111.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count135
+\scratchdimen=\dimen149
+\scratchbox=\box64
+\nofMPsegments=\count136
+\nofMParguments=\count137
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count138
+\MPscratchDim=\dimen150
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
+\everyMPtoPDFconversion=\toks34
+)
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pageslts/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
+(lastpage)             ! on input line 20.
+\AtBeginShipoutBox=\box65
+Package hyperref Info: Link coloring OFF on input line 20.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count141
+LaTeX Info: Redefining \Ref on input line 498.
+)
+LaTeX Info: Redefining \ref on input line 20.
+LaTeX Info: Redefining \pageref on input line 20.
+LaTeX Info: Redefining \nameref on input line 20.
+
+(C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\NaT2.out)
+(C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\NaT2.out)
+\@outlinefile=\write4
+LaTeX Info: Redefining \Ref on input line 20.
+
+(C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\NaT2.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+))
+\tf@toc=\write5
+ [1{C:/Users/dkoeppel.VIRTUALNETWORKS/AppData/Local/MiKTeX/2.9/pdftex/config/pd
+ftex.map}
+
+
+
+]
+(C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\sections/06_WSK.tex
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
+
+ []
+
+) (C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\sections/07_RandomProcess.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+<../NaT2/bilder/07_zufallsprozess.png, id=256, 430.2474pt x 231.7458pt>
+File: ../NaT2/bilder/07_zufallsprozess.png Graphic file (type png)
+
+<use ../NaT2/bilder/07_zufallsprozess.png>
+Package pdftex.def Info: ../NaT2/bilder/07_zufallsprozess.png used on input lin
+e 3.
+(pdftex.def)             Requested size: 284.52756pt x 153.26387pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--15
+\OT1/cmr/m/n/10 Zufallsprozesse be-schrei-ben ei-ne de-ter-mi-nis-ti-sche
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 6--15
+\OT1/cmr/m/n/10 Zeitlich \OT1/cmr/bx/n/10 zuf[]allig ab-lau-fen-de Funk-tio-nen
+ \OT1/cmr/m/n/10 k[]onnen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--15
+
+ []
+
+
+Underfull \hbox (badness 6808) in paragraph at lines 6--15
+\OT1/cmr/m/n/10 Zum Ver-gleich: Bei Zu-falls-va-ria-blen wird je-dem
+ []
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 19.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
+
+Overfull \hbox (9.77359pt too wide) in paragraph at lines 60--82
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
+
+ []
+
+[3 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/07_zufallsprozess.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 102--105
+
+ []
+
+
+Overfull \hbox (4.07895pt too wide) in paragraph at lines 106--119
+ []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--119
+
+ []
+
+<../NaT2/bilder/07_zeit-scharmittel.png, id=299, 747.79375pt x 473.77pt>
+File: ../NaT2/bilder/07_zeit-scharmittel.png Graphic file (type png)
+
+<use ../NaT2/bilder/07_zeit-scharmittel.png>
+Package pdftex.def Info: ../NaT2/bilder/07_zeit-scharmittel.png used on input l
+ine 148.
+(pdftex.def)             Requested size: 133.72786pt x 84.71828pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--160
+
+ []
+
+[4 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/07_zeit-scharmittel.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+
+Overfull \hbox (1.60118pt too wide) in paragraph at lines 232--235
+\OT1/cmr/m/n/10 Kreuzkorrelationen ($\OML/cmm/m/it/10 R[]\OT1/cmr/m/n/10 (\OML/
+cmm/m/it/10 \OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; R[]\OT1/cmr/m/n/10 (\OML/cmm/m
+/it/10 \OT1/cmr/m/n/10 )$) und Kreuz-Spektraldichten ($\OML/cmm/m/it/10 S[]\OT
+1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; S[]\OT1/cmr
+/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )$) bil-den ein Fourier-Transformati
+onspaar. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+[][]\OT1/cmr/bx/n/10 Auto-
+ []
+
+
+Overfull \hbox (3.67752pt too wide) in paragraph at lines 250--251
+\OT1/cmr/bx/n/10 korrelation[]*[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+[][]\OT1/cmr/bx/n/10 Spektrale
+ []
+
+
+Overfull \hbox (21.77357pt too wide) in paragraph at lines 242--266
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--288
+
+ []
+
+<../NaT2/bilder/07_weisses_rauschen.png, id=310, 895.345pt x 203.76125pt>
+File: ../NaT2/bilder/07_weisses_rauschen.png Graphic file (type png)
+
+<use ../NaT2/bilder/07_weisses_rauschen.png>
+Package pdftex.def Info: ../NaT2/bilder/07_weisses_rauschen.png used on input l
+ine 290.
+(pdftex.def)             Requested size: 256.0748pt x 58.27776pt.
+ [5]
+<../NaT2/bilder/07_bandlimited_whitenoise.png, id=321, 857.2025pt x 260.975pt>
+File: ../NaT2/bilder/07_bandlimited_whitenoise.png Graphic file (type png)
+
+<use ../NaT2/bilder/07_bandlimited_whitenoise.png>
+Package pdftex.def Info: ../NaT2/bilder/07_bandlimited_whitenoise.png used on i
+nput line 343.
+(pdftex.def)             Requested size: 256.0748pt x 77.96259pt.
+
+<../NaT2/bilder/07_schmalbandiger_zufallsprozess.png, id=322, 903.375pt x 365.3
+65pt>
+File: ../NaT2/bilder/07_schmalbandiger_zufallsprozess.png Graphic file (type pn
+g)
+ <use ../NaT2/bilder/07_schmalbandiger_zufallsprozess.png>
+Package pdftex.def Info: ../NaT2/bilder/07_schmalbandiger_zufallsprozess.png us
+ed on input line 350.
+(pdftex.def)             Requested size: 256.0748pt x 103.56702pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
+
+
+Overfull \hbox (7.54721pt too wide) in paragraph at lines 377--390
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--390
+
+ []
+
+) (C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\sections/08_NoiseAnalog.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+[6 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/07_weisses_rauschen.png> 
+<C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/07_bandlimited_whitenoise.pn
+g> <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/07_schmalbandiger_zufalls
+prozess.png>]
+<../NaT2/bilder/08_noise_blockdiag.png, id=334, 973.6375pt x 159.59625pt>
+File: ../NaT2/bilder/08_noise_blockdiag.png Graphic file (type png)
+
+<use ../NaT2/bilder/08_noise_blockdiag.png>
+Package pdftex.def Info: ../NaT2/bilder/08_noise_blockdiag.png used on input li
+ne 5.
+(pdftex.def)             Requested size: 398.33858pt x 65.29362pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--26
+
+ []
+
+<../NaT2/bilder/08_noise_baseband.png, id=335, 816.04875pt x 126.4725pt>
+File: ../NaT2/bilder/08_noise_baseband.png Graphic file (type png)
+
+<use ../NaT2/bilder/08_noise_baseband.png>
+Package pdftex.def Info: ../NaT2/bilder/08_noise_baseband.png used on input lin
+e 27.
+(pdftex.def)             Requested size: 330.46059pt x 51.21504pt.
+
+<../NaT2/bilder/08_continuous_wave_communication.png, id=336, 1080.035pt x 218.
+8175pt>
+File: ../NaT2/bilder/08_continuous_wave_communication.png Graphic file (type pn
+g)
+ <use ../NaT2/bilder/08_continuous_wave_communication.png>
+Package pdftex.def Info: ../NaT2/bilder/08_continuous_wave_communication.png us
+ed on input line 45.
+(pdftex.def)             Requested size: 351.08961pt x 71.13188pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+[7 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/08_noise_blockdiag.png> <
+C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/08_noise_baseband.png> <C:/Us
+ers/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/08_continuous_wave_communication.p
+ng>]
+Underfull \hbox (badness 10000) in paragraph at lines 75--82
+
+ []
+
+<../NaT2/bilder/08_noise_anglemod.png, id=348, 857.2025pt x 112.42pt>
+File: ../NaT2/bilder/08_noise_anglemod.png Graphic file (type png)
+
+<use ../NaT2/bilder/08_noise_anglemod.png>
+Package pdftex.def Info: ../NaT2/bilder/08_noise_anglemod.png used on input lin
+e 85.
+(pdftex.def)             Requested size: 282.04059pt x 36.98866pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--90
+
+ []
+
+[8 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/08_noise_anglemod.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 113--209
+
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 210.
+[9
+
+])
+(C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\sections/09_OptimumDetection.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+<bilder/09_digital_signal_detection.png, id=369, 780.9175pt x 230.8625pt>
+File: bilder/09_digital_signal_detection.png Graphic file (type png)
+
+<use bilder/09_digital_signal_detection.png>
+Package pdftex.def Info: bilder/09_digital_signal_detection.png used on input l
+ine 11.
+(pdftex.def)             Requested size: 288.73238pt x 85.35826pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--76
+
+ []
+
+<../NaT2/bilder/09_AWGN-PDF.png, id=372, 226.56645pt x 74.79945pt>
+File: ../NaT2/bilder/09_AWGN-PDF.png Graphic file (type png)
+
+<use ../NaT2/bilder/09_AWGN-PDF.png>
+Package pdftex.def Info: ../NaT2/bilder/09_AWGN-PDF.png used on input line 78.
+(pdftex.def)             Requested size: 241.84842pt x 79.84514pt.
+ [10
+
+ <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/09_digital_signal_detection
+.png> <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/09_AWGN-PDF.png>]
+<../NaT2/bilder/09_matched_filter.png, id=387, 397.485pt x 77.28876pt>
+File: ../NaT2/bilder/09_matched_filter.png Graphic file (type png)
+
+<use ../NaT2/bilder/09_matched_filter.png>
+Package pdftex.def Info: ../NaT2/bilder/09_matched_filter.png used on input lin
+e 118.
+(pdftex.def)             Requested size: 128.0374pt x 24.89682pt.
+
+<../NaT2/bilder/09_correlator.png, id=388, 403.5075pt x 184.69pt>
+File: ../NaT2/bilder/09_correlator.png Graphic file (type png)
+
+<use ../NaT2/bilder/09_correlator.png>
+Package pdftex.def Info: ../NaT2/bilder/09_correlator.png used on input line 12
+4.
+(pdftex.def)             Requested size: 128.0374pt x 58.60318pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+) (C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\sections/10_SourceCoding.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+[11 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/09_matched_filter.png> <
+C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/09_correlator.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 17--19
+
+ []
+
+
+Overfull \hbox (30.50826pt too wide) in paragraph at lines 20--56
+[][]$[]$ $[]$
+ []
+
+
+Overfull \hbox (2.0555pt too wide) in paragraph at lines 20--56
+[]$ $[]$ 
+ []
+
+<../NaT2/bilder/10_DMC.png, id=395, 966.61125pt x 515.9275pt>
+File: ../NaT2/bilder/10_DMC.png Graphic file (type png)
+
+<use ../NaT2/bilder/10_DMC.png>
+Package pdftex.def Info: ../NaT2/bilder/10_DMC.png used on input line 61.
+(pdftex.def)             Requested size: 213.39566pt x 113.89801pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--72
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--72
+
+ []
+
+
+Underfull \hbox (badness 8075) in paragraph at lines 65--72
+\OT1/cmr/m/n/9 Alle Auf-tre-tens-wahr-schein-lich-kei-ten $\OML/cmm/m/it/9 P\OT
+1/cmr/m/n/9 (\OML/cmm/m/it/9 x[]\OT1/cmr/m/n/9 )$ der ein-zel-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--72
+\OT1/cmr/m/n/9 Wahrscheinlichkeiten (chan-nel tran-si-ti-on pro-ba-bi-li-ties)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+<../NaT2/bilder/10_channels_lossless.png, id=396, 811.03pt x 550.055pt>
+File: ../NaT2/bilder/10_channels_lossless.png Graphic file (type png)
+
+<use ../NaT2/bilder/10_channels_lossless.png>
+Package pdftex.def Info: ../NaT2/bilder/10_channels_lossless.png used on input 
+line 121.
+(pdftex.def)             Requested size: 125.85684pt x 85.35826pt.
+
+Overfull \hbox (12.04582pt too wide) in paragraph at lines 121--122
+ [][] 
+ []
+
+[12 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/10_DMC.png>]
+<../NaT2/bilder/10_channels_deterministic.png, id=405, 796.9775pt x 521.95pt>
+File: ../NaT2/bilder/10_channels_deterministic.png Graphic file (type png)
+
+<use ../NaT2/bilder/10_channels_deterministic.png>
+Package pdftex.def Info: ../NaT2/bilder/10_channels_deterministic.png used on i
+nput line 140.
+(pdftex.def)             Requested size: 130.32816pt x 85.35826pt.
+
+Overfull \hbox (16.51714pt too wide) in paragraph at lines 140--141
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+<../NaT2/bilder/10_channels_noiseless.png, id=406, 787.94376pt x 362.35374pt>
+File: ../NaT2/bilder/10_channels_noiseless.png Graphic file (type png)
+
+<use ../NaT2/bilder/10_channels_noiseless.png>
+Package pdftex.def Info: ../NaT2/bilder/10_channels_noiseless.png used on input
+ line 157.
+(pdftex.def)             Requested size: 128.0374pt x 58.87901pt.
+
+Overfull \hbox (14.22638pt too wide) in paragraph at lines 157--158
+ [][] 
+ []
+
+
+<../NaT2/bilder/10_channels_binarysymmetrical.png, id=407, 209.583pt x 88.53075
+pt>
+File: ../NaT2/bilder/10_channels_binarysymmetrical.png Graphic file (type png)
+ <use ../NaT2/bilder/10_channels_binarysymmetrical.png>
+Package pdftex.def Info: ../NaT2/bilder/10_channels_binarysymmetrical.png used 
+on input line 171.
+(pdftex.def)             Requested size: 128.0374pt x 54.0847pt.
+
+Overfull \hbox (14.22638pt too wide) in paragraph at lines 171--172
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+[13 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/10_channels_lossless.png
+> <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/10_channels_deterministic.
+png> <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/10_channels_noiseless.p
+ng> <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/10_channels_binarysymmet
+rical.png>]
+<../NaT2/bilder/10_codierung_shannon-fano.png, id=417, 838.13126pt x 413.545pt>
+File: ../NaT2/bilder/10_codierung_shannon-fano.png Graphic file (type png)
+<use ../NaT2/bilder/10_codierung_shannon-fano.png>
+Package pdftex.def Info: ../NaT2/bilder/10_codierung_shannon-fano.png used on i
+nput line 335.
+(pdftex.def)             Requested size: 227.62204pt x 112.30858pt.
+
+Overfull \hbox (2.0555pt too wide) in paragraph at lines 333--347
+[]$[]$ $[]$ 
+ []
+
+<../NaT2/bilder/10_codierung_huffman.png, id=418, 222.5916pt x 115.3911pt>
+File: ../NaT2/bilder/10_codierung_huffman.png Graphic file (type png)
+
+<use ../NaT2/bilder/10_codierung_huffman.png>
+Package pdftex.def Info: ../NaT2/bilder/10_codierung_huffman.png used on input 
+line 351.
+(pdftex.def)             Requested size: 227.62204pt x 118.00548pt.
+)
+(C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\sections/11_ChannelCoding.tex
+Overfull \hbox (2.0555pt too wide) in paragraph at lines 349--1
+[]$[]$ $[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--1
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+<../NaT2/bilder/11_channel_coding_blockdiag.png, id=419, 582.978pt x 131.5314pt
+>
+File: ../NaT2/bilder/11_channel_coding_blockdiag.png Graphic file (type png)
+ <use ../NaT2/bilder/11_channel_coding_blockdiag.png>
+Package pdftex.def Info: ../NaT2/bilder/11_channel_coding_blockdiag.png used on
+ input line 3.
+(pdftex.def)             Requested size: 455.24408pt x 102.71248pt.
+ [14 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/10_codierung_shannon-fa
+no.png> <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/10_codierung_huffman
+.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 11.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+
+ []
+
+<../NaT2/bilder/11_systematic_code.png, id=438, 491.8375pt x 319.1925pt>
+File: ../NaT2/bilder/11_systematic_code.png Graphic file (type png)
+
+<use ../NaT2/bilder/11_systematic_code.png>
+Package pdftex.def Info: ../NaT2/bilder/11_systematic_code.png used on input li
+ne 27.
+(pdftex.def)             Requested size: 142.26378pt x 92.3248pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--45
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 56.
+
+
+Overfull \hbox (18.92813pt too wide) in paragraph at lines 67--81
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--81
+
+ []
+
+[15 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/11_channel_coding_blockd
+iag.png> <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/11_systematic_code.
+png>]
+Overfull \hbox (9.77357pt too wide) in paragraph at lines 84--92
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--92
+
+ []
+
+<../NaT2/bilder/11_hamming_distance.png, id=447, 678.535pt x 192.72pt>
+File: ../NaT2/bilder/11_hamming_distance.png Graphic file (type png)
+
+<use ../NaT2/bilder/11_hamming_distance.png>
+Package pdftex.def Info: ../NaT2/bilder/11_hamming_distance.png used on input l
+ine 94.
+(pdftex.def)             Requested size: 227.62204pt x 64.6476pt.
+
+Overfull \hbox (2.05551pt too wide) in paragraph at lines 93--102
+[][]$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--154
+
+ []
+
+
+Overfull \hbox (6.16187pt too wide) detected at line 165
+ \OT1/cmr/m/n/9 2[] \OMS/cmsy/m/n/9  [] [] [] [] \OT1/cmr/m/n/9 = []
+ []
+
+
+Overfull \hbox (2.0555pt too wide) in paragraph at lines 155--167
+[]$ $[]$ 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 169.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 169.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 169.
+
+[16 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/11_hamming_distance.png>
+]
+Underfull \hbox (badness 10000) in paragraph at lines 209--221
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 241.
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--252
+[][]\OT1/cmr/m/n/9 Das Feh-ler-syn-drom $\OML/cmm/m/it/9 s\OT1/cmr/m/n/9 (\OML/
+cmm/m/it/9 x\OT1/cmr/m/n/9 )$ (vom Grad ($\OML/cmm/m/it/9 n \OMS/cmsy/m/n/9   \
+OML/cmm/m/it/9 k$\OT1/cmr/m/n/9 )) dient zur \OT1/cmr/bx/n/9 Er-mitt-lung von
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 249--252
+[]\OT1/cmr/bx/n/9 Ubertragungsfehlern\OT1/cmr/m/n/9 . Enth[]alt das emp-fan-ge-
+ne Co-de-wort $\OML/cmm/m/it/9 c[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n
+/9 )$ ein \OT1/cmr/bx/n/9 Feh-ler-mus-ter
+ []
+
+
+Overfull \hbox (0.71404pt too wide) in paragraph at lines 260--261
+[][]$ $ 
+ []
+
+
+Overfull \hbox (43.94514pt too wide) in paragraph at lines 248--277
+[]$[]$ $[]$ $[]$ 
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 278--283
+
+ []
+
+
+<../NaT2/bilder/11_cyclic_coder_multiplication.png, id=470, 931.48pt x 266.9975
+pt>
+File: ../NaT2/bilder/11_cyclic_coder_multiplication.png Graphic file (type png)
+
+ <use ../NaT2/bilder/11_cyclic_coder_multiplication.png>
+Package pdftex.def Info: ../NaT2/bilder/11_cyclic_coder_multiplication.png used
+ on input line 286.
+(pdftex.def)             Requested size: 256.0748pt x 73.39804pt.
+
+<../NaT2/bilder/11_cyclic_decoder_division.png, id=471, 1020.81375pt x 253.9487
+5pt>
+File: ../NaT2/bilder/11_cyclic_decoder_division.png Graphic file (type png)
+ <use ../NaT2/bilder/11_cyclic_decoder_division.png>
+Package pdftex.def Info: ../NaT2/bilder/11_cyclic_decoder_division.png used on 
+input line 297.
+(pdftex.def)             Requested size: 256.0748pt x 63.70403pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 311.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 311.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 311.
+
+) (C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\sections/99_UebungsVZ.tex
+Underfull \hbox (badness 10000) in paragraph at lines 312--1
+
+ []
+
+[18 <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/11_cyclic_coder_multipli
+cation.png> <C:/Users/dkoeppel.VIRTUALNETWORKS/git/NaT2/bilder/11_cyclic_decode
+r_division.png>]) 
+AED: lastpage setting LastPage
+[19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 35.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 35.
+ (C:\Users\dkoeppel.VIRTUALNETWORKS\git\NaT2\NaT2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 35.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 35.
+Package rerunfilecheck Info: File `NaT2.out' has not changed.
+(rerunfilecheck)             Checksum: 99DD06456738E30BD279ED0CDC98983B;4168.
+ ) 
+Here is how much of TeX's memory you used:
+ 7983 strings out of 494045
+ 116328 string characters out of 3145912
+ 234817 words of memory out of 3000000
+ 10913 multiletter control sequences out of 15000+200000
+ 19811 words of font info for 74 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 33i,16n,45p,668b,426s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmbsy9.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
+onts/latxfont/lcircle1.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/latxfont/line10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on NaT2.pdf (19 pages, 1089264 bytes).
+PDF statistics:
+ 623 PDF objects out of 1000 (max. 8388607)
+ 147 named destinations out of 1000 (max. 500000)
+ 502 words of extra memory for PDF output out of 10000 (max. 10000000)
+

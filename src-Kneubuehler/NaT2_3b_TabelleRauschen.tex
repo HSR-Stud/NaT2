@@ -1,0 +1,157 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[germanb]{babel}
+\usepackage{a4wide,amsmath,amssymb}
+\usepackage{epsfig,array,rotating,mymacros}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[dvips,
+            pdfauthor={Thomas Kneubuehler}
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue
+           ]{hyperref}
+\usepackage{pdflscape} % landscape
+\title{\vspace*{-4cm}\psfig{figure=elektrotechnik_sw.eps,width=6cm}
+       \hfill \textit{ }\psfig{figure=ICOM_Logo_gray.eps,width=3.5cm}
+                     \\[1cm]
+              Nachrichtentechnik 2: Rauschen in analogen \"Ubertragungssystemen}
+\author{T. Kneub\"uhler}
+\date{21. April 2008}
+
+\begin{document}
+\maketitle
+\noindent
+%\vspace*{-15mm}
+
+
+\section{Zusammenfassende Tabelle}
+Um die Berechnung des Signal-Rausch Abstands in analogen \"Ubertragungssystemen zu vereinfachen, wurden einige Annahmen getroffen, welche auch in nachfolgender Tabelle Voraussetzung f\"ur die einfachen Formeln sind:
+\begin{itemize}
+  \item Das Nachrichtensignal (d.h. der Zufallsprozess $X(t)$) wird als 
+        station\"arer Prozess (WSS) angenommen, welcher zudem noch mittelwertfrei ist.
+  \item Bei den modulierten Signalen $X_{c}(t)$ soll es sich um station\"are Prozesse handeln.
+        Diese Annahme ist f\"ur PM und FM unproblematisch (vgl. Schaum Aufgabe 7.1),
+        f\"ur DSB-SC und AM hingegen nicht selbstverständlich (vgl. Schaum Aufgabe 7.2).
+        Erst mit der Einf\"uhrung einer zuf\"alligen Phase (vgl. Anmerkung 1, Schaum Kapitel 8.4.A.1)
+        kann auch f\"ur DSB-SC und AM eine WSS-Stationarit\"at von $X_{c}(t)$ erzwungen werden.
+  \item Der Kanal f\"ugt dem Nachrichtensignal lediglich weisses, gauss'sches Rauschen mit der 
+        spektralen Leistungsdichte $\eta/2$ bei, d.h. das Nachrichtensignal wird weder linear noch
+        nicht-linear verzerrt.
+  \item Die Zeitverz\"ogerung beim Empf\"anger wird in dieser Tabelle vernachl\"assigt.
+        So wird z.B. beim Basisbandsignal $X_{o}(t) = X_{i}(t) = X(t)$ angenommen,
+        auch wenn korrekterweise $X(t-t_{d})$ stehen m\"usste.
+  \item Die $SNR_{i}$ befindet sich f\"ur nachfolgende Tabelle jeweils \"uber
+        dem kritischen Schwellwert, wo die $SNR_{o}$ beim Spitzenwertdetektor
+        bei AM sowie auch bei PM und FM sehr schnell abf\"allt. 
+        Dieser Wert liegt etwa bei $10$ dB, ist bei PM und FM aber auch stark von der Technologie des
+        Empf\"angers abh\"angig (z.B. Locking-Verhalten eines PLL-Empf\"angers).
+        Ein Schwellwertverhalten kann auch bei der koh\"arenten Demodulation von DSB-SC und AM
+        auftreten, z.B. bei der R\"uckgewinnung des unmodulierten Tr\"agersignals mit einem PLL.
+  \item Bei der koh\"arenten Demodulation wird ein lokaler Oszillator mit der Amplitude 2 benutzt,
+        d.h. $x_{lo} = 2 \cos(\omega_{c}t)$. Dieser Faktor fliesst in die Berechnung der
+        Ausgangsleistung $S_{o}$ bei AM und DSB-SC ein.
+  
+\end{itemize}
+
+\begin{landscape}
+\newpage
+\begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    & Baseband 
+    & DSB-SC    
+    & AM Coherent 
+    & AM Envelope  
+    & PM  
+    & FM          \\
+  \hline
+  Nachrichtensignal  
+    & \multicolumn{6}{c|}
+    {Zufallsprozess $X(t)$ mit $\left| X(t) \right| \leq 1$
+     bzw. $\left| x_{\lambda}(t) \right| \leq 1$ f\"ur alle $\lambda$ des Ergebnisraums $S$} \\
+  \hline
+  Leistung $S_{X}$ von $X(t)$
+    & \multicolumn{6}{c|}
+      {$S_{X} = S_{X}(t) = E\left[ X^{2}(t)\right] \leq 1$,
+      (weil $\left| X(t) \right| \leq 1$)}\\
+  \hline
+  Bandbreite von $X(t)$ 
+    & \multicolumn{6}{c|}{B} \\
+  \hline
+  Eingangsnutzsignal $X_{i}(t)$
+    & $X(t)$ 
+    & $X(t) A_{c}\cos(\omega_{c}t)$
+    & \multicolumn{2}{c|}{$A_{c}(1+\mu X(t))\cos(\omega_{c}t)$} 
+    & \multicolumn{1}{c|} {$A_{c}\cos(\omega_{c}t + k_{p}X(t))$} 
+    & {$A_{c}\cos(\omega_{c}t + k_{f}\int\limits_{-\infty}^{t} X(\tau)\;d\tau)$}  \\
+  \hline
+  Leistung $S_{i}$ von $X_{i}(t)$ 
+    & $S_{X}$
+    & $\frac{1}{2}A_{c}^{2} S_{X}$
+    & \multicolumn{2}{c|}{$\frac{1}{2}A_{c}^{2} (1 + \mu^{2}S_{X}) $}
+    & \multicolumn{1}{c|} {$\frac{1}{2}A_{c}^{2}$}
+    & {$\frac{1}{2}A_{c}^{2}$} \\
+  \hline
+  Bandbreite von $X_{i}(t)$ 
+    & $B$
+    & $2B$
+    & \multicolumn{2}{c|}{$2B$}
+    & \multicolumn{1}{c|}{$2(D + 1) B$}
+    & {$2(D + 1) B$} \\
+  \hline
+  Rauschleistung am Eingang
+    & $\eta B$
+    & $2\eta B$
+    & \multicolumn{2}{c|}{$2\eta B$}
+    & \multicolumn{1}{c|}{$2(D + 1)\eta B$}
+    & {$2(D + 1)\eta B$} \\
+  \hline
+  SNR am Eingang $\left(\frac{S}{N}\right)_{i}$
+    & $\frac{S_{i}}{\eta B}$
+    & $\frac{\frac{1}{2}A_{c}^{2} S_{X}}{2\eta B}$
+    & \multicolumn{2}{c|}{$\frac{\frac{1}{2}A_{c}^{2} (1 + \mu^{2}S_{X})}{2\eta B}$}
+    & \multicolumn{1}{c|}{$\frac{\frac{1}{2}A_{c}^{2}}{2(D + 1)\eta B}$}
+    & {$\frac{\frac{1}{2}A_{c}^{2}}{2(D + 1)\eta B}$} \\
+  \hline
+  Ausgangsnutzsignal $X_{o}(t)$
+    & $X(t)$ 
+    & $A_{c}X(t)$
+    & \multicolumn{2}{c|}{$A_{c}\mu X(t)$} 
+    & \multicolumn{1}{c|} {$k_{p}X(t)$} 
+    & {$k_{f}X(t)$}  \\
+  \hline
+  Leistung $S_{o}$ von $X_{o}(t)$   
+    & $S_{X}$
+    & $A_{c}^{2} S_{X}$
+    & \multicolumn{2}{c|}{$A_{c}^{2}\mu^{2}S_{X}$}
+    & \multicolumn{1}{c|} {$k_{p}^{2}S_{X}$}
+    & {$k_{f}^{2}S_{X}$} \\
+  \hline
+  Rauschleistung am Ausgang
+    & $\eta B$
+    & $2\eta B$
+    & \multicolumn{2}{c|}{$2\eta B$}
+    & \multicolumn{1}{c|}{$\frac{1}{A_{c}^{2}/2} \eta B$}
+    & {$\frac{1}{3}\frac{(2\pi B)^{2}}{A_{c}^{2}/2} \eta B$} \\
+  \hline
+  SNR am Ausgang $\left(\frac{S}{N}\right)_{o}$
+    & $\frac{S_{i}}{\eta B}$
+    & $\frac{A_{c}^{2} S_{X}}{2\eta B}$
+    & \multicolumn{2}{c|}{$\frac{A_{c}^{2}\mu^{2}S_{X}}{2\eta B}$}
+    & \multicolumn{1}{c|}{$\frac{k_{p}^{2}A_{c}^{2}S_{X}}{2\eta B}$}
+    & {$\frac{3 D^{2}A_{c}^{2}S_{X}}{2\eta B}$} \\
+  \hline
+  $\left(\frac{S}{N}\right)_{o}$ ausgedr\"uckt mit  $\gamma = \frac{S_{i}}{\eta B}$
+    & $\gamma$
+    & $\gamma$
+    & \multicolumn{2}{c|}{$\frac{\mu^{2}S_{X}}{1 + \mu^{2}S_{X}}\gamma$}
+    & \multicolumn{1}{c|}{$k_{p}^{2}S_{X}\gamma$}
+    & {$3 D^{2}S_{X}\gamma$} \\
+  \hline 
+\end{tabular}
+\\[1cm]
+Wichtige Anmerkung: Die Formeln der Tabelle gelten f\"ur dimensionslose Signale. Der Zufallsprozess liegt zudem in normierter Form vor, wie aus der Tabelle hervorgeht. Soll die SNR für konkrete physikalisch vorliegende Signale berechnet werden, m\"ussen f\"ur die Amplituden und Leistungen am Eingang des Empf\"angers geeignete Saklierungsfaktoren verwendet werden. Handelt es sich beim Empf\"anger zudem um einen aktiven Schaltungsblock, ist das Signal (sowie der Rauschanteil) am Ausgang des Empf\"angers ebenfalls mit den Parametern des Empf\"angers zu skalieren. \\
+\end{landscape}
+
+\end{document}
+ 

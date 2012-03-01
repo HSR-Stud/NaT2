@@ -1,0 +1,513 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[germanb]{babel}
+\usepackage{a4wide,amsmath,amssymb}
+\usepackage{epsfig,array,rotating,mymacros}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[dvips,
+            pdfauthor={Thomas Kneubuehler}
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue
+           ]{hyperref}
+           
+\title{\vspace*{-4cm}\psfig{figure=elektrotechnik_sw.eps,width=6cm}
+       \hfill \textit{ }\psfig{figure=ICOM_Logo_gray.eps,width=3.5cm}
+                     \\[1cm]
+              Nachrichtentechnik 2: Zufallsprozesse}
+\author{T. Kneub\"uhler}
+\date{23. April 2007}
+
+\begin{document}
+\maketitle
+\noindent
+\vspace*{-15mm}
+
+
+\section{Einf\"uhrung}
+\begin{itemize}
+  \item Bei den bisherigen WSK-Betrachtungen mit Zufallsvariablen haben wir 
+        jedem Ergebnis eines Zufallsexperiments eine reelle Zahl zugeordnet.
+  \item Bei Zufallsprozessen wird jetzt neu jedem Ergebnis eines Zufallsexperiments
+        eine Funktion in Ab\-h\"angig\-keit der Zeit zugeordnet.
+        Beispiele:
+  \begin{itemize}
+    \item Eine Bin\"are Datenquelle hat die Ergebnisse 1 und 0. Den beiden Ergebnissen wird
+          je eine Pulsform (d.h. ein Signal in Abh\"angigkeit der Zeit) zugeordnet, 
+          z.B. die beiden Pulsformen des Manchester-Codes.
+          Diese Pulse k\"onnen beispielsweise auf LTI-Systeme (Leitung, Filter) 
+          gegeben und deren Ausgangssignal berechnet werden.          
+    \item Ein Ethernet-Adapter sendet Ethernet-Pakete. Der Ergebnisraum ist zwar endlich
+          (da die maximale L\"ange der Ethernet-Pakete auf 1518 Bytes beschr\"ankt ist und es somit
+          nur eine endliche Anzahl unterschiedlicher Pakete geben kann)
+          aber so riesengross, dass es unm\"oglich ist, das Verhalten der Pakete in einem LTI-System 
+          f\"ur s\"amtliche Bit-Kombinationen zu bestimmen, weshalb man auf 
+          statistische Betrachtungen ausweichen muss.
+    \item Jedem Manchester-Puls wird von der Empfangsschaltung des Ethernet-Adapters 
+          thermisches Rauschen \"uberlagert. Die Rauschspannung kann
+          in ihrem zeitlichen Verlauf nicht vorhergesagt werden (d.h. der Ergebnisraum enth\"alt eine
+          unendliche Anzahl unterschiedlicher Ergebnisse, welchen eine unendliche Anzahl von
+          m\"oglichen Rauschsignal-Verl\"aufen zugeordnet ist).
+          Eine deterministische Berechnung des zeitlichen Verlaufs des Rauschsignals ist nicht
+          m\"oglich, doch k\"onnen die statistischen Eigenschaften der Rauschquellen 
+          aufgrund des physikalischen Modells exakt berechnet werden.
+  \end{itemize} 
+\end{itemize} 
+
+\section{Definitionen und Notationen f\"ur Zufallsprozesse}
+\begin{itemize}
+  \item Gegeben ist ein Zufallsexperiment mit den Ergebnissen $\lambda$ im Ergebnisraum $S$.
+  \item Zufallsprozess: Jedem Ergebnis $\lambda$ wird eine reellwertige Zeitfunktion
+        $x(t) = X(t,\lambda)$ zugeordnet.
+  \item Jeder Zufallsprozess besitzt zwei Parameter: $t,\lambda$
+  \item F\"ur ein spezifisches $\lambda_{i}$ ergibt sich eine \textit{determinierte} Zeitfunktion 
+        $x_{i}(t) = X(t,\lambda_{i})$. 
+        Obwohl wir den zeitlichen Verlauf z.B. einer Musterfunktion eines 
+        Rauschprozesses nicht vorhersagen k\"onnen,
+        fassen wir selbst einen solchen stochastischen Vorgang als deterministische
+        Funktion $x_{i}(t)$ auf. Bei einem Rauschprozess wissen wir jedoch zu keinem Zeitpunkt,
+        welches der unendlich vielen $\lambda_{i}$ und damit verbundenen $x_{i}(t)$ eingetroffen ist,
+        weshalb uns der ,,vorbestimmte'' k\"unftige Verlauf der Zeitfunktion $x_{i}(t)$ verborgen
+        bleibt.
+  \item $x_{i}(t)$ ist eine sogenannte Probefunktion (sample function). Die Gesamtheit
+        dieser Probefunktionen (\"uber alle m\"oglichen Ergebnisse des Zufallsexperiments) 
+        bilden ein Ensemble bzw. eine Schar. 
+  \item Zu jedem Zeitpunkt $t_{k}$ bildet $X_{k} = X(t_{k}, \lambda )$
+        eine Zufallsvariable. 
+  \item $x_{i}(t_{k}) = X(t_{k}, \lambda_{i})$ ist eine Zahl. 
+  \item $X(t,\lambda)$ wird normalerweise verk\"urzt als 
+        $X(t)$ geschrieben.
+  \item $X(t)$ kann als Sammlung von indizierten Zufallsvariablen 
+        $X(t_{1})$, $X(t_{2})$, $X(t_{3})$ etc. betrachtet
+        werden, wobei die Indexmenge $T$ diskret ($t_{1}$, $t_{2}$, $t_{3}$, etc.)
+        oder als $t \in R$ kontinuierlich sein kann. 
+        Entsprechend handelt es sich um einen zeitdiskreten oder zeitkontinuierlichen Zufallsprozess.
+\end{itemize} 
+
+\section{Statistische Kennwerte von Zufallsprozessen}
+\subsection{Verteilungsfunktion und Wahrscheinlichkeitsdichtefunktionen}
+\begin{itemize}
+  \item Gegeben ist ein Zufallsprozess $X(t)$
+  \item $t_{k}$ bildet einen Index, der auf eine Zufallsvariable $X_{k}$ des Zufallsprozesses 
+        weist.
+  \item $X_{k}$ besitzt eine Verteilungsfunktion
+        $F_{X_{k}}(x_{k};t_{k})  = P\left\lbrace X_{k}(t_{k}) \leq x_{k}\right\rbrace$,
+        wobei $x_{k}$ eine beliebige reelle Zahl ist.
+  \item Die zugeh\"orige Wahrscheinlichkeitsdichtefunktion lautet wie folgt:
+        $f_{X_{k}}(x_{k};t_{k})  = \frac{\partial F_{X_{k}}(x_{k};t_{k})}{\partial x_{k}}$
+  \item Neben dem eindimensionalen Fall kann mit mehreren Indizes $t_{i}$ auch auf 
+        $n$ Zufallsvariablen des Zufallsprozesses verwiesen werden, welche dann eine
+        n-dimensionale Verteilungsfunktion bzw. Wahrscheinlichkeitsdichtefunktion besitzen.
+  \item Zweidimensionale Veteilungsfunktion: 
+        $F_{X}(x_{1},x_{2};t_{1},t_{2}) =
+          P\left\lbrace X(t_{1}) \leq x_{1}, X(t_{2}) \leq x_{2} \right\rbrace$
+  \item Zweidimensionale Wahrscheinlichkeitsdichtefunktion :
+        $f_{X}(x_{1},x_{2};t_{1},t_{2}) =
+          \frac{\partial^{2} F_{X}(x_{1},x_{2};t_{1},t_{2})}{\partial x_{1}\;\partial x_{2}}$
+\end{itemize} 
+
+\subsection{Statistische Kennwerte}
+\begin{itemize}
+  \item Bei den statistischen Kennwerten handelt es sich um Mittelwerte \"uber das Ensemble. 
+        Zeitliche Mittelwerte werden sp\"ater betrachtet. Die statistischen Kennwerte werden
+        analog zu den Zufallsvariablen 
+        f\"ur jeden Zeitpunkt $t$ der Indexmenge $T$ berechnet
+        und bilden so Funktionen in Abh\"angigkeit der Zeit.
+  \item Erwartungswert:
+        $\mu_{X}(t) = E\left[X(t)\right] =
+          \int\limits_{-\infty}^{+\infty} x \cdot f_{X}(x;t)\;dx$
+  \item Autokorrelation:
+        $R_{XX}(t_{1},t_{2}) = E\left[X(t_{1})X(t_{2})\right] =
+          \int\limits_{-\infty}^{+\infty} \int\limits_{-\infty}^{+\infty} 
+            x_{1} \cdot  x_{2}\cdot f_{X}(x_{1},x_{2};t_{1},t_{2})\;dx_{1} \;dx_{2}$
+  \item F\"ur $t_{2} = t_{1}$ geht die Autokorrelation in das zweite Moment der Zufallsvariable
+        $X_{1}$ \"uber, welche durch $t_{1}$ inidiziert wird.
+  \item Autokovarianz: \\
+        $C_{XX}(t_{1},t_{2}) =
+          E\left[ \left( X(t_{1})-\mu_{X}(t_{1})\right) \cdot
+                  \left( X(t_{2})-\mu_{X}(t_{2})\right) \right] =
+          R_{XX}(t_{1},t_{2}) - \mu_{X}(t_{1}) \cdot \mu_{X}(t_{2})$
+  \item F\"ur $t_{2} = t_{1}$ geht die Autokovarianz in das zweite Zentralmoment (die Varianz)
+        der Zufallsvariable $X_{1}$ \"uber, welche durch $t_{1}$ inidiziert wird.
+\end{itemize} 
+
+\subsection{Stationarit\"at}
+\subsubsection{Streng station\"are Prozesse (strict sense stationary SSS)}
+\begin{itemize}
+  \item Ein Zufallsprozess heisst streng-station\"ar, wenn seine statistischen Eigenschaften
+        unabh\"angig sind bzgl. einer Verschiebung des Zeitursprungs $c$. Pr\"aziser: \\ \\
+        $f_{X}(x_{1},x_{2},...,x_{n};t_{1},t_{2},...,t_{n}) =
+         f_{X}(x_{1},x_{2},...,x_{n};t_{1}+c,t_{2}+c,...,t_{n}+c) $ \\ \\
+        Sind die beiden n-dimensionalen Wahrscheinlichkeitsdichten unabh\"angig
+        von der konstanten zeitlichen Verschiebung $c$ gleich,
+        spricht man von Stationarit\"at n-ter Ordnung.
+        F\"ur SSS-Prozesse muss obenstehende Gleichung f\"ur beliebig grosse $n$
+        und beliebige Zeitpunkte $t_{i}$ gelten.
+  \item F\"ur einen SSS-Prozess gilt unter anderem:
+  \begin{itemize}
+     \item[$\circ$] $E[X(t)] = \mu_{X}$
+     \item[$\circ$] $R_{XX}(t_{1},t_{2}) = R_{X}(\tau)$, \hspace{10pt} mit $\tau = t_{2} - t_{1}$
+     \item[$\circ$] $C_{XX}(t_{1},t_{2}) = R_{X}(\tau) - \mu_{X}^{2}$
+  \end{itemize} 
+  \item Strikte station\"are Prozesse beinhalten aber noch weitere statistische Abh\"angigkeiten,
+        welche in der Praxis nur von wenigen physikalischen Prozessen erf\"ullt werden.
+\end{itemize} 
+
+\subsubsection{Schwach-station\"are Prozesse (wide sense stationary WSS)}
+\begin{itemize}
+  \item Ein Zufallsprozess heisst schwach-station\"ar, wenn sich die statistischen Eigenschaften
+        bei einer zeitlichen Verschiebung $c$ wiederum nicht ver\"andern,
+        dabei jedoch nur die 2-dimensionalen und nicht die n-dimensionale Wahrscheinlichkeitsdichten
+        station\"ar bleiben m\"ussen: \\ \\
+          $f_{X}(x_{1},x_{2};t_{1},t_{2}) = f_{X}(x_{1},x_{2};t_{1}+c,t_{2}+c) $ \\ \\
+        Man spricht bei WSS-Prozessen auch von einer Stationarit\"at zweiter Ordnung.
+  \item Auch ein schwach station\"arer Prozess erf\"ullt folgende Eigenschaften: 
+  \begin{itemize}
+     \item[$\circ$] $E[X(t)] = \mu_{X}$
+     \item[$\circ$] $R_{XX}(t_{1},t_{2}) = R_{X}(\tau)$, \hspace{10pt} mit $\tau = t_{2} - t_{1}$
+  \end{itemize} 
+  \item Damit gilt nat\"urlich auch:
+  \begin{itemize}
+     \item[$\circ$] $C_{XX}(t_{1},t_{2}) = R_{X}(\tau) - \mu_{X}^{2} = C_{XX}(\tau) $
+  \end{itemize} 
+  \item Umgekehrt gilt auch, dass es sich bei einem Zufallsprozess immer dann um einen WSS-Prozess handelt,
+        sobald sein Erwartungswert konstant ist und die Autokorrelationsfunktion nur eine Funktion von $\tau$ ist,
+        d.h. diese beiden statistiscehn Kennwerte bzgl. einer zeitlichen Verschiebung unabh\"angig sind.
+  \item Jeder streng-station\"are Prozess ist nat\"urlich auch schwach-station\"ar (aber nicht umgekehrt).
+  \item Weiter gilt: $E[X^{2}(t)] = R_{X}(0)$, \hspace{10pt} d.h. die mittlere \textit{satistische}
+        Leistung (des Ensembles) ist f\"ur schwach-station\"are Prozesse zeitunabh\"angig und
+        entspricht gerade $R_{X}(0)$
+  \item Zwei Zufallsprozesse heissen Verbund-schwach-station\"ar, wenn jeder Prozess f\"ur sich 
+        schwach-station\"ar ist und zudem gilt:  
+        \begin{itemize}
+          \item[$\circ$] $R_{XY}(t_{1},t+\tau) = E[X(t)Y(t+\tau)] = R_{XY}(\tau)$ 
+        \end{itemize} 
+  \item Dann gilt auch:
+  \begin{itemize}
+     \item[$\circ$] $C_{XY}(\tau) = R_{XY}(\tau) - \mu_{X} \mu_{Y}$
+  \end{itemize} 
+\end{itemize} 
+
+\subsection{Zeitmittelwerte}
+\begin{itemize}
+  \item Zeitlicher Mittelwert einer Musterfunktion $x_{i}(t)$: \\
+        $\overline{x_{i}} = \left\langle x_{i}(t) \right\rangle = 
+           \lim\limits_{T \rightarrow \infty}
+             \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}} x_{i}(t) \; dt$
+  \item Zeitlich gemittelte Autokorrelationsfunktion einer Musterfunktion $x_{i}(t)$: \\
+        $\overline{R}_{X_{i}X_{i}}(\tau) = \left\langle x_{i}(t) \cdot x_{i}(t+\tau) \right\rangle = 
+           \lim\limits_{T \rightarrow \infty}
+             \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}} x_{i}(t) \cdot x_{i}(t + \tau) \; dt$
+  \item Werden diese zeitlichen Mittelwerte nicht nur f\"ur einzelne Musterfunktionen $x_{i}(t)$ berechnet,
+        sondern f\"ur den gesamten Zufallsprozess $X(t)$, dann handelt es sich bei $\overline{x}$ und
+        $\overline{R}_{XX}(\tau)$ um Zufallsvariablen. 
+  \item Ist der Zufallsprozess $X(t)$ station\"ar (WSS), l\"asst sich von der 
+        Zufallsvariablen des zeitlichen Mittelwerts der Erwartungswert berechnen: \\
+        $E[\overline{x}] = 
+           \lim\limits_{T \rightarrow \infty}
+             \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}} E[x(t)] \; dt = 
+             \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}} \mu_{X} \; dt = \mu_{X}$ \\
+        Bei station\"aren Zufallsprozessen entspricht also der Erwartungswert des zeitlichen
+        Mittelwertes der Musterfunktionen gerade dem (zeitlich konstanten) statistischen Mittelwert
+        des Zufallsprozesses.
+  \item Ebenso gilt dann f\"ur den Erwartungswert der zeitlich gemittelten Autokorrelationsfunktion: \\
+        $E[\overline{R}_{XX}(\tau)] = 
+           \lim\limits_{T \rightarrow \infty}
+             \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}} E[x(t)x(t+\tau)] \; dt =
+             \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}} R_{XX}(\tau) \; dt = R_{XX}(\tau)$ \\
+        Bei station\"aren Zufallsprozessen entspricht also der Erwartungswert der zeitlich gemittelten
+        Autokorrelationsfunktion der Musterfunktionen gerade der (zeitlich konstanten) Autokorrelation
+        \"uber das Ensemble.
+\end{itemize} 
+
+\subsection{Ergodizit\"at von station\"aren Prozessen}
+\begin{itemize}
+  \item Eine noch viel st\"arkere Eigenschaft als die Stationarit\"at ist die Ergodizit\"at. Die
+        Ergodizit\"at f\"ur den Mittelwert von station\"aren Prozessen besagt,
+         dass der zeitliche Mittelwert $\left\langle x_{i}(t) \right\rangle$
+         \textit{jeder} Musterfunktion $x_{i}(t)$ gerade dem Scharmittelwert $\mu_{X}$
+        (d.h. dem station\"aren statistischen Mittelwert \"uber das Ensemble) entspricht. \\
+        $\overline{x_{i}} = \left\langle x_{i}(t) \right\rangle = E[x(t)] = \mu_{X}$
+  \item Dies erlaubt, aus der Beobachtung einer \textit{einzelnen} Musterfunktion $x_{i}(t)$ auf die
+        statistischen Eigenschaften des Ensembles zu schliessen.
+  \item Beispiel: Thermisches Rauschen von Widerst\"anden.
+  \item Diese Eigenschaft ist bei station\"aren Prozessen \textit{nicht}
+        zum vornherein gegeben. Beispiel: Wenn
+        wir in erster N\"aherung davon ausgehen, dass sich die durchschnittliche Punktzahl und deren
+        statistische Verteilung bei den j\"ahrlichen Feldschiessen nicht ver\"andert, der Prozess
+        also als station\"ar angenommen werden kann, heisst das noch lange nicht, dass ein wenig
+        treffsicherer Sch\"utze im Verlauf seiner Karriere an einem Feldschiessen diese 
+        durchschnittliche Punktzahl je \"uberhaupt erreichen wird.
+  \item Ebenso ist die Ergodizit\"at f\"ur die Autokorrelation definiert: \\
+        $\overline{R}_{X_{i}X_{i}}(\tau) = \left\langle x_{i}(t) \cdot x_{i}(t+\tau) \right\rangle =
+                                   E[X(t)\cdot X(t+\tau)] = R_{XX}(\tau)$
+  \item \textit{Nur} bei ergodischen Prozessen (und wirklich \textit{nur} bei diesen), k\"onnen
+        folgende zeitliche und statistische Mittelwerte gleichgesetzt werden. Als Analogien
+        f\"ur die Einordnung der Begriffe Erwartungswert,
+        zweites Moment und Varianz sind sie aber auch bei nicht-ergodischen
+        Prozessen hilfreich. \\ \\
+        \begin{tabular}{ll}
+          $E[X(t)] = \overline{x} = \left\langle x(t) \right\rangle$ & DC-Level \\
+          $E[X(t)]^{2} = (\overline{x})^{2} = \left\langle x(t) \right\rangle^{2}$ & DC-Leistung \\
+          $E[X^{2}(t)] = R_{XX}(0) = \overline{x^{2}} = 
+                         \left\langle x^{2}(t) \right\rangle $ & Gesamtleistung \\
+          $\sigma_{X}^{2}(t) = \left\langle x^{2}(t) \right\rangle 
+                               - \left\langle x(t) \right\rangle^{2}$ & AC-Leistung \\
+          $\sigma_{X}(t) = \overline{\sigma}_{X}$ & RMS-Level (Effektivwert) des AC-Signals\\
+        \end{tabular} \\
+\end{itemize} 
+\clearpage
+
+\section{Korrelationen und Leistungsdichtespektrum}
+In diesem Abschnitt werden alle Zufallsprozesse als \textit{station\"are} Prozesse angenommen.
+
+\subsection{Autokorrelation $R_{XX}(\tau)$}
+\begin{itemize}
+  \item $R_{XX}(\tau) = E[X(t)X(t+\tau)]$
+  \item Eigenschaften:
+  \begin{itemize}
+     \item[$\circ$] $R_{XX}(-\tau) = R_{XX}(\tau)$  
+     \item[$\circ$] $\mid \! R_{XX}(\tau) \! \mid \leq R_{XX}(0)$  
+     \item[$\circ$] $R_{XX}(0) = E[X^{2}(t)]$  
+  \end{itemize} 
+\end{itemize} 
+
+\subsection{Kreuzkorrelation $R_{XY}(\tau)$}
+\begin{itemize}
+  \item $R_{XY}(\tau) = E[X(t)Y(t+\tau)]$
+  \item Eigenschaften:
+  \begin{itemize}
+     \item[$\circ$] $R_{XY}(-\tau) = R_{YX}(\tau)$  \hspace{20pt} (Reihenfolge der Indizes beachten!)
+     \item[$\circ$] $\mid \! R_{XY}(\tau) \! \mid  \leq \frac{1}{2} \left[ R_{XX}(0)+R_{YY}(0)\right] $  
+     \item[$\circ$] $\mid \! R_{XY}(\tau) \! \mid \leq \sqrt{R_{XX}(0)R_{YY}(0)}$  
+  \end{itemize} 
+  \item Zwei Zufallsprozesse bezeichnet man als zueinander \textit{orthogonal},
+        wenn $R_{XY}(\tau) = 0$
+\end{itemize} 
+
+\subsection{Autokovarianz $C_{XX}(\tau)$}
+\begin{itemize}
+  \item $C_{XX}(\tau) = E\!\left[ \left( X(t)      - E[X(t)]      \right) \cdot
+                                  \left( X(t+\tau) - E[X(t+\tau)] \right) \right] =
+                        R_{XX}(\tau) - \mu^{2}_{X} $
+\end{itemize} 
+
+\subsection{Kreuzkovarianz $C_{XY}(\tau)$}
+\begin{itemize}
+  \item $C_{XY}(\tau) = E\!\left[ \left( X(t)      - E[X(t)]      \right) \cdot
+                                  \left( Y(t+\tau) - E[Y(t+\tau)] \right) \right] =
+                        R_{XY}(\tau) - \mu_{X}\mu_{Y} $
+  \item Zwei Zufallsprozesse bezeichnet man als zueinander \textit{unkorreliert},
+        wenn $C_{XY}(\tau) = 0$
+
+\end{itemize} 
+
+\subsection{Spektrale Leistung}
+\begin{itemize}
+  \item Wir definieren die Leistungsspektraldichte eines Zufallsprozesses wie folgt: \\ \\
+        $S_{XX}(\omega) = E\left[ \lim\limits_{T \rightarrow \infty}
+                                    \frac{1}{T} \cdot \mid\! X(\omega) \!\mid^{2}\right]  
+                        = \lim\limits_{T \rightarrow \infty}
+                            \frac{1}{T} E\left[\mid\! X(\omega) \!\mid^{2} \right]$ \\ \\
+        Bei $x(t)$ Es handle es sich hierbei um ein Energiesignal von $-\frac{T}{2}$ bis
+        $+\frac{T}{2}$, d.h. $x(t) = 0$ f\"ur $\mid\! t \!\mid > \frac{T}{2}$.
+        $\mid\!X(\omega)\!\mid^{2}$ kann damit gem\"ass Parseval (Schaum Kapitel 1) als
+        eine Art Energiespektraldichte interpretiert werden.
+        Die Leistungsspektraldichte
+        kann als mittlere Leistung pro Frequenzband aufgefasst werden,
+        indem wir die Energiespektraldichte
+        durch $T$ teilen. Vollziehen wir die zeitliche
+        Mittelung \"uber ein sehr grosses $T$ ($T \rightarrow \infty$)
+        kann diese mittlere spektrale Leistung auch f\"ur
+        Leistungssignale (und damit f\"ur station\"are Prozesse) berechnet werden. 
+        Wie immer bei Zufallsprozessen, bilden wir schliesslich 
+        den Erwartungswert und mitteln so \"uber die Schar von Sample-Funktionen.
+  \item Es gilt das wichtige \textbf{Wiener-Kinchin-Theorem} (vereinfacht f\"ur station\"are Prozees): \\ \\
+        $S_{XX}(\omega) = \int\limits_{-\infty}^{+\infty} 
+                             R_{XX}(\tau) \cdot e^{-j\omega\tau} \; d\tau$ \\ \\
+        $R_{XX}(\tau)   = \frac{1}{2\pi} \int\limits_{-\infty}^{+\infty} 
+                             S_{XX}(\omega) \cdot e^{j\omega\tau} \; d\omega$ \\ \\
+        Beweis: \\
+        Bei station\"aren Prozessen gilt: \\ \\
+        $R_{XX}(\tau) = E[\overline{R}_{XX}(\tau)]  
+                      = E\left[ \lim\limits_{T \rightarrow \infty}
+                                  \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}}
+                                     x(t)x(t+\tau) \; dt \right] 
+                      = \lim\limits_{T \rightarrow \infty}
+                                  \frac{1}{T} E\left[ x(t)\ast x(-t) \right] $ \\ \\
+        Es gilt der Zeitumkehrungssatz f\"ur alle $x(t)$:
+        ${\mathcal F}\lbrack x(-t) \rbrack = X(-\omega)$\\ \\
+        Und f\"ur reellwertige $x(t)$ gilt zudem:
+        $X(-\omega) = X^{\ast}(\omega)$\\ \\
+        Damit folgt f\"ur die Fourier-Transformierte der Autokorrelationsfunktion
+        eines station\"aren Zufallsprozesses: \\ \\
+        ${\mathcal F} \left[ R_{XX}(\tau)\right] 
+          = {\mathcal F} \left[  \lim\limits_{T \rightarrow \infty}
+                                  \frac{1}{T} E\left[ x(t)\ast x(-t) \right] \right]  
+          = \lim\limits_{T \rightarrow \infty}
+              \frac{1}{T} E\left[ X(\omega) \cdot X^{\ast}(\omega) \right]
+          = \lim\limits_{T \rightarrow \infty}
+              \frac{1}{T} E\left[\mid\! X(\omega) \!\mid^{2} \right]
+          = S_{XX}(\omega)$ \\ 
+
+
+\end{itemize} 
+Die Leistungsspektraldichte besitzt folgende Eigenschaften von $S_{XX}(\omega)$:
+\begin{itemize}
+  \item $S_{XX}(\omega)$ ist reellwertig.
+  \item $S_{XX}(\omega) \geq 0$
+  \item $S_{XX}(-\omega) = S_{XX}(\omega)$ 
+  \item Mittlere Leistung des Zufallsprozesses $X(t)$: \\ \\
+        $\frac{1}{2\pi} \int\limits_{-\infty}^{+\infty}
+                           S_{XX}(\omega) \; d\omega = R_{XX}(0) = E[X^{2}(t)]$ 
+\end{itemize} 
+
+\subsection{Kreuz-Spektraldichte}
+\begin{itemize}
+  \item $S_{XY}(\omega) = \int\limits_{-\infty}^{+\infty} 
+                             R_{XY}(\tau) \cdot e^{-j\omega\tau} \; d\tau$ 
+  \item $S_{YX}(\omega) = \int\limits_{-\infty}^{+\infty} 
+                             R_{YX}(\tau) \cdot e^{-j\omega\tau} \; d\tau$ 
+  \item $R_{XY}(\tau)   = \frac{1}{2\pi} \int\limits_{-\infty}^{+\infty} 
+                             S_{XY}(\omega) \cdot e^{j\omega\tau} \; d\omega$ 
+  \item $R_{YX}(\tau)   = \frac{1}{2\pi} \int\limits_{-\infty}^{+\infty} 
+                             S_{YX}(\omega) \cdot e^{j\omega\tau} \; d\omega$ 
+  \item Mit $R_{XY}(\tau) = R_{YX}(-\tau)$ folgt: \hspace{20pt}
+          $S_{XY}(\omega) = S_{YX}(-\omega) = S^{\ast}_{YX}(\omega)$ 
+\end{itemize} 
+
+\clearpage
+\section{\"Ubertragung von Zufallsprozessen \"uber LTI-Systeme}
+\begin{itemize}
+  \item Ein lineares zeit-invarinates System sei gegeben durch
+        $Y(t) = L[X(t)]$, wobei gilt \\ \\
+  \begin{tabular}{ll}
+     $X(t)$ & Eingangs-Zufallsprozess \\
+     $L[]$  & LTI-System repr\"asentiert mit dem Operator $L$ \\
+     $Y(t)$ & Ausgangs-Zufallsprozess \\
+  \end{tabular} \\
+  \item $h(t)$ ist die Impulsantwort des LTI-Systems
+  \item Damit folgt $Y(t) = h(t) \ast X(t)
+                          = \int\limits_{-\infty}^{+\infty} h(\alpha)X(t-\alpha) \; d\alpha$
+  \item Dies bedeutet, dass f\"ur jede Musterfunktion $x_{i}(t)$
+        des Zufallsprozesses $X(t)$ mit Hilfe der Faltungsfunktion und der Impulsantwort 
+        $h(t)$ das Ausgangssignal $y_{i}(t)$ berechnet werden kann.
+        Die Schar der Ausgangssignale $y_{i}(t)$ ergeben zusammen den Zufallsprozess $Y(t)$.
+\end{itemize} 
+
+\subsection{Erwartungswert und Autokorrelation des Ausgangsprozesses $Y(t)$}
+\begin{itemize}
+  \item            $\mu_{Y}(t) = h(t) \ast \mu_{X}(t)$  
+  \item Falls WSS: $\mu_{Y} = H(0) \cdot \mu_{X}$  
+  \item $R_{YY}(t_{1},t_{2}) = \int\limits_{-\infty}^{+\infty} \int\limits_{-\infty}^{+\infty}
+                      h(\alpha) h(\beta)
+                      R_{XX}(t_{1}-\alpha, t_{2}-\beta) \; d\alpha \; d\beta$
+  \item Falls WSS: $R_{YY}(\tau) = \int\limits_{-\infty}^{+\infty} \int\limits_{-\infty}^{+\infty}
+                      h(\alpha) h(\beta)
+                      R_{XX}(\tau+\alpha-\beta) \; d\alpha \; d\beta$ 
+  \item Ein WSS Prozess am Eingang eines LTI-Systems erzeugt auch am Ausgang einen WSS-Prozess.
+\end{itemize} 
+
+
+\subsection{Leistungsdichtespektrum des Ausgangsprozesses $Y(t)$}
+\begin{itemize}
+  \item $S_{YY}(\omega)= \int\limits_{-\infty}^{+\infty}
+                            R_{YY}(\tau) \cdot e^{-j\omega\tau} \; d\tau$ 
+  \item $S_{YY}(\omega)= H^{\ast}(\omega) \cdot H(\omega) \cdot S_{XX}(\omega)$ 
+  \item $S_{YY}(\omega)= \mid\! H(\omega)\!\mid^{2} \cdot S_{XX}(\omega)$  
+  \item $R_{YY}(\tau) = \frac{1}{2\pi} 
+          \int\limits_{-\infty}^{+\infty} 
+            \mid\! H(\omega)\!\mid^{2}S_{XX}(\omega)e^{j\omega\tau} \; d\omega$
+  \item $E[Y^{2}(t)] = R_{YY}(0) = \frac{1}{2\pi} 
+          \int\limits_{-\infty}^{+\infty} 
+            \mid\! H(\omega)\!\mid^{2}S_{XX}(\omega) \; d\omega$
+\end{itemize} 
+\clearpage
+\section{Spezielle Zufallsprozesse}
+\subsection{Spezielle Eigenschaften im Zeitbereich}
+\subsubsection{Gauss'scher Zufallsprozess}
+\begin{itemize}
+  \item Beispiel: thermisches Rauschen von Widerst\"anden.
+  \item Zweidimensionaler Fall (gauss'sche Verbunddichte): \\ \\
+        $f_{X}(x_{1},x_{2};t_{1},t_{2}) = \frac{1}{2\pi \sigma_{x_{1}}\sigma_{x_{2}}} \cdot
+                                      e^{-\frac{(x_{1}-\mu_{x_{1}})^{2}}{2 \sigma^{2}_{x_{1}}}} \cdot
+                                      e^{-\frac{(x_{2}-\mu_{x_{2}})^{2}}{2 \sigma^{2}_{x_{2}}}}$
+  \item Zu jedem Zeitpunkt $t_{i}$ ist die Zufallsvariable $X(t_{i})$ gaussverteilt.
+  \item $\mu_{X}(t)$ und $R_{XX}(t_{1}, t_{2})$ charakterisisieren einen gauss'schen Zufallsprozess
+        vollst\"andig.
+  \item Sind die Zufallsvariablen $X(t_{1})$ und $X(t_{2})$ unkorreliert ($C_{XX}(t_{1},t_{2})=0$),
+        so sind die Zufallsvariablen auch unabh\"angig voneinader, d.h:
+        $f_{XX}(x_{1},x_{2}; t_{1},t_{2}) = f_{X}(x_{1};t_{1}) \cdot f_{X}(x_{2};t_{2}) $ 
+  \item Ist ein gauss'scher Prozess WSS ist er zugleich auch SSS.
+  \item Ein gauss'scher Zufallsprozess $X(t)$ ist am Ausgang eines LTI Systems ($Y(t)$) wiederum gaussisch.
+\end{itemize} 
+
+\subsection{Spezielle Eigenschaften im Frequenzbereich}
+\subsubsection{Weisses Rauschen}
+\begin{itemize}
+  \item Betrachtung der Leistungs-Spektraldichte eines Zufallsprozesses.
+  \item ''weiss'' bedeutet eine gleichm\"assige Leistungsdichte f\"ur alle Frequenzanteile: \\ \\
+        $S_{XX}(\omega) = \frac{\eta}{2}$ \\ \\
+        $R_{XX}(\tau) =  \frac{\eta}{2} \cdot \delta(\tau)$ 
+  \item Beispiel: thermisches Rauschen von Widerst\"anden.
+\end{itemize} 
+
+\subsubsection{Bandbeschr\"anktes weisses Rauschen}
+\begin{itemize}
+  \item Bei einem Zufallsprozess $X(t)$ handelt es sich 
+        um bandbeschr\"anktes Rauschen, falls gilt: \\ \\
+        $S_{XX}(\omega) = \left\lbrace \begin{array}{ll}
+                            \frac{\eta}{2} & \mid\!\omega\!\mid \leq \omega_{B} \\
+                            0              & \mid\!\omega\!\mid > \omega_{B} \\
+                          \end{array} \right. $ \\ 
+  \item Daraus kann die Autokorrelationsfunktion berechnet werden: \\ \\
+        $R_{XX}(\tau) =  \frac{1}{2\pi} \int\limits_{-\omega_{b}}^{+\omega_{b}}
+                                           \frac{\eta}{2}  \cdot e^{j\omega\tau}\; d\tau
+                      = \frac{\eta\omega_{B}}{2\pi} \frac{\sin(\omega_{B}\tau)}{\omega_{B}\tau}$ 
+\end{itemize} 
+
+\clearpage
+\subsubsection{Schmalbandige Zufallsprozesse}
+\begin{itemize}
+  \item Bandbeschr\"anktes weisses Rauschen mit sehr kleiner Bandreite $2B$,
+        verteilt um $\pm\omega_{c}$ .
+  \item Bsp: Schmalbandig gefiltertes thermisches Widerstandsrauschen.
+  \item Messung im Zeitbereich : sinusf\"ormiges Signal mit zuf\"alliger Amplitude und Phase.
+  \item $X(t) = V(t) \cdot \cos \left[ \omega_{c}t + \phi(t) \right]$ \\ \\
+        \begin{tabular}{ll}
+        $V(t)$: & Enveloppen-Funktion \\ 
+        $\phi(t)$: & Phasenfunktion.
+        \end{tabular} 
+  \item $X(t) = X_{c}(t)\cos\omega_{c}(t) - X_{s}(t)\sin\omega_{c}(t)$ \\ \\
+        \begin{tabular}{ll}
+        $X_{c}(t) = V(t)\cos\phi(t)$: & gleichphasiger Anteil \\ 
+        $X_{s}(t) = V(t)\sin\phi(t)$: & Quadratur-Anteil \\ 
+        $V(t) = \sqrt{X^{2}_{c}(t) + X^{2}_{s}(t)}$ \\
+        $\phi(t) = \arctan \frac{X_{s}(t)}{X_{c}(t)}$ \\
+        \end{tabular} \\ \\
+\end{itemize} 
+Eigenschaften von $X_{c}(t)$ und $X_{s}(t)$: \\
+\begin{itemize}
+\item $S_{X_{c}X_{c}}(\omega) = S_{X_{s}X_{s}}(\omega)
+                   = \left\lbrace
+                       \begin{array}{ll}
+                         S_{XX}(\omega -\omega_{c}) +S_{XX}(\omega +\omega_{c})
+                                        & \mid\!\omega\!\mid \leq W \\
+                         0              & \mid\!\omega\!\mid > W \\
+                       \end{array} \right. $ \\ 
+  \item Bei $X_{c}(t)$ und $X_{s}(t)$ handelt es sich damit um bandbeschr\"anktes Rauschen im Basisband.
+  \item $\mu_{X_{c}} = \mu_{X_{s}} = \mu_{X} = 0$ 
+  \item $\sigma^{2}_{X_{c}} = \sigma^{2}_{X_{s}} = \sigma^{2}_{X}$
+  \item $E\left[ X_{c}(t)X_{s}(t) \right]  = 0$ \hspace{20pt} (unkorreliert und orthogonal)
+  \item Ist $X(t)$ ein Gauss-Prozess, sind auch $X_{c}(t)$ und $X_{s}(t)$ gaussisch.
+  \item Ist $X(t)$ ein Gauss-Prozess, gilt: \\
+        \begin{tabular}{ll}
+        $V(t)$: & Rayleigh-verteilt zu jedem Zeitpunkt t \\
+        $\Phi(t)$: & gleichverteilt ($0..2\pi$) zu jedem Zeitpunkt t. \\
+        \end{tabular} \\
+\end{itemize} 
+
+
+\end{document}
+ 

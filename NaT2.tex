@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokumentinformationen %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\titleinfo}{Nachrichtentechnik 2 - Formelsammlung}
+\newcommand{\authorinfo}{F. Braun, L. Schmid, U. Giger, R. Koller, S.
+Arnold, S. Ferreti}
+\newcommand{\versioninfo}{$Revision: 991 $ - powered by \LaTeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standard projektübergreifender Header für
+% - Makros 
+% - Farben
+% - Mathematische Operatoren 
+%
+% DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\include{header/header}
+
+% Möglichst keine Ergänzungen hier, sondern in header.tex
+\begin{document} 
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\newpage
+\input{sections/06_WSK.tex}
+\input{sections/07_RandomProcess.tex}
+\input{sections/08_NoiseAnalog.tex}
+\input{sections/09_OptimumDetection.tex}
+\input{sections/10_SourceCoding.tex}
+\input{sections/11_ChannelCoding.tex}
+\input{sections/99_UebungsVZ.tex}
+
+
+\end{document}
