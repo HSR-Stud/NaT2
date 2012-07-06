@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Fri Jul 06 16:38:57 CEST 2012
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp\\
+mainTexFile=NaT2.tex
+outputFile=NaT2.pdf
+langSpell=
+markDer=true
+srcDir=
