@@ -1,9 +1,11 @@
 \section{Rauschen in analogen Kommunikationssystemen \formelbuch{202-8}}
 \textbf{Rauschen} \textbf{verschlechtert} die \textbf{Performance}. Bei \textbf{analogen} Systemen
 macht sich dies beim \textbf{Signal-Rausch-Abstand (SNR)} bemerkbar.
+\begin{figure}[!ht]
 \begin{center}
-	\includegraphics[width=14cm]{../NaT2/bilder/08_noise_blockdiag.png}
+	\include{./tikz/noise_blockdiagramm}
 \end{center}
+\end{figure}
 Die Voraussetzungen für eine einfache Berechnung mit Hilfe von diesem Modell (gauss'scher Kanal)
 sind die folgenden:
 \begin{itemize}
@@ -23,9 +25,11 @@ werden: $S_{i_{dB}} = S_{t_{dB}} - A_{dB}$
 \skriptsubsection{Basisband}{203-8.3}
 Die Berechnungen im Basisband gelten als \textbf{Referenz}, für den \textbf{Vergleich} mit
 \textbf{anderen Systemen}. \\
+\begin{figure}[!ht]
 \begin{center}
-	\includegraphics[height=1.8cm]{../NaT2/bilder/08_noise_baseband.png}
+	\include{./tikz/noise_baseband}
 \end{center}
+\end{figure}
 Wiederum müssen wieder gewisse Einschränkungen gemacht werden für eine einfachere Berechnung:
 \begin{itemize}
   \item $X(t)$ ist mittelwertfrei $\quad \Rightarrow \quad E[X]=0$
@@ -41,10 +45,11 @@ $$ \text{Die Rauschleistung im Basisband: } \qquad \boxed{\left(\dfrac{S}{N}\rig
 Systemen.}$$
 
 \skriptsubsection{Amplitudenmodulation}{204-8.4}
+\begin{figure}[!ht]
 \begin{center}
-	\includegraphics[height=2.5cm]{../NaT2/bilder/08_continuous_wave_communication.png}
+	\include{./tikz/cw_communication_system}
 \end{center}
-
+\end{figure}
 Das Rauschsignal am Eingang des Demodulators ist wie folgt definiert
 \verweis{schmalbandiger_zufallsprozess}{Schmalbandiger Zufallsprozess}:  
 $$n_i(t) = n_c(t) \cos(\omega_c t) - n_s(t) \sin(\omega_c t) $$
