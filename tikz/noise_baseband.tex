@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=latex']
+    \node[input, name=input] {};
+    \node[block, right of=input, name=lpf1, node distance=2cm] {LPF};
+    \node[block, right of=lpf1, name=channel, node distance=2.8cm] {Channel};
+    \node[sum, right of=channel, name=sum, pin={[pin style]above:$n(t)$}, node distance = 2cm] {$\Sigma$};
+    \node[block, right of=sum, name=lpf2] {LPF}; 
+    \node[output, right of=lpf2, name=output, node distance=2cm] {};        
+    
+    \draw[->] (input) -- (lpf1)
+       node[above, near start] {$X(t)$}
+       node[below, near start] {$S_x$} ;
+    \draw[->] (lpf1) -- node[below] {$S_t$} (channel);
+    \draw[->] (channel) -- (sum);
+    \draw[->] (sum) -- (lpf2)
+       node[above, midway] {$Y_i(t)$}
+       node[below, midway] {$S_i, N_i$};
+    \draw[->] (lpf2) -- (output)
+       node[above, near end] {$Y_0(t)$}
+       node[below, near end] {$S_0, N_0$};
+\end{tikzpicture}

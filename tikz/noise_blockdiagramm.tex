@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=latex']
+    \node[input, name=input] {};
+    \node[block, right of=input, name=transmitter] {Transmitter};
+    \node[block, right of=transmitter, name=channel, node distance=3cm] {Channel};
+    \node[sum, right of=channel, name=sum, pin={[pin style]above:$n(t)$}] {$\Sigma$};
+    \node[block, right of=sum, name=receiver] {Receiver}; 
+    \node[output, right of=receiver, name=output, node distance=2cm] {};        
+    
+    \draw[->] (input) -- (transmitter)
+       node[above, near start] (Xt) {$X(t)$}
+       node[below, near start] (Xt) {$S_x$};
+    \draw[->] (transmitter) -- node[below] {$S_t$} (channel);
+    \draw[->] (channel) -- (sum);
+    \draw[->] (sum) -- (receiver)
+       node[above, midway] {$Y_i(t)$}
+       node[below, midway] {$S_i, N_i$};
+    \draw[->] (receiver) -- (output)
+       node[above, near end] {$Y_0(t)$}
+       node[below, near end] {$S_0, N_0$};
+\end{tikzpicture}    

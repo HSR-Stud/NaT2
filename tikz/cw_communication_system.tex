@@ -1,0 +1,32 @@
+\begin{tikzpicture}[>=latex']
+    \node[input, name=input] {};
+    \node[block, right of=input, name=transmitter, node distance=2.2cm, text width=6em] {Transmitter (modulator)};
+    \node[block, right of=transmitter, name=channel, node distance=3.2cm] {Channel};
+    \node[sum, right of=channel, name=sum, pin={[pin style]above:$n(t)$}, node distance = 2cm] {$\Sigma$};
+    \node[block, right of=sum, name=bpf, node distance = 2cm] {BPF};
+    \node[block, right of=bpf, name=detector, node distance=3.4cm] {Detector};
+    \node[block, right of=detector, name=lpf] {LPF};
+    \node[output, right of=lpf, name=output, node distance=2.4cm] {};        
+    
+    \draw[->] (input) -- (transmitter)
+       node[above, near start] {$X(t)$}
+       node[below, near start] {$S_x$} ;
+    \draw[->] (transmitter) -- node[above] {$X_c(t)$} (channel);
+    \draw[->] (channel) -- (sum);
+    \draw[->] (sum) -- (bpf);
+    \draw[->] (bpf) -- node[above, near start] {$Y_i(t)$} (detector);
+    \draw[->] (detector) -- (lpf);
+    \draw[->] (lpf) -- (output)
+       node[above, near end] {$Y_0(t)$};
+    
+    %% Rechtecke
+    \node at ($(detector.south west)-(0.3cm,0.4cm)$) (demo_SW) {};
+    \node at ($(lpf.north east)+(0,0.1cm)$) (demo_NE) {};
+    \node[draw=black, rectangle, dashed, fit=(demo_SW) (demo_NE)] (demodulator) {};
+    \node[anchor=south east] at (demodulator.south east) {Demodulator};
+    
+    \node at ($(bpf.south west)-(0.2cm,0.8cm)$) (rec_SW) {};
+    \node at ($(lpf.north east)+(0.3cm,0.4cm)$) (rec_NE) {};
+    \node[draw=black, rectangle, dashed, fit=(rec_SW) (rec_NE)] (receiver) {};
+    \node[anchor=south west] at (receiver.south west) {Receiver};
+\end{tikzpicture}
