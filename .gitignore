@@ -3,6 +3,10 @@
 Thumbs.db
 #Ignore files build by LaTeX
 
+*.toc
+*.out
+*.aux
+*.log
 *.pdf
 *.synctex
 tmp/
