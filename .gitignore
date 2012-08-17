@@ -8,5 +8,5 @@ Thumbs.db
 *.aux
 *.log
 *.pdf
-*.synctex
+*.synctex*
 tmp/
