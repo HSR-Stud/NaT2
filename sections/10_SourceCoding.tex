@@ -15,43 +15,54 @@ gedächtnisfreie Quelle). Eine solche wird mit folgenden Eigenschaften charakter
 
 \skriptsubsubsection{Informationsgehalt, Binary Unit, Entropie, Informationsrate}{246-10.2-B.1,2,3}
 Mathematisch gesehen kann man sagen, je \textbf{unwahrscheinlicher} das \textbf{Eintreten} eines \textbf{spezifischen
-Ereignisses} ist, desto \textbf{grösser} ist dessen \textbf{Informationsgehalt}. \\
+Ereignisses} ist, desto \textbf{grösser} ist dessen \textbf{Informationsgehalt}.
 
-\begin{minipage}[c]{13cm}
-	$$ I(x_i) = \log_{base} \frac{1}{P(x_i)} = - \log_{base} P(x_i) \qquad \qquad  R = r H (X)$$ 	
-	$$ H(X) = E[I(x_i)] = \sum\limits_{i=1}^m P(x_i) I(x_i) = - \sum\limits_{i=1}^m P(x_i)
-	\log_2{P(x_i)} \qquad 0 \leq H(x) \leq \log_2(m)$$	
-	$$ H(X|Y)=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j)
-	log_2(P(x_i|y_j))$$
-	$$ H(X,Y)=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j)
-	log_2(P(x_i,y_j))$$
-	$$I(X;Y)=I(Y;X)=H(X)+H(Y)-H(X,Y)=H(X)-H(X|Y)$$
-\end{minipage}
-\begin{minipage}[c]{7cm}
-	$I(x_i)$ Informationsgehalt, $[I(x_i)] = b$ \\
-	$base = 2$ siehe nachfolgender Text\\
-	$P(x_i)$ Auftretens-WSK eines Symbols \\
-	$H(x_i)$ Entropie, $[H(x_i)] = $ b/Symbol \\
-	$R$ Informationsrate, $[R]$ = b/s  \\
-	$r$ Symbolrate/Bitrate, $[r]$ = Symbole/s
-%	$$
-\end{minipage} 
-\vspace{0.1cm} \\
-Der Informationsgehalt kann in folgenden Masseinheiten angegeben werden: \\
-\begin{minipage}[c]{8cm}
-$$ [I(X)] = \begin{cases}
+\begin{multicols}{2}
+\renewcommand{\arraystretch}{\arraystretchOriginal}
+\begin{tabular}{|l|l|l|}
+	\hline
+	\textbf{Grösse}	& \textbf{Bezeichnung}	& \textbf{Einheit} \\ 
+	\hline
+	$I(x_i)$ 	& Informationsgehalt 	& b \\
+	\hline
+	$P(x_i)$	& Auftretens-WSK eines Symbols & \\
+	\hline
+	$H(x_i)$	& Entropie				& b/Symbol\\
+	\hline
+	$R$			& Informationsrate 		& b/s \\
+	\hline
+	$r$			& Symbolrate/Bitrate	& Symbole/s	 \\
+	\hline
+\end{tabular}
+
+Der Informationsgehalt kann in folgenden Masseinheiten angegeben werden:
+\[ [I(X)] = \begin{cases}
             	\text{bit (\emph{bi}nary uni\emph{t})} 
             		& \text{falls } base=2. \\
             	\text{hartley oder decit}
             		& \text{falls } base=10. \\
             	\text{nat (\emph{na}tural uni\emph{t})} 
             		& \text{falls } base=e
-			\end{cases} $$
-\end{minipage}
-\begin{minipage}[c]{11cm}
+			\end{cases} 
+\]
 \textbf{Standardmässig} verwenden wir $base=2$, also bit oder gekürzt
 \textbf{b}. Binary Unit ist ein Mass für den Informationsgehalt und sollte nicht mit dem Term ``bit'' (Binäres Zeichen) verwechselt
 werden.
+\end{multicols}
+
+\begin{align*}
+	I(x_i)	&= \log_{base} \frac{1}{P(x_i)} = - \log_{base} P(x_i) \\
+	R		&= r H (X) \\
+	H(X)	&= E[I(x_i)] = \sum\limits_{i=1}^m P(x_i) I(x_i) = - \sum\limits_{i=1}^m P(x_i) \log_2{P(x_i)} \qquad 0 \leq H(x) \leq \log_2(m) \\
+	H(X|Y)	&=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j) log_2(P(x_i|y_j)) \\
+	H(X,Y)	&=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j) log_2(P(x_i,y_j)) \\
+	I(X;Y)	&=I(Y;X)=H(X)+H(Y)-H(X,Y)=H(X)-H(X|Y) 
+\end{align*}
+
+
+
+\begin{minipage}[c]{13cm}
+
 \end{minipage}
 
 
@@ -330,20 +341,35 @@ Die Kraft'sche Ungleichung hilft jedoch zum Auffinden dieses Codes nicht weiter.
 steigern.
 
 \skriptsubsubsection{Shannon - Fanno Codierung}{255-10.8.A}
-\begin{minipage}{8cm}
-	\begin{center}
-		\includegraphics[width=8cm]{../NaT2/bilder/10_codierung_shannon-fano.png}
-	\end{center}
-\end{minipage}
-\begin{minipage}{11cm}
+\begin{multicols}{2}
+	\begin{tabular}{|c|c|c|c|c|c|l|}
+		\hline
+		$x_i$	& $P(x_i)$ 	& Step 1	& Step 2	& Step 3 	& Step 4 	& Code \\
+		\hline
+		$x_1$	& 0.30		& 0			& 0			& 			&			& 00 \\
+		\cline{4-4}
+		$x_2$	& 0.25		& 0			& 1			& 			& 			& 01 \\
+		\cline{3-4}
+		$x_3$	& 0.20		& 1			& 0			& 			& 			& 10 \\
+		\cline{4-5}
+		$x_4$	& 0.12		& 1			& 1			& 0			& 			& 110 \\
+		\cline{5-6}
+		$x_5$	& 0.08		& 1			& 1			& 1			& 0			& 1110 \\
+		\cline{6-6}		
+		$x_6$	& 0.05		& 1			& 1			& 1			& 1			& 1111 \\
+		\hline 
+	\end{tabular}
+	
 	\begin{enumerate}
-	  \item Symbole mit \textbf{absteigender} Wahrscheinlichkeit anordnen.
-	  \item Trennung in \textbf{2 Teilmengen} mit möglichst gleicher WSK.
-	  \item \textbf{Obere} Teilmenge Symbol \textbf{0}, \textbf{unterer} Teilmenge Symbol \textbf{1}
-	  zuordnen.
-	  \item Weiterhin unterteilen gemäss obigen Schritten, bis keine Teilung mehr möglich ist.
+		\item Symbole mit \textbf{absteigender} Wahrscheinlichkeit anordnen.
+		\item Trennung in \textbf{2 Teilmengen} mit möglichst gleicher WSK.
+		\item \textbf{Obere} Teilmenge Symbol \textbf{0}, \textbf{unterer} Teilmenge Symbol \textbf{1}
+		  zuordnen.
+		\item Weiterhin unterteilen gemäss obigen Schritten, bis keine Teilung mehr möglich ist.
 	\end{enumerate}
-\end{minipage}
+\end{multicols}
+
+
 
 \skriptsubsubsection{Huffman Codierung}{256-10.8.B}
 \begin{minipage}{8cm}
