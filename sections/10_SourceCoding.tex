@@ -60,12 +60,6 @@ werden.
 \end{align*}
 
 
-
-\begin{minipage}[c]{13cm}
-
-\end{minipage}
-
-
 \skriptsubsection{DMC - Discrete Memoryless Channels}{247-10.3}
 \begin{minipage}{9.5cm}
 	\begin{center}
@@ -372,17 +366,14 @@ steigern.
 
 
 \skriptsubsubsection{Huffman Codierung}{256-10.8.B}
-\begin{minipage}{8cm}
-	\begin{center}
-	\includegraphics[width=8cm]{../NaT2/bilder/10_codierung_huffman.png}
-	\end{center}
-\end{minipage}
-\begin{minipage}{11cm}
-	\begin{enumerate}
+\begin{multicols}{2}
+  \adjustbox{width=\linewidth, frame}{\input{./tikz/10_codierung_huffman}}
+  
+  	\begin{enumerate}
 	  \item Symbole mit \textbf{absteigender} Wahrscheinlichkeit anordnen.
 	  \item \textbf{Unterste 2} Symbole als Gruppe zusammenfassen.
 	  \item Beide Schritte wiederholen, bis nur noch zwei Gruppen vorliegen.
 	  \item \textbf{Grössere} WSK \textbf{0}, \textbf{kleinere} WSK \textbf{1} zuordnen.
 	  \item Reduktion rückgägngig machen und vorheriger Schritt für alle Teilschritte wiederholen.
-	\end{enumerate}
-\end{minipage}
+	\end{enumerate}	
+\end{multicols}
