@@ -233,25 +233,28 @@ Wobei $B$ der Bandbreite des Kanals entspricht.
 \skriptsubsection{Quellencodierung}{253-10.7}
 
 \skriptsubsubsection{Code-Länge, -Effizienz, -Redundanz}{253-10.7.A/B}
-Gilt für eine DMS mit endlicher Entropie. \\
-
-\begin{minipage}[c]{8cm}
-	$$ L = \sum\limits_{i=1}^m P(x_i) n_i $$
-	$$ \eta = \frac{H(x)}{L} = \frac{L_{min}}{L} \qquad \qquad  \gamma_c = 1 -
-	\eta $$
-	$$ \gamma_q = R(x) = H_{max} - H(x) = \log_2(m) - H(x)$$
-\end{minipage}
-\begin{minipage}[c]{10cm}
-	$L$ Durchschnittliche Codewort-Länge, $[L]$ = Bits/Symbol \\
-	$L_{min}$ kleinstmölgliches L \\
-	$P(x_i)$ Auftretenswahrscheinlichkeit des Symbols \\
-	$n_i$ Symbollänge, $[n_i] = $ Bits \\
-	$m$ Anzahl Symbole des Codes \\
-	$\eta$ Effizienz \\
-	$\gamma_c$ Redundanz des Codes; $\gamma_q = R(x)$ Redundanz der Quelle \\
-	$H(X)$ Entropie, $[H(X)] = $ b/Symbol 
-\end{minipage}
-% TODO: Redundanz mit H(X) und Hmax 
+Gilt für eine DMS mit endlicher Entropie.
+\begin{multicols}{2}
+	\begin{align*}
+		L 		 &= \sum\limits_{i=1}^m P(x_i) n_i \\
+		\eta	 &= \frac{H(x)}{L} = \frac{L_{min}}{L} \\
+		\gamma_c &= 1 - \eta \\
+		R(x)	 &= \gamma_q = H_{max} - H(x) = \log_2(m) - H(x) \\
+				 &= \log_2(m) + \sum\limits_{i = 1}^m p(x_i) \cdot \log_2( p(x_i))
+	\end{align*}
+	
+	\begin{tabular}{lll}
+		$L$ 		& Durschnitt. Codewort-Länge & $[L]$ = Bits/Symbol \\
+		$L_{min}$ 	& kleinstmölgliches L &  \\
+		$P(x_i)$	& Auftretens-WSK des Symbols \\
+		$n_i$ 		& Symbollänge & $[n_i] = $ Bits \\
+		$m$ 		& Anzahl Symbole des Codes \\
+		$\eta$ 		& Effizienz \\
+		$\gamma_c$  & Redundanz des Codes & \\
+		$\gamma_q$ 	& $= R(x)$ Redundanz der Quelle \\
+		$H(X)$ 		& Entropie &  $[H(X)] = $ b/Symbol 
+	\end{tabular}
+\end{multicols}
 
 \skriptsubsubsection{Klassifizierung von Codes}{254-10.7.C}
 	\renewcommand{\arraystretch}{2}
@@ -354,6 +357,9 @@ steigern.
 		\hline 
 	\end{tabular}
 	
+	\columnbreak
+	
+	\textbf{Vorgehen:}
 	\begin{enumerate}
 		\item Symbole mit \textbf{absteigender} Wahrscheinlichkeit anordnen.
 		\item Trennung in \textbf{2 Teilmengen} mit möglichst gleicher WSK.
@@ -361,6 +367,12 @@ steigern.
 		  zuordnen.
 		\item Weiterhin unterteilen gemäss obigen Schritten, bis keine Teilung mehr möglich ist.
 	\end{enumerate}
+	
+	\textbf{Eigenschaften:}
+	\begin{itemize}
+  		\item Präfix frei
+  		\item letzter Teilungsschrit liefert immer gerade Anzahl Codewörter 
+	\end{itemize}
 \end{multicols}
 
 
@@ -369,6 +381,9 @@ steigern.
 \begin{multicols}{2}
   \adjustbox{width=0.95\linewidth, frame}{\input{./tikz/10_codierung_huffman}}
   
+  \columnbreak
+  
+  	\textbf{Vorgehen:}
   	\begin{enumerate}
 	  \item Symbole mit \textbf{absteigender} Wahrscheinlichkeit anordnen.
 	  \item \textbf{Unterste 2} Symbole als Gruppe zusammenfassen.
@@ -376,4 +391,10 @@ steigern.
 	  \item \textbf{Grössere} WSK \textbf{0}, \textbf{kleinere} WSK \textbf{1} zuordnen.
 	  \item Reduktion rückgägngig machen und vorheriger Schritt für alle Teilschritte wiederholen.
 	\end{enumerate}	
+	
+	\textbf{Eigenschaften:}
+	\begin{itemize}
+	  \item Maximale Effizienz
+	  \item Keine reduntante Bits (vgl. Prüfung Aug. 2010)
+	\end{itemize}
 \end{multicols}
