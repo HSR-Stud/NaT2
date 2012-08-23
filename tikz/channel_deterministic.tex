@@ -1,20 +1,19 @@
-\begin{tikzpicture}[dot/.style={circle, inner sep=0}]
-	\node (x1) at(0,0)[dot] {};
-	\node (x2) at(0,-1)[dot] {};
-	\node (x3) at(0,-2)[dot] {};
-	\node (x4) at(0,-3)[dot] {};
-	\node (x5) at(0,-4)[dot] {};
+\begin{tikzpicture}
+	\node (x1) at(0,0) {}  (x1) node[anchor=east] {$x_1$};
+	\node (x2) at(0,-1) {} (x2) node[anchor=east] {$x_2$};
+	\node (x3) at(0,-2) {} (x3) node[anchor=east] {$x_3$};
+	\node (x4) at(0,-3) {} (x4) node[anchor=east] {$x_4$};
+	\node (x5) at(0,-4) {} (x5) node[anchor=east] {$x_5$};
 
-	\node (y1) at(5,-1)[dot] {};
-	\node (y2) at(5,-2)[dot] {};
-	\node (y3) at(5,-3.5)[dot] {};
+	\node (y1) at(5,-1) {} (y1) node[anchor=west] {$y_1$};
+	\node (y2) at(5,-2) {} (y2) node[anchor=west] {$y_2$};
+	\node (y3) at(5,-3.5) {} (y3) node[anchor=west] {$y_3$};
 
-	\draw[decorated onethird] (x1) node[anchor=east] {$x_1$} -- node[pos=0.33, above] {$1$} (y1) node[anchor=west] {$y_1$};
-	\draw[decorated onethird] (x2) node[anchor=east] {$x_2$} -- node[pos=0.33, above] {$1$} (y1);
+	\draw[decorated onethird] (x1) -- node[pos=0.33, above] {$1$} (y1) ;
+	\draw[decorated onethird] (x2) -- node[pos=0.33, above] {$1$} (y1);
 
-	\draw[decorated onethird] (x3) node[anchor=east] {$x_3$} -- node[pos=0.33, below] {$1$} (y2) node[anchor=west] {$y_2$};
-	\draw[decorated halfway] (x4) node[anchor=east] {$x_4$} -- node[pos=0.5, below] {$1$} (y2);
+	\draw[decorated onethird] (x3) -- node[pos=0.33, below] {$1$} (y2) ;
+	\draw[decorated halfway] (x4) -- node[pos=0.5, below] {$1$} (y2);
 
-	\draw[decorated halfway] (x5) node[anchor=east] {$x_5$} -- node[pos=0.5, above] {$1$} (y3) node[anchor=west] {$y_3$};
-
+	\draw[decorated halfway] (x5) -- node[pos=0.5, above] {$1$} (y3) ;
 \end{tikzpicture}
