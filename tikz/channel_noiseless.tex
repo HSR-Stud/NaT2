@@ -1,0 +1,20 @@
+\begin{tikzpicture}[dot/.style={circle, inner sep=0}]
+	\node (x1) at(0,0)[dot] {};
+	\node (x2) at(0,-1)[dot] {};
+	\node (xx) at (0,-2)[dot] {};
+	\node (x3) at(0,-3)[dot] {};
+
+	\node (y1) at(5,0)[dot] {};
+	\node (y2) at(5,-1)[dot] {};
+	\node (yy) at(5,-2)[dot] {};
+	\node (y3) at(5,-3)[dot] {};
+
+	\draw[decorated halfway] (x1) node[anchor=east] {$x_1$} -- node[pos=0.5, above] {$1$} (y1) node[anchor=west] {$y_1$};
+
+	\draw[decorated halfway] (x2) node[anchor=east] {$x_2$} -- node[pos=0.5, below] {$1$} (y2) node[anchor=west] {$y_2$};
+
+	\draw[dotted] (xx) node[anchor=east]{\vdots} -- (yy) node[anchor=west] {\vdots};
+
+	\draw[decorated halfway] (x3) node[anchor=east] {$x_m$} -- node[pos=0.5, below] {$1$} (y3) node[anchor=west] {$y_m$};
+
+\end{tikzpicture}
