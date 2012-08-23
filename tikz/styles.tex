@@ -3,3 +3,9 @@
 \tikzstyle{input} = [coordinate]
 \tikzstyle{output} = [coordinate]
 \tikzstyle{pin style} = [pin edge={to-, semithick,black}]
+
+\usetikzlibrary{decorations.markings}
+\tikzstyle{decorated} = [*-*, very thick, postaction={decorate}] % Kann nicht direkt verwendet werden!
+\tikzstyle{decorated onethird} = [decorated, decoration={markings, mark= at position 0.33 with {\arrow{>}}}]
+\tikzstyle{decorated twothird} = [decorated, decoration={markings, mark= at position 0.66 with {\arrow{>}}}]
+\tikzstyle{decorated halfway} = [decorated, decoration={markings, mark= at position 0.5 with {\arrow{>}}}]
