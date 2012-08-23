@@ -1,13 +1,13 @@
 \begin{tikzpicture}
-	\node (x1) at(0,0) {}   (x1) node[anchor=east] {$x_1$};
-	\node (x2) at(0,-1) {}  (x2) node[anchor=east] {$x_2$};
-	\node (xx) at (0,-2) {} (xx) node[anchor=east]{\vdots};
-	\node (x3) at(0,-3) {}  (x3) node[anchor=east] {$x_m$};
+	\node (x1) at(0,0)  [dot] {}   (x1) node[anchor=east] {$x_1$};
+	\node (x2) at(0,-1) [dot] {}  (x2) node[anchor=east] {$x_2$};
+	\node (xx) at (0,-2)[] {} (xx) node[anchor=east]{\vdots};
+	\node (x3) at(0,-3) [dot] {}  (x3) node[anchor=east] {$x_m$};
 
-	\node (y1) at(5,0) {}  (y1) node[anchor=west] {$y_1$};
-	\node (y2) at(5,-1) {} (y2) node[anchor=west] {$y_2$};
-	\node (yy) at(5,-2) {} (yy) node[anchor=west] {\vdots};
-	\node (y3) at(5,-3) {} (y3) node[anchor=west] {$y_m$};
+	\node (y1) at(5,0) [dot] {}  (y1) node[anchor=west] {$y_1$};
+	\node (y2) at(5,-1)[dot] {} (y2) node[anchor=west] {$y_2$};
+	\node (yy) at(5,-2)[] {} (yy) node[anchor=west] {\vdots};
+	\node (y3) at(5,-3)[dot] {} (y3) node[anchor=west] {$y_m$};
 
 	\draw[decorated halfway] (x1) -- node[pos=0.5, above] {$1$} (y1);
 	\draw[decorated halfway] (x2) -- node[pos=0.5, below] {$1$} (y2);

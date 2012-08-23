@@ -1,11 +1,12 @@
 \tikzstyle{block} = [draw, rectangle, minimum height= 2em, minimum width = 5em, node distance= 2.5cm]
 \tikzstyle{sum} = [draw, circle, radius=2em, node distance=2.5cm]
+\tikzstyle{dot} = [fill,draw, circle, inner sep=1]
 \tikzstyle{input} = [coordinate]
 \tikzstyle{output} = [coordinate]
 \tikzstyle{pin style} = [pin edge={to-, semithick,black}]
 
 \usetikzlibrary{decorations.markings}
-\tikzstyle{decorated} = [*-*, very thick, postaction={decorate}] % Kann nicht direkt verwendet werden!
+\tikzstyle{decorated} = [-, very thick, postaction={decorate}] % Kann nicht direkt verwendet werden!
 \tikzstyle{decorated onethird} = [decorated, decoration={markings, mark= at position 0.33 with {\arrow{>}}}]
 \tikzstyle{decorated twothird} = [decorated, decoration={markings, mark= at position 0.66 with {\arrow{>}}}]
 \tikzstyle{decorated halfway} = [decorated, decoration={markings, mark= at position 0.5 with {\arrow{>}}}]
