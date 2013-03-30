@@ -106,14 +106,18 @@ $$ f_X(x_1, x_2; t_1, t_2) = f_X(x_1, x_2; t_1+c, t_2+c) \qquad \forall (c \in
 		\mathbb{R})$$
 %Zudem gilt:\\
 \renewcommand{\arraystretch}{1.4}
-\begin{tabular}[c]{ p{3.3cm}  p{6.5cm} p{8cm} }
+\begin{tabular}[c]{ |p{3.3cm}|  p{6.5cm} |p{8cm}| }
+	\hline
 	\textbf{Mittelwert}: 	&  $E[X(t)] = \mu_{X}(t) = \text{const.}$  
 							& bleibt über die ganze Zeit konstant\\ 
-	\textbf{quad. Mittelwert}: 	&  $E[X^{2}(t)] = R_{XX}(0)$  \\ 
+	\hline
+	\textbf{quad. Mittelwert}: 	&  $E[X^{2}(t)] = R_{XX}(0)$ &  \\ 
+	\hline
 	\textbf{Autokorrelation}: 	& 	$R_{XX}(t_{1},t_{2}) = R_{XX}(\tau)$
-	& \multirow{2}{8cm}{nur \textbf{abhängig} von der \textbf{Zeitdifferenz} $(\tau = t_2 - t_1)$ und \textbf{nicht direkt} von
-	 der \textbf{Zeit} $t$} \\
-	 \textbf{Autokovarianz}:		& $ C_{XX}(t_{1},t_{2}) = R_{XX}(\tau) - \mu_{X}(t)^{2} = C_{XX}(\tau)$ \\
+	& nur \textbf{abhängig} von der \textbf{Zeitdifferenz} $(\tau = t_2 - t_1)$ und \textbf{nicht direkt} von der \textbf{Zeit} $t$ \\
+	 \hline
+	 \textbf{Autokovarianz}:		& $ C_{XX}(t_{1},t_{2}) = R_{XX}(\tau) - \mu_{X}(t)^{2} = C_{XX}(\tau)$ & \\
+	 \hline
 \end{tabular}
 \renewcommand{\arraystretch}{1}
  
@@ -197,26 +201,29 @@ Dies ist bei gleichbleibender Temperatur \textbf{ergodisch}.
 Formeln in diesem Abschnitt gelten für \textbf{stationäre} Prozesse. \\
 
 \renewcommand{\arraystretch}{1.6}
-\begin{tabular}[c]{ p{4cm}  p{6cm} p{7.5cm} }
-	\textbf{Autokorrelation}: 	&  
-	$R_{XX}(\tau) = E[X(t)X(t+\tau)]$ \\
-  	&	$\mid \! R_{XX}(\tau) \! \mid \leq R_{XX}(0) = E[X^{2}(t)]$ 
-	& $R_{XX}(-\tau) = R_{XX}(\tau) \quad$ (gerade)\\
-  \textbf{Kreuzkorrelation}: 	& 	
- 	$R_{XY}(\tau) = E[X(t)Y(t+\tau)]$  
-	& $R_{XY}(-\tau) = R_{YX}(\tau) \quad$ (Reihenfolge Indizes!) \\
-	& $|R_{XY}(\tau)| \leq \frac{1}{2} \left[ R_{XX}(0)+R_{YY}(0)\right] $
-	& $|R_{XY}(\tau)|  \leq \sqrt{R_{XX}(0)R_{YY}(0)}$ \\
-   \textbf{Autokovarianz}: 	&  
-	\multicolumn{2}{l}{$C_{XX}(\tau) = E\!\left[ \left( X(t)      - E[X(t)]      \right) \cdot
-                                  \left( X(t+\tau) - E[X(t+\tau)] \right) \right] =
-                        R_{XX}(\tau) - \mu^{2}_{X} $} \\
-   	\textbf{Kreuzkovarianz}: 	& 	
-   	\multicolumn{2}{l}{$C_{XY}(\tau) = E\!\left[ \left( X(t)      - E[X(t)]      \right) \cdot
-                                  \left( Y(t+\tau) - E[Y(t+\tau)] \right) \right] =
-                        R_{XY}(\tau) - \mu_{X}\mu_{Y} $}\\
-    & \multicolumn{2}{l}{Zufallsprozesse bezeichnet man als zueinander
-                        \textbf{unkorreliert}, wenn $C_{XY}(\tau) = 0$}
+\begin{tabular}[c]{|p{4cm}|p{6cm}|p{7.5cm}|}
+	\hline
+	\textbf{Autokorrelation}: 	&
+		$R_{XX}(\tau) = E[X(t)X(t+\tau)]$\newline
+  		$R_{XX}(\tau) \! \mid \leq R_{XX}(0) = E[X^{2}(t)]$ 
+		&$R_{XX}(-\tau) = R_{XX}(\tau) \quad$ (gerade)\\
+	\hline
+  	\textbf{Kreuzkorrelation}: 	& 	
+ 		$R_{XY}(\tau) = E[X(t)Y(t+\tau)]$  
+		& $R_{XY}(-\tau) = R_{YX}(\tau) \quad$ (Reihenfolge Indizes!) \\
+		& $|R_{XY}(\tau)| \leq \frac{1}{2} \left[ R_{XX}(0)+R_{YY}(0)\right] $
+		& $|R_{XY}(\tau)|  \leq \sqrt{R_{XX}(0)R_{YY}(0)}$ \\
+	\hline
+  	\textbf{Autokovarianz}: 	&  
+		\multicolumn{2}{l|}{$C_{XX}(\tau) = E\!\left[ \left( X(t)      - E[X(t)]      \right) \cdot
+    	\left( X(t+\tau) - E[X(t+\tau)] \right) \right] =
+   		R_{XX}(\tau) - \mu^{2}_{X} $} \\
+   	\hline
+  	\textbf{Kreuzkovarianz}: 	& 	
+   		\multicolumn{2}{l|}{$C_{XY}(\tau) = E\!\left[ \left( X(t)      - E[X(t)]      \right) \cdot
+        \left( Y(t+\tau) - E[Y(t+\tau)] \right) \right] = R_{XY}(\tau) - \mu_{X}\mu_{Y} $}\\
+  	  	& \multicolumn{2}{l|}{Zufallsprozesse bezeichnet man als zueinander \textbf{unkorreliert}, wenn $C_{XY}(\tau)0$}\\
+   	\hline
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
@@ -242,11 +249,15 @@ S_{XY}(\tau)$) bilden ein Fourier-Transformationspaar.
 Ein Zufallsprozess wird durch ein LTI-System übertragen. \hspace{2cm} $Y(t) = L[X(t)] \Rightarrow
 Y(t) = h(t) \ast X(t)$ \vspace{0.3cm}\\
 \renewcommand{\arraystretch}{1.4}
- \begin{tabular}[c]{ p{2cm}  p{8.5cm} p{8cm} }
-	& \textbf{Allgemein} & \textbf{WSS-Prozess} \\
+ \begin{tabular}[c]{|p{2cm}| p{8.5cm} |p{8cm}| }
+ 	\hline
+		&\textbf{Allgemein}
+		& \textbf{WSS-Prozess} \\
+	\hline
 	\textbf{Mittelwert}
-		& $\mu_{Y}(t) = h(t) \ast \mu_{X}(t)$
-		& $\mu_{Y} = H(0) \mu_{X}$ \\
+		& $E(Y(t)) = h(t) \ast E(X(t))$
+		& $E(Y) = H(0) \cdot E(X)$ \\
+	\hline
 	\textbf{Auto-korrelation\textcolor{red}{*}}
 		& {$R_{YY}(t_{1},t_{2}) = \int\limits_{-\infty}^{+\infty}
 		\int\limits_{-\infty}^{+\infty} h(\alpha) h(\beta)
@@ -254,10 +265,12 @@ Y(t) = h(t) \ast X(t)$ \vspace{0.3cm}\\
 		& {$R_{YY}(\tau) = \int\limits_{-\infty}^{+\infty}
 		\int\limits_{-\infty}^{+\infty} h(\alpha) h(\beta)
                       R_{XX}(\tau+\alpha-\beta) \; d\alpha \; d\beta$} \\
+    \hline
 	\textbf{Spektrale Leistung}
 		&
-		& $\boxed{S_{YY}(\omega)= H^{\ast}(\omega) H(\omega) S_{XX}(\omega)
-			= |H(\omega)|^{2} S_{XX}(\omega)}$  \\
+		& $S_{YY}(\omega)= H^{\ast}(\omega) H(\omega) S_{XX}(\omega)
+			= |H(\omega)|^{2} S_{XX}(\omega)$  \\
+	\hline
 \end{tabular}
 \renewcommand{\arraystretch}{1} \\
 \textcolor{red}{*} = Es ist viel einfacher die Autokorrelation aus der Spektralen Leistung
@@ -265,15 +278,15 @@ Y(t) = h(t) \ast X(t)$ \vspace{0.3cm}\\
 Ein WSS-Prozess am Eingang erzeugt auch einen WSS-Prozess am Ausgang.
 
 \skriptsubsection{Spezielle Zufallsprozesse}{172-7.6}
-\skriptsubsubsection{Gauss Zufallsprozess}{172-7.6.A}
+\skriptsubsubsection{Gauss'scher Zufallsprozess}{172-7.6.A}
 Bein diesem Prozess ist die \textbf{Zufallsvariable} $X(t_{i})$ zu \textbf{jedem Zeitpunkt} $t_{i}$
 \textbf{gaussverteilt}. Bsp.: thermisches Rauschen. \\
 Zweidimensionaler Fall (gauss'sche Verbunddichte): 
-        $f_{XX}(x_{1},x_{2};t_{1},t_{2}) = \frac{1}{2\pi \sigma_{x_{1}}\sigma_{x_{2}}} \cdot
+       $$f_{XX}(x_{1},x_{2};t_{1},t_{2}) = \frac{1}{2\pi \sigma_{x_{1}}\sigma_{x_{2}}} \cdot
                                       e^{-\frac{(x_{1}-\mu_{x_{1}})^{2}}{2 \sigma^{2}_{x_{1}}}} \cdot
-                                      e^{-\frac{(x_{2}-\mu_{x_{2}})^{2}}{2 \sigma^{2}_{x_{2}}}}$ \\
-Für $X(t_{1})$ und $X(t_{2})$ unkorreliert ($C_{XX}(t_{1},t_{2})=0$) gilt:
-        $f_{XX}(x_{1},x_{2}; t_{1},t_{2}) = f_{X}(x_{1};t_{1}) \cdot f_{X}(x_{2};t_{2}) $ \\ \\
+                                      e^{-\frac{(x_{2}-\mu_{x_{2}})^{2}}{2 \sigma^{2}_{x_{2}}}}$$ \\
+Für unkorrelierte $X(t_{1})$ und $X(t_{2})$  ($C_{XX}(t_{1},t_{2})=0$) gilt:
+        $$f_{XX}(x_{1},x_{2}; t_{1},t_{2}) = f_{X}(x_{1};t_{1}) \cdot f_{X}(x_{2};t_{2}) $$
 $\mu_{X}(t)$ und $R_{XX}(t_{1}, t_{2})$ charakterisisieren einen gauss'schen Zufallsprozess
         vollst\"andig. \\
 Ist ein gauss'scher Prozess WSS ist er zugleich auch SSS. Zudem ist wird ein gauss'scher
