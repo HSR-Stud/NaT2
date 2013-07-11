@@ -4,7 +4,7 @@
  * Unterlagen ohne Einschränkungen
  * Taschenrechner
  
- ## Ausdruck
+## Ausdruck
 * Zusammenfassung am Besten als A5-Booklet ausdrucken
 
 ## Lizenz
