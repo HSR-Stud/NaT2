@@ -1,4 +1,4 @@
-\section{Informationstheorie und Quellencodierung \formelbuch{245-10}}
+\section{Informationstheorie und Quellencodierung \schaum{245-10}}
 \subsection{DMS - Discrete Memoryless Source}
 Eine Informations\textbf{quelle} ist ein Objekt welches \textbf{Ereignise}, welche zufällig aus einer
 WSK-Dichtefunktion ausgewählt werden, \textbf{generiert}. \\ 
@@ -13,7 +13,7 @@ gedächtnisfreie Quelle). Eine solche wird mit folgenden Eigenschaften charakter
   \item Symbolrate 
 \end{itemize} 
 
-\skriptsubsubsection{Informationsgehalt, Binary Unit, Entropie, Informationsrate}{246-10.2-B.1,2,3}
+\subsubsection{Informationsgehalt, Binary Unit, Entropie, Informationsrate \schaum{246-10.2-B.1,2,3}}
 Mathematisch gesehen kann man sagen, je \textbf{unwahrscheinlicher} das \textbf{Eintreten} eines \textbf{spezifischen
 Ereignisses} ist, desto \textbf{grösser} ist dessen \textbf{Informationsgehalt}.
 
@@ -60,7 +60,7 @@ werden.
 \end{align*}
 
 
-\skriptsubsection{DMC - Discrete Memoryless Channels}{247-10.3}
+\subsection{DMC - Discrete Memoryless Channels \schaum{247-10.3}}
 \begin{minipage}{9.5cm}
 	\begin{center}
 		\includegraphics[width=7.5cm]{../NaT2/bilder/10_DMC.png}
@@ -110,7 +110,7 @@ werden.
 	$\sum $ aller Elemente von $[P(Y,X)] = 1$
 \end{minipage}
 
-\skriptsubsubsection{Spezielle Kanäle}{248-10.3.C}
+\subsubsection{Spezielle Kanäle \schaum{248-10.3.C}}
 \textbf{Verlustfreier (lossless) Kanal} \\
 \begin{minipage}{14cm}
 	Auf jeder Spalte der Kanalmatrix gibt es jeweils nur ein  Element $\neq 0$. \\
@@ -180,13 +180,13 @@ werden.
 
 
 
-% \skriptsubsection{Gegenseitige (mutual) Information}{250-10.4}
+% \subsection{Gegenseitige (mutual) Information \schaum{250-10.4}}
 %  TODO \subsubsection{Bedingte Entropien}
 %
 %  TODO \subsubsection{Gegenseitige Information}
 % \textbf{TODO}
 
-\skriptsubsection{Kanalkapazität}{251-10.5}
+\subsection{Kanalkapazität \schaum{251-10.5}}
 \begin{minipage}[c]{8cm}
 	$$ C_s = \max\limits_{\{ P(x_i) \}}{I (X; Y)} $$
 	$$ C = r_b C_s $$
@@ -227,12 +227,12 @@ werden.
  	\end{tabular}
 	\renewcommand{\arraystretch}{1} \\ \\
 Wobei $B$ der Bandbreite des Kanals entspricht. 
-% \skriptsubsection{AWGN-Channel}{252-10.6}
+% \subsection{AWGN-Channel \schaum{252-10.6}}
 % \textbf{TODO}
 
-\skriptsubsection{Quellencodierung}{253-10.7}
+\subsection{Quellencodierung \schaum{253-10.7}}
 
-\skriptsubsubsection{Code-Länge, -Effizienz, -Redundanz}{253-10.7.A/B}
+\subsubsection{Code-Länge, -Effizienz, -Redundanz \schaum{253-10.7.A/B}}
 Gilt für eine DMS mit endlicher Entropie.
 \begin{multicols}{2}
 	\abovedisplayskip=-15pt % Hack um den überflüssigen Whitespace zu entfernen.
@@ -257,7 +257,7 @@ Gilt für eine DMS mit endlicher Entropie.
 	\end{tabular}
 \end{multicols}
 
-\skriptsubsubsection{Klassifizierung von Codes}{254-10.7.C}
+\subsubsection{Klassifizierung von Codes \schaum{254-10.7.C}}
 	\renewcommand{\arraystretch}{2}
 	\begin{tabular}{| p{6cm} | p{12cm} |}
 		\hline
@@ -326,7 +326,7 @@ Gilt für eine DMS mit endlicher Entropie.
  	\end{tabular}
 	\renewcommand{\arraystretch}{1}
 
-\skriptsubsubsection{Kraft'sche Ungleichung}{255-10.7.D}
+\subsubsection{Kraft'sche Ungleichung \schaum{255-10.7.D}}
 Wenn diese Ungleichung erfüllt ist, besagt sie, dass ein \textbf{eindeutig} und \textbf{sofort
 decodierbarer} Code gefunden werden kann. \\
 Gegeben ist eine Quelle mit \textbf{Alphabet $x_i$} der \textbf{Länge $m$}, wobei jedem
@@ -334,11 +334,11 @@ Gegeben ist eine Quelle mit \textbf{Alphabet $x_i$} der \textbf{Länge $m$}, wob
 $$ K = \sum\limits_{i=1}^{m} 2 ^{-n_i} \leq 1$$ 
 Die Kraft'sche Ungleichung hilft jedoch zum Auffinden dieses Codes nicht weiter.
 
-\skriptsubsection{Entropie Codierung}{255-10.8}
+\subsection{Entropie Codierung \schaum{255-10.8}}
 \textbf{Ziel:} Durchschnittliche Codelänge an Entropie annähern $ \Rightarrow $ Wirkungsgrad
 steigern.
 
-\skriptsubsubsection{Shannon - Fanno Codierung}{255-10.8.A}
+\subsubsection{Shannon - Fanno Codierung \schaum{255-10.8.A}}
 \begin{multicols}{2}
 	\begin{tabular}{|c|c|c|c|c|c|l|}
 		\hline
@@ -378,7 +378,7 @@ steigern.
 
 
 
-\skriptsubsubsection{Huffman Codierung}{256-10.8.B}
+\subsubsection{Huffman Codierung \schaum{256-10.8.B}}
 \begin{multicols}{2}
   \adjustbox{width=0.95\linewidth, frame}{\input{./tikz/10_codierung_huffman}}
   

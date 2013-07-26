@@ -1,4 +1,4 @@
-\section{Kanalcodierung \formelbuch{282-11}} 
+\section{Kanalcodierung \schaum{282-11}} 
 \begin{center}
 	\includegraphics[width=16cm]{../NaT2/bilder/11_channel_coding_blockdiag.png}
 \end{center}
@@ -8,7 +8,7 @@ Dies geschieht durch beifügen geeigneter \textbf{Redundanz}. \\
 Je nachdem wieviel Redundanz in dem Code beinhaltet ist, handelt es sich um einen \textit{error-detecting
 code} oder sogar um einen \textit{error-correcting code}.
 
-\subsection{Kanalkodierungstheorem - Shannon \formelbuch{282-11.2B}}
+\subsection{Kanalkodierungstheorem - Shannon \schaum{282-11.2B}}
 Gegeben seien DMS mit Entropie $H(X)$ und DMC mit Kanalkapazität $C_s$. 
 
 \begin{itemize}
@@ -102,7 +102,7 @@ gegeben. \\
 	eindeutig feststellen, zu welchem ``Kreis'' das empfangene Zeichen gehört - Abb. (b).
 \end{minipage} 
 
-\subsubsection{Generatormatrix G \formelbuch{285-11.4.F}}
+\subsubsection{Generatormatrix G \schaum{285-11.4.F}}
 Mittels der \textbf{Generatormatrix} $G$ kann das jeweilige \textbf{Codewort} $c$ aus dem \textbf{Datenwort} $d$
 generiert werden. Dimensionen: $\textcolor{blue}{[H\times B]}$
 $$ c\textcolor{blue}{_{[1 \times n]}} = \begin{bmatrix} c_1 & c_2 & \ldots & c_n \end{bmatrix} =
@@ -120,7 +120,7 @@ d\textcolor{blue}{_{[1 \times k]}} \cdot G\textcolor{blue}{_{[k \times n]}} =
 es sich um einen systematischen Code handelt. Ansonsten ist auch der linke Teil der Generatormatrix
 nicht genau mit der Einheitsmatrix ``gefüllt''.
 
-\subsubsection{Paritätsprüfmatrix H \formelbuch{285-11.4.G}} \label{paritycheckmatrix}
+\subsubsection{Paritätsprüfmatrix H \schaum{285-11.4.G}} \label{paritycheckmatrix}
 Die Paritätsprüfmatrix $H$ dient zur \textbf{Erkennung von Übertragungsfehlern}. 
 $$H\textcolor{blue}{_{[(n-k) \times n]}} = \begin{bmatrix}P & I_{n-k}\end{bmatrix} \Rightarrow
 H^T\textcolor{blue}{_{[n \times (n-k)]}} =
@@ -139,7 +139,7 @@ Die \textbf{minimale Hamming-Distanz} $d_{min}$ vom Code $C$ entspricht genau de
 nötige Anzahl irgendwelcher Zeilen von $H^T$, sodass deren \textbf{Linearkombination Null} ergibt.
 
 
-\subsubsection{Auswertung des Fehlersyndroms s \formelbuch{286-11.4.H}}
+\subsubsection{Auswertung des Fehlersyndroms s \schaum{286-11.4.H}}
 Das \textbf{Fehlersyndrom} $s$ erlaubt die Erkennung und eventuelle Korrektur von Übertragungsfehlern.
 Angenommen das empfangene Codewort $c_r$ ist mit einem \textbf{Fehlermuster} $e$ versehen.
 $$c_r = c \oplus e \qquad \qquad s\textcolor{blue}{_{[1 \times (n-k)]}} = c_r \cdot H^T = c
@@ -169,7 +169,7 @@ empfangene Codewort $c_r$ \textbf{korrigiert} werden. \\
 \end{minipage}
 
 
-\subsection{Zyklische Blockcodes \formelbuch{286-11.5}}
+\subsection{Zyklische Blockcodes \schaum{286-11.5}}
 Coder und Decoder von gewissen \textbf{linearen Blockcodes} sind ab einem Umfang von $n \gg 1$ und
 $k \gg 1$ sehr \textbf{aufwendig} zu realisieren. \\
 \textbf{Abhilfe} schaffen die zyklischen Blockcodes - eine \textbf{Untergruppe} der linearen Blockcodes -
@@ -182,7 +182,7 @@ c_{n-1})$ wiederum ein \textbf{gültiges Codewort} $c$ ergibt, so handelt es sic
 einen linearen Blockcode.
 
 
-\subsubsection{Code-Polynom c(x), Modulo-2-Polynom Arithmetik \formelbuch{287-11.5.B}}
+\subsubsection{Code-Polynom c(x), Modulo-2-Polynom Arithmetik \schaum{287-11.5.B}}
 Zur mathematischen Behandlung werden zyklische Codes als Polynome dargestellt, wobei die
 Koeffizienten $c_i$ jeweils der binären Menge $K=\{0,1\}$ angehören.
 $$ c = (c_0, c_1, c_2, \ldots,
@@ -231,7 +231,7 @@ $$ c^{(i)}(x) = c(x) x^i \mod{(1+x^n)}$$
   \item Divisionsrest $r(x)$ entspricht gerade $c^{(i)}(x)$
 \end{enumerate}
 
-\subsubsection{Generator-Polynom g(x) \formelbuch{287-11.5.C}}
+\subsubsection{Generator-Polynom g(x) \schaum{287-11.5.C}}
 Jeder $[n,k]$ zyklische Code kann mit Hilfe des Generator-Polynoms $g(x)$ (vom Grade $(n-k)$)
 durch Multiplikation mit dem Daten-Polynom $d=d_0 + d_1 + \ldots + d_{k-1}x^{k-1}$ gebildet werden.
 $$ g(x) = \textcolor{blue}{g_0} + g_1 x + g_2 x^2 + \ldots + \textcolor{blue}{g_{n-k}} x^{n-k}
@@ -245,9 +245,9 @@ werden. Mittels \textbf{\matlab{cyclpoly(n,k,'all')}} können alle möglichen Ge
 erzeugt werden.
 % einige generatormatritzen mittels matlab einfügen?!?
 
-%\subsubsection{Paritätsprüf-Polynom h(x) \formelbuch{288-11.5.D}}
+%\subsubsection{Paritätsprüf-Polynom h(x) \schaum{288-11.5.D}}
 
-\subsubsection{Syndrom-Polynom s(x) \formelbuch{288-11.5.E}}
+\subsubsection{Syndrom-Polynom s(x) \schaum{288-11.5.E}}
 \begin{minipage}{13.1cm}
 Das Fehlersyndrom $s(x)$ (vom Grad ($n-k$)) dient zur \textbf{Ermittlung von Übertragungsfehlern}.
 Enthält das empfangene Codewort $c_r(x)$ ein \textbf{Fehlermuster} $e(x)$, so entspricht der
@@ -284,7 +284,7 @@ Für einen zyklischen Code mit minimaler Hamming-Distanz $d_{min}$ hat jedes
 Fehlermuster mit Hamming-Gewicht $< \frac12 d_{min}$ ein ganz \textbf{charakteristisches Syndrom}, welches nur vom Fehler
 abhängig ist.
 
-\subsubsection{Codierung - Multiplikation \formelbuch{289-11.5.F}}
+\subsubsection{Codierung - Multiplikation \schaum{289-11.5.F}}
 \begin{minipage}{9cm}
 	\includegraphics[width=9cm]{../NaT2/bilder/11_cyclic_coder_multiplication.png}
 \end{minipage}
@@ -295,7 +295,7 @@ abhängig ist.
 	lediglich die Reihenfolge von $g_i$ getauscht werden.
 \end{minipage}
 
-\subsubsection{Decodierung - Division \formelbuch{289-11.5.F}}
+\subsubsection{Decodierung - Division \schaum{289-11.5.F}}
 \begin{minipage}{9.4cm}
 	\includegraphics[width=9cm]{../NaT2/bilder/11_cyclic_decoder_division.png}
 \end{minipage}
@@ -311,7 +311,7 @@ abhängig ist.
 Ein zyklischer Blockcode kann immer in eine systematische Form gebracht werden, ohne dass die
 Hamming-Distanz verändert wird oder die zyklische Eigenschaft verloren geht.
 
-\subsection{Faltungscodes \formelbuch{290-11.6}}
+\subsection{Faltungscodes \schaum{290-11.6}}
 \textit{Nicht prüfungsrelevant!}\\ \\
 Hierbei werden ganze Daten Streams codiert. Der Code hängt hier nicht nur vom aktuellen Datenblock
 ab, denn der Codierer bezieht auch noch einige vorgängige Blöcke in die Codierung mit ein.

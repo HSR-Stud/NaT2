@@ -1,4 +1,4 @@
-\section{Rauschen in analogen Kommunikationssystemen \formelbuch{202-8}}
+\section{Rauschen in analogen Kommunikationssystemen \schaum{202-8}}
 \textbf{Rauschen} \textbf{verschlechtert} die \textbf{Performance}. Bei \textbf{analogen} Systemen
 macht sich dies beim \textbf{Signal-Rausch-Abstand (SNR)} bemerkbar.
 \begin{figure}[!ht]
@@ -22,7 +22,7 @@ werden: $S_{i_{dB}} = S_{t_{dB}} - A_{dB}$
 
 
 
-\skriptsubsection{Basisband}{203-8.3}
+\subsection{Basisband \schaum{203-8.3}}
 Die Berechnungen im Basisband gelten als \textbf{Referenz}, für den \textbf{Vergleich} mit
 \textbf{anderen Systemen}. \\
 \begin{figure}[!ht]
@@ -44,7 +44,7 @@ $$ \text{Die Rauschleistung im Basisband: } \qquad \boxed{\left(\dfrac{S}{N}\rig
 \dfrac{S_0}{N_0} = \dfrac{S_i}{\eta B} = \gamma} \qquad \text{dient zum Vergleich mit anderen
 Systemen.}$$
 
-\skriptsubsection{Amplitudenmodulation}{204-8.4}
+\subsection{Amplitudenmodulation \schaum{204-8.4}}
 \begin{figure}[!ht]
 \begin{center}
 	\include{./tikz/cw_communication_system}
@@ -55,7 +55,7 @@ Das Rauschsignal am Eingang des Demodulators ist wie folgt definiert
 $$n_i(t) = n_c(t) \cos(\omega_c t) - n_s(t) \sin(\omega_c t) $$
 
 
-\skriptsubsubsection{DSB-SC, SSB}{205-8.4.A.1,2}
+\subsubsection{DSB-SC, SSB \schaum{205-8.4.A.1,2}}
 Ein Mass für die Effizienz des Demodulators ist der sogenannte Detektor-Gewinn: \\
 $$ \alpha_{d_{DSB-SC}} = \dfrac{\text{SNR}_{out}}{\text{SNR}_{in}} = 2 \approx 3 dB
 \qquad \qquad
@@ -68,7 +68,7 @@ Somit haben im Endeffekt SSB und DSB-SC \textbf{dieselbe Rausch-Performance}:
 	$$ \left(\dfrac{S}{N}\right)_0 =
 	\dfrac{A_c^2 S_x}{2 \eta B} = \dfrac{\frac12 A_c^2 S_x}{\eta B} = \dfrac{S_i}{\eta B} = \gamma $$
 
-\skriptsubsubsection{Gewöhnliche AM}{206-8.4.A.3}
+\subsubsection{Gewöhnliche AM \schaum{206-8.4.A.3}}
 
 \textbf{Synchroner Detektor}
 $$ \left(\dfrac{S}{N}\right)_0 =
@@ -85,7 +85,7 @@ Der \textbf{Übergang} zwischen \textbf{ausreichender} Übertragungsqualität un
 Übertragung beginnt ab \unboldmath$ \text{SNR}_{i_{dB}} \approx 10 \text{dB} $ und erfolgt
 \textbf{sehr schnell}.
 
-\skriptsubsection{Winkelmodulation}{208-8.5}
+\subsection{Winkelmodulation \schaum{208-8.5}}
 \begin{center}
 	\includegraphics[height=1.3cm]{../NaT2/bilder/08_noise_anglemod.png}
 \end{center}
@@ -100,11 +100,11 @@ Formeln angewendet werden. \\
 Im Falle von (CNR $\ll 1$) tritt ein ähnlicher Effekt auf wie bei AM (SNR $\ll 1$), 
 sodass das demodulierte Signal nicht mehr brauchbar wird.
 
-\skriptsubsubsection{SNR bei PM}{210-8.5.B}
+\subsubsection{SNR bei PM \schaum{210-8.5.B}}
 $$ \left(\dfrac{S}{N}\right)_0 =
 \dfrac{k_p^2 A_c^2 S_x}{2 \eta B} = k_p^2 S_x \gamma $$
 
-\skriptsubsubsection{SNR bei FM}{210-8.5.C}
+\subsubsection{SNR bei FM \schaum{210-8.5.C}}
 $$ \left(\dfrac{S}{N}\right)_0 =
 3 \left(\dfrac{k_f^2 S_x}{W^2}\right) \left(\dfrac{Ac^2}{2 \eta B}\right)
 = 3 \left(\frac{k_f^2 S_x}{W^2}\right) \gamma = 
