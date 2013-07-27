@@ -40,6 +40,7 @@ bestimmten Zeitpunkt $t$ gemittelt.
 \begin{tabular}[c]{ p{3.5cm}  p{14.5cm}  }
 	\textbf{Erwartungswert}: 	&  $\mu_{X}(t) = E\left[X(t)\right] =
           \int\limits_{-\infty}^{+\infty} x \cdot f_{X}(x;t)\;dx$ \\
+          & Wobei für $x$ auch Funktion in $x \Rightarrow g(X)$ stehen kann.\\
    	\textbf{Autokorrelation}: 	& 	$R_{XX}(t_{1},t_{2}) = E\left[X(t_{1})X(t_{2})\right] =
           \int\limits_{-\infty}^{+\infty} \int\limits_{-\infty}^{+\infty} 
             x_{1} \cdot  x_{2}\cdot f_{X}(x_{1},x_{2};t_{1},t_{2})\;dx_{1} \;dx_{2}$ \\
@@ -71,7 +72,7 @@ abhängig davon (darum Index $_i$), welche Funktion genutzt wird.
 	$E[\overline{x}] = 
            \lim\limits_{T \rightarrow \infty}
              \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}} E[x(t)] \; dt = 
-             \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}} \mu_{X} \; dt = \mu_{X}(t)$  \\
+             \frac{1}{T} \int\limits_{-\frac{T}{2}}^{+\frac{T}{2}} \mu_{X} \; dt = \mu_{X}$  \\
    	\textbf{Autokorrelation}: 	& 	
    	$E[\overline{R}_{XX}(\tau)] = 
            \lim\limits_{T \rightarrow \infty}
@@ -83,39 +84,43 @@ abhängig davon (darum Index $_i$), welche Funktion genutzt wird.
 \subsection{Stationarität \schaum{167-7.3.C}}
 Ein stationärer Prozess verändert seine statistischen Eigenschaften über die
 Zeit nicht. Wenn ein Prozess ergodisch ist, ist er auch stationär (nicht
-umgekehrt).\\
+umgekehrt).
 
 \subsubsection{Streng Stationär (SSS - Strict Sense Stationary)}
 % TODO genaue beschreibung streng, schwach stationär
 Bei einem streng stationären Prozess bleiben die n-dimensionale WSK-Dichten über die
 Zeit konstant. D.h. die \textbf{statistischen Eigenschaften} und somit auch die WSK-Dichten sind zu 
 \textbf{allen Zeitpunkten dieselben}.
+\vspace{-0.2cm}
 $$ f_X(x_1, x_2, \ldots, x_n; t_1, t_2, \ldots, t_n) =
 		f_X(x_1, x_2, \ldots, x_n; t_1+c, t_2+c, \ldots, t_n+c) \qquad \forall (c,n \in
 		\mathbb{R})$$
+
 % Es gelten folgende Beziehungen: \\
 % $$E[X(t)] = \mu_{X} \qquad \qquad
 % R_{XX}(t_{1},t_{2}) = R_{XX}(\tau),\quad \text{ mit } \tau = t_{2} - t_{1} \qquad \qquad
 % C_{XX}(t_{1},t_{2}) = R_{XX}(\tau) - \mu_{X}^{2}$$ 
+Jeder streng stationäre Prozess ist auch schwach stationär, daher besitzt er die gleichen Eigenschaften wie ein WSS-Prozess
 
 \subsubsection{Schwach Stationär (WSS - Wide Sense Stationary) - Stationarität 2. Ordnung}
 Bei einem schwach stationären Prozess sind die statistischen Eigenschaften zwar
 \textbf{nicht zu jedem Zeitpunkt die selben}, jedoch sind sie \textbf{nicht} von einem \textbf{absoluten} Zeitpunkt, sondern
 von der \textbf{Differenz} ($\tau$) \textbf{zweier Zeitpunkte} ($t_1, t_2$) abhängig.  \\ 
-$$ f_X(x_1, x_2; t_1, t_2) = f_X(x_1, x_2; t_1+c, t_2+c) \qquad \forall (c \in
-		\mathbb{R})$$
+\vspace{-0.2cm}
+$$ f_X(x_1, x_2; t_1, t_2) = f_X(x_1, x_2; t_1+c, t_2+c) \qquad \forall (c \in \mathbb{R})$$
+
 %Zudem gilt:\\
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}[c]{ |p{3.3cm}|  p{6.5cm} |p{8cm}| }
 	\hline
-	\textbf{Mittelwert}: 	&  $E[X(t)] = \mu_{X}(t) = \text{const.}$  
+	\textbf{Mittelwert}: 	&  $E[X(t)] = \mu_{X} = \text{const.}$  
 							& bleibt über die ganze Zeit konstant\\ 
 	\hline
 	\textbf{quad. Mittelwert}: 	&  $E[X^{2}(t)] = R_{XX}(0)$ &  \\ 
 	\hline
 	\textbf{Autokorrelation}: 	& 	$R_{XX}(t_{1},t_{2}) = R_{XX}(\tau)$
-	& nur \textbf{abhängig} von der \textbf{Zeitdifferenz} $(\tau = t_2 - t_1)$ und \textbf{nicht direkt} von der \textbf{Zeit} $t$ \\
-	 \hline
+	& \multirow{2}{8cm}{nur \textbf{abhängig} von der \textbf{Zeitdifferenz} $(\tau = t_2 - t_1)$ und \textbf{nicht direkt} von der \textbf{Zeit} $t$}\\
+	 \cline{1-2}
 	 \textbf{Autokovarianz}:		& $ C_{XX}(t_{1},t_{2}) = R_{XX}(\tau) - \mu_{X}(t)^{2} = C_{XX}(\tau)$ & \\
 	 \hline
 \end{tabular}
@@ -124,7 +129,6 @@ $$ f_X(x_1, x_2; t_1, t_2) = f_X(x_1, x_2; t_1+c, t_2+c) \qquad \forall (c \in
 Bei einem Zufallsprozess handelt es sich immer um ein WSS-Prozess, sobald der Erwartungswert
 für jede Zeit $t$ konstant bleibt und die Autokorrelationsfunktion nur eine Funktion von $\tau$ ist,
 d.h. beide statistischen Kennwerte bzgl. einer zeitlichen Verschiebung unabhängig sind.    
-Jeder streng stationäre Prozess ist auch schwach stationär, aber nicht umgekehrt. 
         
 %   \item Zwei Zufallsprozesse heissen Verbund-schwach-station\"ar, wenn jeder Prozess f\"ur sich 
 %         schwach-station\"ar ist und zudem gilt:  
@@ -197,8 +201,8 @@ unterschiedlich starke Schüler mit unterschiedlichen Zeugnisnoten (Zeitmittel).
 Dies ist bei gleichbleibender Temperatur \textbf{ergodisch}.
 
 
-\subsection{Korrelationen und Leistungsspektren \schaum{169-7.4}}
-Formeln in diesem Abschnitt gelten für \textbf{stationäre} Prozesse. \\
+\subsection{Korrelationen und Leistungsspektren von WSS-Prozessen \schaum{169-7.4}}
+Formeln in diesem Abschnitt gelten für \textbf{schwach stationäre} Prozesse. \\
 
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}[c]{|p{4cm}|p{6cm}|p{7.5cm}|}
@@ -213,6 +217,7 @@ Formeln in diesem Abschnitt gelten für \textbf{stationäre} Prozesse. \\
 		& $R_{XY}(-\tau) = R_{YX}(\tau) \quad$ (Reihenfolge Indizes!) \\
 		& $|R_{XY}(\tau)| \leq \frac{1}{2} \left[ R_{XX}(0)+R_{YY}(0)\right] $
 		& $|R_{XY}(\tau)|  \leq \sqrt{R_{XX}(0)R_{YY}(0)}$ \\
+		& \multicolumn{2}{l|}{Zwei Zufallsprozesse sind \textit{orthogonal}, wenn $R_{XY}(\tau) = 0$}\\
 	\hline
   	\textbf{Autokovarianz}: 	&  
 		\multicolumn{2}{l|}{$C_{XX}(\tau) = E\!\left[ \left( X(t)      - E[X(t)]      \right) \cdot
@@ -227,36 +232,62 @@ Formeln in diesem Abschnitt gelten für \textbf{stationäre} Prozesse. \\
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
+\subsubsection{Autokorrelation bei Signalen}
+% Aus NaT2_2d_Autokorrelation
+	\begin{tabular}[c]{ll}
+		Determinierte Energiesignale 
+		& $ R_{XX}(\tau) = \int\limits_{-\infty}^{+\infty} x(t) \cdot x(t+\tau) dt$ \\
+		Determinierte Leistungssignale
+		& $\overline{R}_{XX}(\tau) = \lim\limits_{T\rightarrow\infty}\frac{1}{T}\int\limits_{-\frac{T}{2}}^{\frac{T}{2}} x(t) \cdot x(t+\tau) dt$ \\
+%		Stationäre stochastische Leistungssignale
+%		& $ R_{XX}(\tau) = \int\limits_{-\infty}^{+\infty} \int\limits_{-\infty}^{+\infty} x(t_0) \cdot x(t_0+\tau)\cdot f_X(x_0,x_{\tau};t_0,t_0+\tau)\; dx_0 \; dx_{\tau}$ \\
+%		Nicht-stationäre stochastische Leistungssignale
+%		& $ R_{XX}(\tau) = \int\limits_{-\infty}^{+\infty} \int\limits_{-\infty}^{+\infty} x_1 \cdot x_2\cdot f_X(x_1,x_2;t_1,t_2)\; dx_1 \; dx_2$ 
+	\end{tabular}\\
+	
+\subsubsection{Statistische Autokorrelation}
+	\parbox{5cm}{1. Stationären Prozess kreieren indem der Abtastzeitpunkt $t_0$ völlig beliebig gewählt wird, also nicht beispielsweise auf den Anfang oder die Mitte der Bitzeit synchronisieren.}
+	\hspace{0.25cm}
+	\parbox{5cm}{2. Mit Hilfe eines Grafen die verschiedenen Verbund-Wahrscheinlichkeitsfunktionen zu entsprechenden Zeitpunkten aufzeichnen und Amplitudenwerte, sowie Wahrscheinlichkeiten bestimmen.}
+	\hspace{0.25cm}
+	\parbox{3.75cm}{\includegraphics[width = 3.75cm]{./bilder/07_stat_autokorr}}
+	\hspace{0.25cm}
+	\parbox{4cm}{$R_{XX}(\tau)=\sum p_{xx_i} \cdot A_i$, dabei Fallunterscheidung mit $\tau$}
+	
+
 \subsubsection{Spektrale Leistung \schaum{170-7.4.E,F}}
 Autokorrelationsfunktion $R_{XX}(\tau)$ und Leistungsspektraldichte $S_{XX}(\omega)$ bilden ein
 Fourier-\textbf{Transformationspaar}. \\ Die Leistungsspektraldichte kann als \textbf{mittlere Leistung pro Frequenzband }aufgefasst werden, sie ist
 wie folgt definiert:                             
-        $$ E\left[ \lim\limits_{T \rightarrow \infty} \frac{1}{T} \cdot \mid\!
+        $$ \lim\limits_{T \rightarrow \infty} \frac{1}{T} \cdot E\left[  \mid\!
         X(\omega) \!\mid^{2}\right] = \int\limits_{-\infty}^{+\infty}
         R_{XX}(\tau) \cdot e^{-j\omega\tau} \; d\tau = \boxed{S_{XX}(\omega)
         \qquad \IFT \qquad R_{XX}(\tau)} = \frac{1}{2\pi}
         \int\limits_{-\infty}^{+\infty}S_{XX}(\omega) \cdot e^{j\omega\tau} \;
-        d\omega$$ $S_{XX}(\omega)$ ist rein reell und $\geq 0$. \\
-Kreuzkorrelationen ($R_{YX}(\tau), R_{XY}(\tau)$) und Kreuz-Spektraldichten ($S_{YX}(\tau),
+        d\omega$$ 
+        $S_{XX}(\omega)$ ist rein reell und $\geq 0$; $S_{XX}(-\omega) = S_{XX}(\omega)$ \qquad
+        \textbf{Mittlere Leistung:} $ E[X^2(t)] = R_{XX}(0) = \frac{1}{2\pi} \int\limits_{-\infty}^{+\infty}S_{XX}(\omega)\cdot1 \; d\omega $\\ \\
+\textbf{Kreuzkorrelationen} ($R_{YX}(\tau), R_{XY}(\tau)$) und \textbf{Kreuz-Spektraldichten} ($S_{YX}(\tau),
 S_{XY}(\tau)$) bilden ein Fourier-Transformationspaar.
 \begin{center}
-	$R_{YX}(\tau) \FT S_{YX}(\omega) \qquad \qquad R_{XY}(\tau) \FT S_{XY}(\omega)$
+	$R_{YX}(\tau) \FT S_{YX}(\omega) \qquad \qquad R_{XY}(\tau) \FT S_{XY}(\omega)$\\
+	$S_{XY}(\omega) = S_{YX}(-\omega) = S_{XY}^{\ast}(\omega)$
 \end{center}
 
-
+\newpage
 
 \subsection{Übertragung von Zufallsprozessen durch LTI-Systeme \schaum{171-7.5}}
 Ein Zufallsprozess wird durch ein LTI-System übertragen. \hspace{2cm} $Y(t) = L[X(t)] \Rightarrow
 Y(t) = h(t) \ast X(t)$ \vspace{0.3cm}\\
-\renewcommand{\arraystretch}{1.4}
- \begin{tabular}[c]{|p{2cm}| p{8.5cm} |p{8cm}| }
+\renewcommand{\arraystretch}{1.5}
+ \begin{tabular}[c]{|p{2cm}| p{8.5cm} |p{7.5cm}| }
  	\hline
 		&\textbf{Allgemein}
-		& \textbf{WSS-Prozess} \\
+		& \textbf{WSS-Prozess} \quad \parbox[c]{4.5cm}{Ein WSS-Prozess am Eingang erzeugt auch einen WSS-Prozess am Ausgang.} \\
 	\hline
 	\textbf{Mittelwert}
-		& $E(Y(t)) = h(t) \ast E(X(t))$
-		& $E(Y) = H(0) \cdot E(X)$ \\
+		& $\mu_Y(t) = h(t) \ast \mu_X(t)$
+		& $\mu_Y = H(0) \cdot \mu_X$ \\
 	\hline
 	\textbf{Auto-korrelation\textcolor{red}{*}}
 		& {$R_{YY}(t_{1},t_{2}) = \int\limits_{-\infty}^{+\infty}
@@ -266,36 +297,44 @@ Y(t) = h(t) \ast X(t)$ \vspace{0.3cm}\\
 		\int\limits_{-\infty}^{+\infty} h(\alpha) h(\beta)
                       R_{XX}(\tau+\alpha-\beta) \; d\alpha \; d\beta$} \\
     \hline
+\end{tabular}
+
+So gilt für alle WSS-Prozesse:\\
+\begin{tabular}[c]{|p{4cm}| p{14.5cm} |}
+	\hline
 	\textbf{Spektrale Leistung}
-		&
-		& $S_{YY}(\omega)= H^{\ast}(\omega) H(\omega) S_{XX}(\omega)
+		& $S_{YY}(\omega)=\int\limits_{-\infty}^{+\infty} R_{YY}(\tau)\cdot e^{-j\omega\tau} \; d\tau =  H^{\ast}(\omega) H(\omega) S_{XX}(\omega)
 			= |H(\omega)|^{2} S_{XX}(\omega)$  \\
+	\textbf{Autokolleration}
+			& $R_{YY}(\tau)=\frac{1}{2 \pi} \int\limits_{-\infty}^{+\infty} S_{YY}\cdot e^{j\omega\tau} \; d\omega= \frac{1}{2 \pi} \int\limits_{-\infty}^{+\infty} |H(\omega)|^2 S_{XX}(\omega)\cdot e^{j\omega\tau} \; d\omega$\\	
+	\textbf{Mittlere Leistung}
+		& $E[Y^2(t)] = R_{YY}(0) = \frac{1}{2 \pi}\int\limits_{-\infty}^{+\infty} |H(\omega)|^2 S_{XX}(\omega) \; d\omega$\\
 	\hline
 \end{tabular}
 \renewcommand{\arraystretch}{1} \\
 \textcolor{red}{*} = Es ist viel einfacher die Autokorrelation aus der Spektralen Leistung
 (Transformationspaar) - anstatt aus diesem höllischen Integral - auszurechnen. \\
-Ein WSS-Prozess am Eingang erzeugt auch einen WSS-Prozess am Ausgang.
+
 
 \subsection{Spezielle Zufallsprozesse \schaum{172-7.6}}
 \subsubsection{Gauss'scher Zufallsprozess \schaum{172-7.6.A}}
-Bein diesem Prozess ist die \textbf{Zufallsvariable} $X(t_{i})$ zu \textbf{jedem Zeitpunkt} $t_{i}$
+Bei diesem Prozess ist die \textbf{Zufallsvariable} $X(t_{i})$ zu \textbf{jedem Zeitpunkt} $t_{i}$
 \textbf{gaussverteilt}. Bsp.: thermisches Rauschen. \\
 Zweidimensionaler Fall (gauss'sche Verbunddichte): 
-       $$f_{XX}(x_{1},x_{2};t_{1},t_{2}) = \frac{1}{2\pi \sigma_{x_{1}}\sigma_{x_{2}}} \cdot
+       $$f_{X}(x_{1},x_{2};t_{1},t_{2}) = \frac{1}{2\pi \sigma_{x_{1}}\sigma_{x_{2}}} \cdot
                                       e^{-\frac{(x_{1}-\mu_{x_{1}})^{2}}{2 \sigma^{2}_{x_{1}}}} \cdot
                                       e^{-\frac{(x_{2}-\mu_{x_{2}})^{2}}{2 \sigma^{2}_{x_{2}}}}$$ \\
 Für unkorrelierte $X(t_{1})$ und $X(t_{2})$  ($C_{XX}(t_{1},t_{2})=0$) gilt:
-        $$f_{XX}(x_{1},x_{2}; t_{1},t_{2}) = f_{X}(x_{1};t_{1}) \cdot f_{X}(x_{2};t_{2}) $$
+        $$f_{X}(x_{1},x_{2}; t_{1},t_{2}) = f_{X}(x_{1};t_{1}) \cdot f_{X}(x_{2};t_{2}) \text{, also unabhängig} $$
 $\mu_{X}(t)$ und $R_{XX}(t_{1}, t_{2})$ charakterisisieren einen gauss'schen Zufallsprozess
         vollst\"andig. \\
-Ist ein gauss'scher Prozess WSS ist er zugleich auch SSS. Zudem ist wird ein gauss'scher
+Ist ein gauss'scher Prozess WSS ist er zugleich auch SSS. Zudem ist ein gauss'scher
 Zufallsprozess $X(t)$ am Ausgang eines LTI Systems $Y(t)$ wiederum gaussisch.
 
 \subsubsection{Weisses Rauschen  \schaum{173-7.6.B}}
 \begin{center}
 	\begin{minipage}{8cm}
-		$S_{XX}(\omega) = \dfrac{\eta}{2} \qquad R_{XX}(\tau) = \dfrac{\eta}{2} \cdot \delta(\tau)$ \\ \\
+		$S_{XX}(\omega) = \dfrac{\eta}{2} \qquad R_{XX}(\tau) = \dfrac{\eta}{2} \cdot \delta(\tau)$ \\ mit $\eta = \frac{N}{B}$ \qquad $N = (\overline{\sigma}_{WS})^2 = Var_{WS}$\\ \\
 		Beispiel: therm. Rauschen von Widerständen \\
 		\textbf{Nimmt} in der Praxis im \textbf{Tera-Hz Bereich ab}!
   	\end{minipage}
@@ -384,20 +423,19 @@ Zufallsprozess $X(t)$ am Ausgang eines LTI Systems $Y(t)$ wiederum gaussisch.
         $X_{s}(t)$ Quadratur-Anteil        
   	\end{minipage} \\
 
-Eigenschaften von $X_{c}(t)$ und $X_{s}(t)$: \\
+Eigenschaften von schmalbandigen Zufallsprozessen: \\
 
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{p{4.5cm} p{4.5cm} p{9cm}}
+	\multicolumn{3}{c}{$S_{X_{c}X_{c}}(\omega) = 		S_{X_{s}X_{s}}(\omega)
+    = \left\lbrace \begin{array}{ll}
+      S_{XX}(\omega -\omega_{c}) +S_{XX}(\omega +\omega_{c})
+          & \mid\!\omega\!\mid \leq W \\
+          0  & \mid\!\omega\!\mid > W \\
+                       \end{array} \right. $} \\ 
 	$\mu_{X_{c}} = \mu_{X_{s}} = \mu_{X} = 0$
 		& $\sigma^{2}_{X_{c}} = \sigma^{2}_{X_{s}} = \sigma^{2}_{X}$
 		& $E\left[ X_{c}(t)X_{s}(t) \right]  = 0$ (unkorreliert \& orthogonal) \\
-	\multicolumn{3}{c}{$S_{X_{c}X_{c}}(\omega) = S_{X_{s}X_{s}}(\omega)
-                   = \left\lbrace
-                       \begin{array}{ll}
-                         S_{XX}(\omega -\omega_{c}) +S_{XX}(\omega +\omega_{c})
-                                        & \mid\!\omega\!\mid \leq W \\
-                         0              & \mid\!\omega\!\mid > W \\
-                       \end{array} \right. $} \\ 
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
