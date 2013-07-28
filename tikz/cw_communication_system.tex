@@ -11,13 +11,15 @@
     \draw[->] (input) -- (transmitter)
        node[above, near start] {$X(t)$}
        node[below, near start] {$S_x$} ;
-    \draw[->] (transmitter) -- node[above] {$X_c(t)$} (channel);
+    \draw[->] (transmitter) --(channel)
+       node[above, midway] {$X_c(t)$}     				
+       node[below, midway] {$S_T$};
     \draw[->] (channel) -- (sum);
     \draw[->] (sum) -- (bpf);
     \draw[->] (bpf) -- node[above, near start] {$Y_i(t)$} (detector);
     \draw[->] (detector) -- (lpf);
     \draw[->] (lpf) -- (output)
-       node[above, near end] {$Y_0(t)$};
+       node[above, near end] {$Y_o(t)$};
     
     %% Rechtecke
     \node at ($(detector.south west)-(0.3cm,0.4cm)$) (demo_SW) {};
