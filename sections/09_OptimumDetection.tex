@@ -1,24 +1,25 @@
 \section{Optimaler Detektor - Rauschen in digitalen Kommunikationssys. \schaum{227-9}}
 \textbf{Rauschen} \textbf{verschlechtert} die \textbf{Performance}, bei \textbf{digitalen} Systemen zeigt sich dies in der
 \textbf{Bitfehlerrate} $P_e$. \\
-Diese Kapitel behandelt digitale Signale, welche über einen verzerrungsfreien Kanal gesendet werden
+Dieses Kapitel behandelt digitale Signale, welche über einen verzerrungsfreien Kanal gesendet werden
 und mit einem Additiven Weissen Gauss'schen Rauschen (AWGN) versetzt werden. 
 
 \subsection{Binäres Übertragungssystem \schaum{226-9.2}}
 Ein \textbf{binäres Signal} $s_i(t)$ \verweiskurz{09_binary_signals_error} wird
-über einen verzerrungsfreien Kanal gesendet. \\
-\begin{center}
- 	\includegraphics[height=3cm]{bilder/09_digital_signal_detection.png}
-\end{center}
-
-$$s_i(t) = \begin{cases}
+über einen verzerrungsfreien (auch ohne Intersymbol Interferenz) Kanal gesendet. \\
+\begin{minipage}{10cm}
+ 	\includegraphics[width=9.5cm]{bilder/09_digital_signal_detection.png}
+\end{minipage}
+\begin{minipage}[c]{9cm}
+	$$s_i(t) = \begin{cases}
           	s_1(t) & 0 \leq t \leq T \qquad \text{für Logisch } 1 \\
           	s_2(t) & 0 \leq t \leq T \qquad \text{für Logisch } 0          	
-          \end{cases} 
-				\qquad \overset{Rauschen}{\Longrightarrow} \qquad 
-			r(t) = s_i(t) + n(t) 
-				\qquad \overset{Filter}{\Longrightarrow} \qquad 
-			z(t) = r(t) \ast h(t)$$ \\
+          \end{cases} $$
+	$$\overset{Rauschen}{\Downarrow}$$
+	$$	r(t) = s_i(t) + n(t) $$
+	$$	\overset{Filter}{\Downarrow} $$ 
+	$$	z(t) = r(t) \ast h(t) $$
+\end{minipage}
 
 \begin{enumerate}
   \item Am \textbf{Empfänger} $r(t)$ liegt das \textbf{Signal} $s(t)$ zusätzlich mit einem Additiven 
@@ -30,8 +31,8 @@ $$s_i(t) = \begin{cases}
 		\verweiskurz{09_matched_filter} oder der Korrelator
 		\verweiskurz{09_korrelator}.
   \item Anschliessend wird das Signal \textbf{zeitdiskretisiert}, also immer nach einer konstanten Zeit
-  		(Samplingzeit $t = T$) abgetastet. Dadurch resultiert: $z(T) = a_i(T) + n_0(T)$, wobei $a_i(T)$
-  		dem Signalanteil und $n_o(T)$ dem Rauschanteil entspricht. \\
+  		(Samplingzeit $t = T$) abgetastet. In der Praxis ist der opimale Abtastzeitpunktpunkt bei der maximalen SNR. Im Modell wird die SNR zum Zeitpunkt $nT$ maximiert. Dadurch resultiert: $z(nT) = a_i(nT) + n_o(nT)$, wobei $a_i(nT)$
+  		dem Signalanteil und $n_o(nT)$ dem Rauschanteil entspricht. \\
   		Dies entspricht zwei Normalverteilungen, welche um die Mittelwerte ($a_1, a_2$) angeordnet sind.
   \item Schlussendlich wird mit dem Schwellwertdetektor entschieden, welches Signal
   		höchstwahrscheinlich gesendet wurde. Man unterscheidet die zwei verschiedenen Arten von
@@ -44,20 +45,24 @@ $$s_i(t) = \begin{cases}
 \subsubsection{Hypothesen und Fehlerwahrscheinlichkeit \schaum{227-9.2,3.A}}
 	Für die Entscheidung existieren zwei \textbf{Hypothesen} ($H_1 \Rightarrow s_1$ wurde gesendet, 
 	$H_2 \Rightarrow s_2$ wurde gesendet): \\ 
-	Falls das gesamplete Signal ($z(T) > \lambda_0$) ist, wird $H_1$, 
-	für ($z(T) < \lambda_0$) wird $H_2$ gewählt. \\
+	Im binären Fall erfolt die Entscheidung mit einem Schwellwert $\lambda$: \qquad \parbox[c]{10cm}{
+	Hypothese $H_1$ (falls $z(nT) > \lambda$): \quad $s_1$ wurde gesendet \\
+	Hypothese $H_2$ (falls $z(nT) < \lambda$): \quad $s_2$ wurde gesendet}\\
 
 \begin{minipage}[c]{10cm}
 	\begin{center}
-	 	\begin{tabular}{|l|c|c|}
+	 	\begin{tabular}{l l|c|c|}
+	 		\cline{3-4} 
+	 			& & \multicolumn{2}{c|}{empfangen} \\
+			\cline{3-4}
+				& & Mark = $H_1$ & Space = $H_2$ \\
 			\hline
-				gesendet $\backslash$ detektiert & Log. $1 = H_1$ & Log. $0 = H_2$ \\
-			\hline
-				Log. $1$ = $s_1$, mit $P(s_1)$ & $\textcolor{green}{P(H_1 | s_1)}$ 
-												&  $\textcolor{red}{P(H_2 | s_1)}$\\
-			\hline
-				Log. $0$ = $s_2$, mit $P(s_2)$ & $\textcolor{red}{P(H_1 | s_2)}$ 
-												& $\textcolor{green}{P(H_2 | s_2)}$ \\
+				 \multicolumn{1}{|l|}{\multirow{2}{*}{  gesendet }} 
+				 & Mark = $s_1$, mit $P(s_1)$ & $\textcolor{green}{P(H_1 | s_1)}$ 
+				 &  $\textcolor{red}{P(H_2 | s_1)}$\\
+			\cline{2-4}
+				\multicolumn{1}{|l|}{} & Space = $s_2$, mit $P(s_2)$ & $\textcolor{red}{P(H_1 | s_2)}$ 
+				& $\textcolor{green}{P(H_2 | s_2)}$ \\
 			\hline
 		\end{tabular}  
   	\end{center}
@@ -72,66 +77,77 @@ $$s_i(t) = \begin{cases}
 Bei einem Maximum Likelihood Detektor ist der Schwellwert $\lambda_0$ genau so gewählt, dass die
 \textbf{Fehler-WSK }$P_e$ \textbf{minimal} wird. \\
 Konkret kann dies berechnet werden, indem man das \textbf{Minimum} von $P_e$ bestimmt, also: $\qquad
-\dfrac{d P_e}{d \lambda_0} = 0 \qquad$ setzt. \\ \\
+\dfrac{d P_e}{d \lambda_0} = 0 \qquad$ setzt. \\ 
+Der Maximum Likelihood Detector entscheidet wie folgt: \qquad \parbox[c]{9cm}{Hypothese $H_1$: \quad falls $f(z|s_1)\cdot P(s_1) > f(z|s_2)\cdot P(s_2)$\\
+Hypothese $H_2$: \quad falls $f(z|s_1)\cdot P(s_1) < f(z|s_2)\cdot P(s_2)$}\\
 
 \begin{minipage}[c]{9.5cm}
  	\includegraphics[width=8.5cm]{../NaT2/bilder/09_AWGN-PDF.png} \newline
- 	$a_1 = $ Amplitude $\cdot T$ \newline
- 	$a_2 = $ Amplidude $\cdot -T$
+ 	$a_1 = $ Amplitude von $s_1 \cdot T$ \newline
+ 	$a_2 = $ Amplidude von $s_2 \cdot T$
 \end{minipage}
 \begin{minipage}[c]{7cm}
 	 $$ \lambda_0 = \dfrac{1}{2} (a_1 + a_2) + \dfrac{\sigma_{n_0}^2}{a_1 - a_2}
  \ln\dfrac{P(s_2)}{P(s_1)} $$ 
  	$$ \lambda_0 = \dfrac{a_1 + a_2}{2} \qquad (\text{gilt für: } P(s_2) = P(s_1) = \dfrac{1}{2})
  	$$
+ 	$$ \text{mit } \sigma_{n_o}^2 = \frac{\eta \cdot T}{2}\text{, wenn weisses Rauschen}$$
 \end{minipage} 
 
-Somit beträgt die Fehler-WSK: $ \qquad P_e = \textcolor{red}{P(H_2 | s_1)} P(s_1) + \textcolor{red}{P(H_1 | s_2)} = 
+Somit beträgt die Fehler-WSK: $ \qquad P_e = \textcolor{red}{P(H_2 | s_1)} P(s_1) + \textcolor{red}{P(H_1 | s_2)}P(s_2) = 
  P(s_1) \int\limits_{-\infty}^{\lambda_0} f(z|s_1) dz + P(s_2) \int\limits_{\lambda_0}^{\infty}
  f(z|s_2) dz$ \\
-Mit ($P(s_2) = P(s_1) = \dfrac{1}{2}$) und ($\lambda_0 = \dfrac{a_1 + a_2}{2}$) gilt für ein
+Mit ($P(s_2) = P(s_1) = 0.5$) und ($\lambda_0 = \dfrac{a_1 + a_2}{2}$) gilt für ein
 \textbf{NRZ-Signal}: $ \qquad P_e = Q \left(\dfrac{a_1 - a_2}{2 \sigma_{n_0}}\right) $
 
 
 
-\subsection{Lineares Filter}
-\subsubsection{Matched Filter \schaum{229-9.4.A}} \label{09_matched_filter}
+\subsection{Optimales Lineares Filter: Matched Filter \schaum{229-9.4.A}}
+\label{09_matched_filter}
 	\textbf{Ziel: } Maximierung von $(a_1 - a_2)$ bei gleichzeitiger Minimierung
-	von $n_0$. Mit $E_{s(t)}$ als Energie des Eingangssignals $s(t)$.
+	von $n_0$.
 	%\includegraphics[width=4.5cm]{../NaT2/bilder/09_matched_filter.png}
  
-	$$\text{SNR wird maximal bei} H \left( \omega \right) = S^* \left( \omega
+	$$\text{SNR wird maximal bei } H \left( \omega \right) = S^* \left( \omega
 	\right) \e^{-\jmath \omega T} \quad \IFT \quad h \left( t \right) = 
 	\begin{cases} s(T-t) & 0 \leq t \leq T \\
-	0 & sonst\end{cases} \qquad \text{wobei } \left(\dfrac{S}{N}\right)_{0_{max}} =
-	\dfrac{2E_{s(t)}}{\eta}$$
+	0 & sonst\end{cases}\text{ ; }h(t) = s(t) \text{, falls s(t) symmetrischer Puls}$$
+	\begin{minipage}{6cm}{	
+		$$ \left(\dfrac{S}{N}\right)_{0_{max}} = \dfrac{(a_1 - a_2)^2}{\sigma_{n_o}^2} = \dfrac{E_d}{\eta / 2} = \dfrac{2E_d}{\eta}$$} 	
+	\end{minipage}
+	\begin{minipage}{14cm}
+		Mit $E_d$ als Energie des Differenzsignals $s(t) = s_1(t) - s_2(t)$ ; $ E_d = \int\limits_{0}^{T}[s_1(t) - s_2(t)]^2 \; dt$ \\
+		
+		Fehler- WSK des ML-Detektors: $P_e = Q\left(\frac{a_1 - a_2}{2\sigma_{n_o}}\right)  = Q\left(\sqrt{\frac{E_d}{2 \eta}} \right)$
+	\end{minipage}
  	
 
-\subsubsection{Korrelator \schaum{230-9.4.B}} \label{09_korrelator}
+\subsubsection{Variante zum Matched-Filter: Korrelator \schaum{230-9.4.B}} \label{09_korrelator}
 Für den Sample Zeitpunkt ($t=T$) sind die Eigenschaften eines \textbf{Matched-Filter} und diejenigen eines
 \textbf{Korrelators} \textbf{identisch}. Somit können beide für den selben Zweck eingesetzt werden.
 
 $$ z(t) = r(t) \ast h(t) = \int_0^t r(\tau) h(t-\tau) d\tau \overbrace{=}^{h(t) =
-h_{MatchedFilter}(t)} \int_0^t r(\tau) s[T - (t - \tau)] d\tau \overbrace{=}^{t = T} \int_0^T
-r(\tau)s(\tau)$$
+h_{MatchedFilter}(t)} \int_0^t r(\tau) s[T - (t - \tau)] d\tau \overbrace{=}^{t = T} \underbrace{\int_0^T
+r(\tau)s(\tau) \; d\tau}_{\text{Korrelator}}$$
 
 	\begin{center}
 		\begin{minipage}[c]{4.5cm}
 			\includegraphics[width=4.5cm]{../NaT2/bilder/09_matched_filter.png}
+			\centering Matched Filter
 		\end{minipage}
 		\begin{minipage}[c]{2cm}		
 			$$\Longleftrightarrow $$
 		\end{minipage}
 		\begin{minipage}[c]{4.5cm}
 			\includegraphics[width=4.5cm]{../NaT2/bilder/09_correlator.png}
+			\centering Korrelator
 		\end{minipage}
 	\end{center}
 
 \subsubsection{Unmatched RC-Filter \schaum{238-Prob.9.9}}
 Hierbei wird an Stelle eines Matched Filters ein RC-Tiefpassfilter verwendet. \\
-$$H(\omega) = \dfrac{1}{1 + j \omega R C}$$
-% \qquad \dfrac{T}{RC} = 1.257 \qquad
-%\left(\dfrac{S}{N}\right)_0_{max} = (0.815)\dfrac{2 A^2 T}{\eta}$$
+$$H(\omega) = \dfrac{1}{1 + j \omega R C} \qquad \qquad
+ \left(\dfrac{S}{N}\right)_{0_{max}} = (0.815)\dfrac{2 A^2 T}{\eta}$$
 
 \subsection{Fehlerwahrscheinlichkeit verschiedener binären
 Übertragungen \schaum{231-9.5}}\label{09_binary_signals_error}
@@ -140,10 +156,10 @@ $E_b$ bezeichnet die mittlere Signalenergie pro Bit. Werte für Q-Funktion hinte
 \renewcommand{\arraystretch}{2}
 	\begin{tabular}{ p{6cm} p{2.5cm} p{9cm} }
 		
-		\multicolumn{3}{l}{\textbf{Allgemein}} \\
-		$P_e=Q\left(\sqrt{\dfrac{E_d}{2n}}\right)$
-		& $E_d =$ Energie des Differenzsignals
-		& \\
+		\multicolumn{3}{l}{\textbf{Allgemein optimaler Detektor}} \\
+		$P_e= Q\left(\frac{a_1 - a_2}{2\sigma_{n_o}}\right)  = Q\left(\sqrt{\dfrac{E_d}{2n}}\right)$
+		& \multicolumn{2}{l}{$E_d =$ Energie des Differenzsignals = $\int\limits_{0}^{T}[s_1(t) - s_2(t)]^2 \; dt$}
+		\\
 					
 		\multicolumn{3}{l}{\textbf{Unipolar Baseband Signaling}} \\
 		$ P_e = Q\left(\sqrt{\dfrac{A^2 T}{2 \eta}}\right) = Q\left(\sqrt{\dfrac{E_b}{\eta}}\right) $
