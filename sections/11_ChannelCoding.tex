@@ -39,12 +39,12 @@ Folgende mathematische Operatoren werden auf diese Menge angewendet:
 
 
 \subsection{Lineare Blockcodes \formelbuch{283-11.4}}
-Ein Code gilt als linear, falls die Summe jeder beliebigen Codeworte (a,b) wiederum auch ein
-Codewort (c) ist. 
-$$a = (a_1, a_2, \ldots, a_n) \quad \text{ und } \quad b = (b_1, b_2, \ldots, b_n) \quad
-\Longrightarrow \quad c = a \oplus b = (a_1 \oplus b_1, a_2 \oplus b_2, \ldots, a_n \oplus b_n)$$
+Ein Code gilt als linear, falls die Summe jeder beliebigen Codeworte ($\vec{a},\vec{b}$) wiederum auch ein
+Codewort ($\vec{c}$) ist. 
+$$\vec{a} = (a_1, a_2, \ldots, a_n) \quad \text{ und } \quad b = (b_1, b_2, \ldots, b_n) \quad
+\Longrightarrow \quad \vec{c} = \vec{a} \oplus \vec{b} = (a_1 \oplus b_1, a_2 \oplus b_2, \ldots, a_n \oplus b_n)$$
 
-Wegen: $\quad a \oplus a = b \oplus b = 0 = (0,0,\ldots,0) \quad$, gilt \textbf{zwingend}, dass
+Wegen: $\quad \vec{a} \oplus \vec{a} = \vec{b} \oplus \vec{b} = 0 = (0,0,\ldots,0) \quad$, gilt \textbf{zwingend}, dass
 zu jedem linearen Code der \textbf{Nullvektor} $0$ gehört. Jeder Code der mit einer Generatormatrix
 gebildet werden kann ist ein linearer Code.
 
@@ -164,9 +164,8 @@ empfangene Codewort $c_r$ \textbf{korrigiert} werden. \\
 	Einzelfehler korrigierende perfekte Codes nennt man \textbf{Hamming-Codes}.
 \end{minipage} 
 \begin{minipage}{7cm}
-	$$ \qquad 2^{n-k} \geq \sum\limits_{i=0}^{t} \binom{n}{i} \quad \text{ mit } \quad \binom{n}{i} =
-	\dfrac{n!}{(n-i)! i!}$$ \\
-	oder mit Rechner: \verb+nCr(n,i)+
+	$$ \qquad 2^{n-k} \geq \sum\limits_{i=0}^{t} \binom{n}{i} \quad$$ \\
+	$$ \text{mit} \quad \binom{n}{i} = \dfrac{n!}{(n-i)! i!} \quad \text{oder TR: \textbf{nCr(n,i)}}$$
 \end{minipage}
 
 \newpage
@@ -203,8 +202,8 @@ $$ mod2(x^k + x^k) = 0 \qquad mod2(x^k - x^k) = 0 \qquad mod2(0 + x^k) = x^k \qq
 Die Modulo-2-Division stellt eine etwas \textbf{spezielle} Rechnung dar.
 Eine Divison von \boldmath$f(x)$ durch $h(x)$ ergibt den Quotienten $q(x)$ mit Rest $r(x)$
 \unboldmath . 
-$$ \dfrac{f(x)}{q(x)} = h(x) + \dfrac{r(x)}{q(x)} \qquad \Longleftrightarrow \qquad f(x) = q(x)
-\cdot h(x) + r(x)$$ 
+$$ \dfrac{f(x)}{h(x)} = q(x) + \dfrac{r(x)}{h(x)} \qquad \Longleftrightarrow \qquad \boxed{f(x) = q(x)
+\cdot h(x) + r(x)}$$ 
 Um $q(x)$ und $r(x)$ zu berechnen muss man die \textbf{übliche Polynomdivision} anwenden, \textbf{jedoch}
 bei Addition und Subraktion zwischen den Koeffizienten Modulo-2-Addition anwenden. \\ 
 Der \textbf{Modulo Operator} stellt eine vereinfachte Schreibweise dar, die jedoch teils auch
@@ -254,9 +253,9 @@ erzeugt werden.
 Das Fehlersyndrom $s(x)$ (vom Grad ($n-k$)) dient zur \textbf{Ermittlung von Übertragungsfehlern}.
 Enthält das empfangene Codewort $c_r(x)$ ein \textbf{Fehlermuster} $e(x)$, so entspricht der
 Rest der Division (Decodierung) dem sog. Fehlersyndrom $s(x)$.
-$$ c_r(x) = c(x) + e(x) \quad \qquad \text{Definiert: }s(x) = c_r(x) \quad (mod g(x)) $$
+$$ c_r(x) = c(x) + e(x) \quad \qquad \text{Fehlersyndrom: } \boxed{s(x) = c_r(x) \quad \mod{g(x)}} $$
 % $$ d(x) = \dfrac{c(x)}{g(x)} \Longrightarrow \dfrac{c_r(x)}{g(x)} = d(x) + \dfrac{s(x)}{g(x)}$$
-$$ \text{Aus } c(x) = d(x)\cdot g(x) \text{ folgt } \boxed{s(x) = e(x) \mod{(g(x))}}$$
+$$ \text{Aus } c(x) = d(x)\cdot g(x) \text{ folgt } s(x) = e(x) \mod{g(x)}$$
 
 	Die Fehlermuster $e(x)$ und die dazugehörigen Fehlersyndrome $s(x)$ werden in einer
 \textbf{Tabelle} erfasst, sodass bei einem Syndrom $s(x)$ gerade auf das entsprechende Fehlermuster $e(x)$
@@ -294,7 +293,7 @@ abhängig ist.
 \begin{minipage}{9.5cm}
 	Zur Codierung der Datenworte dient ein m-faches ($m = n-k$) \textbf{Schieberegister}. \\
 	Das Datenwort muss mit \textbf{Zero-Padding} (konstante Länge, d.h. vorne mit 0 aufgefüllt) vorhanden sein.
-	Zudem gilt in der nebenstehenden Form ``\textbf{LSB first}" ($d_0$) . Ist ``MSB first'' gewünscht, so muss
+	Zudem gilt in der nebenstehenden Form ``\textbf{LSB first}" ($d_0$) . Ist ``MSB first''($d_{k-1}$) gewünscht, so muss
 	lediglich die Reihenfolge von $g_i$ getauscht werden.
 \end{minipage}
 
@@ -306,7 +305,7 @@ abhängig ist.
 	Die Decodierung der Codeworte erfolgt durch ein (n-k-1)-faches \textbf{Feedback-Schieberegister}.\\
 	Nach $n$-Taktzyklen entspricht der Ausgang dem Datenwort $d$ und der Inhalt des Schieberegisters
 	dem Fehlersyndrom (Rest der Division). \\ 
-	Das Codewort muss in der nebenstehenden Form mit \textbf{``MSB first''} vorliegen.
+	Das Codewort muss in der nebenstehenden Form mit \textbf{``MSB first''} ($c_{n-1}$) vorliegen.
 \end{minipage}
 
 
@@ -314,7 +313,7 @@ abhängig ist.
 Ein zyklischer Blockcode kann immer in eine systematische Form gebracht werden, ohne dass die
 Hamming-Distanz verändert wird oder die zyklische Eigenschaft verloren geht.
 Die Matrix G eines nicht-systematischen zyklischen Codes kann durch die Zeilen $g(x), x\cdot g(x), \ldots, x^{k-1}\cdot g(x)$ gebildet werden. 
-$\Rightarrow$ Durch Zeilenoperationen (Additionen) kann G in eine systematisch Form gebracht werden. Oft ist es üblich den systematischen Teil (Einheitsmatrix) im rechten Teil der Matrix G unterzubringen.\\
+$\Rightarrow$ Durch Zeilenkombination (Additionen) kann G in eine systematisch Form gebracht werden. Oft ist es üblich den systematischen Teil (Einheitsmatrix) im rechten Teil der Matrix G unterzubringen.\\
 \hspace*{0.5cm}$ c(x) = p(x) + x^{n-k}\cdot d(x)$\\
 \includegraphics[width = 12cm]{./bilder/11_cyc_hw_imp_sys_code}
 

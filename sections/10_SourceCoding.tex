@@ -182,29 +182,22 @@ werden.
 \end{center}
 \end{minipage}
 
-\textbf{Binärer Symmetrischer (binary symmetrical) Kanal} \\
+\textbf{Binärer (binary) Kanal} \\
 \begin{minipage}{14cm}
 	$$ [P(Y | X)] = \begin{bmatrix}
-           		1-p & p \\
-           		p & 1-p
+           		1-p_1 & p_1 \\
+           		p_2 & 1-p_2
            \end{bmatrix} $$
     $$ p = p_e = Fehler-WSK$$
+    $$ \text{symmetrisch: } p_1 = p_2$$
 \end{minipage}
 \begin{minipage}{4cm}
 \begin{center}
-	\adjustbox{width=5cm}{\input{./tikz/channel_binary_sym}}
+	\adjustbox{width=5cm}{\input{./tikz/channel_binary}}
 \end{center}
 \end{minipage}
 
-
-
-% \subsection{Gegenseitige (mutual) Information \schaum{250-10.4}}
-%  TODO \subsubsection{Bedingte Entropien}
-%
-%  TODO \subsubsection{Gegenseitige Information}
-% \textbf{TODO}
-
-\subsubsection{Bedingte Entropien , Gegenseitige Information \schaum{25-10.4}}
+\subsubsection{Bedingte Entropien , Gegenseitige Information \schaum{250-10.4}}
 	\textbf{Bedingte Entropie $H(Y|X)$}\\
 	$\bullet$ Informationsbedarf um aus gesendetem X empfangenes Y zu bestimmen: $H(Y|X)	=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j) log_2(P(y_j|x_i))$ \\
 	\textbf{Bedingte Entropie $H(X|Y)$}\\
@@ -214,7 +207,7 @@ werden.
 		$H(X,Y) = H(X|Y) + H(Y)$ \\
 		$H(X,Y) = H(Y|X) + H(X)$
 	} \\
-	\textbf{Gegenseitige (mutual) Information}\\
+	\textbf{Gegenseitige (mutual) Information} in b/(Symbol)\\
 	$\bullet$ Information, welche vom Eingang zum Ausgang des Kanales transferiert wird: $I(X;Y) = H(X)-H(X|Y)$\\
 	\hspace*{0.5cm} Eigenschaften: \quad \parbox{12cm}{
 	$I(X;Y) = H(X)-H(X|Y) = H(Y)-H(Y|X) = I(Y;X)$ \\
@@ -272,21 +265,21 @@ Gilt für eine DMS mit endlicher Entropie.
 	\abovedisplayskip=-15pt % Hack um den überflüssigen Whitespace zu entfernen.
 	\begin{align*}
 		L 		 &= \sum\limits_{i=1}^m P(x_i) n_i \geq H(X)\\
-		\eta	 & = \frac{L_{min}}{L} = \frac{H(x)}{L}  \\
+		\eta	 & = \frac{L_{min}}{L} = \frac{H(X)}{L}  \\
 		R_c(X) &  = L - H(X) \\
 		\gamma_c &  = 1-\eta \\
 		R_q(X)	 &= \gamma_q = H_{max} - H(x) = \log_2(m) - H(X) \\
 	\end{align*}
 	
 	\begin{tabular}{lll}
-		$L$ 		& Mittlere Codelänge & $[L]$ = Bits/Symbol \\
+		$L$ 		& Mittlere Codelänge & $[L]$ = b/Symbol \\
 		$L_{min}$ 	& kleinstmölgliches L &  \\
 		$P(x_i)$	& Auftretens-WSK des Symbols \\
 		$n_i$ 		& Symbollänge & $[n_i] = $ Bits \\
 		$m$ 		& Anzahl Symbole des Codes \\
 		$\eta$ 		& Effizienz \\
 		$\gamma_c$  & Code-Redundanz  & \\
-		$R_c(X)$    & Redundanz der Codierung & \\
+		$R_c(X)$    & Redundanz der Codierung & $[R_c(X)] = $ b/Symbol\\
 		$H(X)$ 		& Entropie &  $[H(X)] = $ b/Symbol 
 	\end{tabular}
 \end{multicols}

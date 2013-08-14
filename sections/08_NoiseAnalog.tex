@@ -45,7 +45,7 @@ Wiederum müssen ebenfalls gewisse Einschränkungen gemacht werden für eine ein
   Signalleistung am Ausgang des Empf.: 
   & $S_o = E[X_o^2(t)] = E[X^2(t-t_d)] = \frac{1}{2\pi}\int\limits_{-W}^{+W}S_{XX}(\omega)d\omega = S_X = S_i$\\
   Rauschleistung am Ausgang des Empf.: 
-  & $N_o = E[n_o^2(t)] = \frac{1}{2\pi}\int\limits_{-W}^{+W}S{nn}(\omega) \;d\omega  = \frac{1}{2\pi}\int\limits_{-W}^{+W}\frac{1}{2/pi}\; d\omega = \eta \frac{W}{2\pi} = \eta B$\\
+  & $N_o = E[n_o^2(t)] = \frac{1}{2\pi}\int\limits_{-W}^{+W}S{nn}(\omega) \;d\omega  = \frac{1}{2\pi}\int\limits_{-W}^{+W}\frac{\eta}{2}\; d\omega = \eta \frac{W}{2\pi} = \eta B$\\
   
 \end{tabular}
 
@@ -166,7 +166,7 @@ $$B_{FM} = 2(\Delta f + B_S) = 2(D+1)B_S \qquad mit \quad B_S = B_m + \underbrac
 \newpage
 \subsection{Zusammenfassende Tabelle \tiny{(Freundlicherweise zur Verfügung gestellt von Herrn T.
 Kneubuehler})}
-\renewcommand{\arraystretch}{2.3}
+\renewcommand{\arraystretch}{2.4}
 \begin{tabular}{|c|c|c|c|c|c|c|}
   \hline
     & Baseband
@@ -264,7 +264,7 @@ Kneubuehler})}
 \\[0.5cm]
 \textbf{Wichtige Anmerkung}  \\
 \begin{itemize}
-  \item $S_X = (\frac{s_{pk}}{c})^2$
+  \item $S_X = (\frac{X_{pk}}{c})^2$
   \item Die Formeln der Tabelle gelten für dimensionslose, stationäre und mittelwertfreie Signale.
   \item Der Zufallsprozess liegt zudem in normierter Form vor, wie aus der Tabelle hervorgeht.
   \item Soll die SNR für konkrete physikalisch vorliegende Signale berechnet werden,
