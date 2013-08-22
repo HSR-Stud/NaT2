@@ -239,8 +239,8 @@ $$ g(x) = \textcolor{blue}{g_0} + g_1 x + g_2 x^2 + \ldots + \textcolor{blue}{g_
 \quad \text{mit (} \textcolor{blue}{g_{n-k} = g_0 = 1} \text{) } \qquad \Longrightarrow \qquad
 c(x) = d(x) \cdot g(x)$$
 Das Generatorpolynom wird durch \textbf{Modulo-2-Faktorzerlegung} (sehr kompliziert) gewonnen: 
-$$ (x^n + 1) = q(x) \cdot \textcolor{green}{g(x)} \qquad \qquad \text{Bsp.: } \quad (n=7,k=4) \quad
-\Rightarrow \quad (x^7 + 1) = (x+1)\textcolor{green}{(x^3+x+1)(x^3+x^2+1)}$$ Jedes Polynom der
+$$ (x^n + 1) = q(x) \cdot \textcolor{purple}{g(x)} \qquad \qquad \text{Bsp.: } \quad (n=7,k=4) \quad
+\Rightarrow \quad (x^7 + 1) = (x+1)\textcolor{purple}{(x^3+x+1)(x^3+x^2+1)}$$ Jedes Polynom der
 Faktorzerlegung vom Grad ($n-k$) mit $g_{n-k} = g_0 = 1$ kann als Generatorpolynom verwendet
 werden. Mittels \textbf{\matlab{cyclpoly(n,k,'all')}} können alle möglichen Generatorpolynome
 erzeugt werden.
