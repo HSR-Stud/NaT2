@@ -202,7 +202,7 @@ Dies ist bei gleichbleibender Temperatur \textbf{ergodisch}.
 
 
 \subsection{Korrelationen und Leistungsspektren von WSS-Prozessen \schaum{169-7.4}}
-Formeln in diesem Abschnitt gelten für \textbf{schwach stationäre} Prozesse. \\
+Formeln in diesem Abschnitt gelten auch für \textbf{schwach stationäre} Prozesse. \\
 
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}[c]{|p{4cm}|p{6cm}|p{7.5cm}|}
@@ -252,7 +252,7 @@ Formeln in diesem Abschnitt gelten für \textbf{schwach stationäre} Prozesse. \
 	\hspace{0.25cm}
 	\parbox{3.75cm}{\includegraphics[width = 3.75cm]{./bilder/07_stat_autokorr}}
 	\hspace{0.25cm}
-	\parbox{4cm}{$R_{XX}(\tau)=\sum p_{xx_i} \cdot A_i$, dabei Fallunterscheidung mit $\tau$}
+	\parbox{4cm}{$R_{XX}(\tau)=\sum p_{xx_i} \cdot A_i^2$, dabei Fallunterscheidung mit $\tau$}
 	
 
 \subsubsection{Spektrale Leistung \schaum{170-7.4.E,F}}
@@ -331,10 +331,10 @@ $\mu_{X}(t)$ und $R_{XX}(t_{1}, t_{2})$ charakterisisieren einen gauss'schen Zuf
 Ist ein gauss'scher Prozess WSS ist er zugleich auch SSS. Zudem ist ein gauss'scher
 Zufallsprozess $X(t)$ am Ausgang eines LTI Systems $Y(t)$ wiederum gaussisch.
 
-\subsubsection{Weisses Rauschen  \schaum{173-7.6.B}}
+\subsubsection{Weisses, gauss'sches Rauschen  \schaum{173-7.6.B}}
 \begin{center}
 	\begin{minipage}{8cm}
-		$S_{XX}(\omega) = \dfrac{\eta}{2} \qquad R_{XX}(\tau) = \dfrac{\eta}{2} \cdot \delta(\tau)$ \\ mit $\eta = \frac{N}{B}$ \qquad $N = (\overline{\sigma}_{WS})^2 = Var_{WS}$\\ \\
+		$S_{XX}(\omega) = \dfrac{\eta}{2} \qquad R_{XX}(\tau) = \dfrac{\eta}{2} \cdot \delta(\tau)$ \\ mit $\eta = \frac{N}{B}$ \qquad $N = (\overline{\sigma}_{WS})^2$\\ \\
 		Beispiel: therm. Rauschen von Widerständen \\
 		\textbf{Nimmt} in der Praxis im \textbf{Tera-Hz Bereich ab}!
   	\end{minipage}
