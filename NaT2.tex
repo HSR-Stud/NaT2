@@ -2,8 +2,8 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{Nachrichtentechnik 2 - Formelsammlung}
-\newcommand{\authorinfo}{Braun \& Co, DIE SCHWEISSER, K\"orner, Gwerder}
-\newcommand{\versioninfo}{$Revision: 2.0$ - gem\"ass Unterricht Thomas Kneubühler/FS2013}
+\newcommand{\authorinfo}{Braun \& Co, DIE SCHWEISSER, K\"orner, Gwerder, Fischer}
+\newcommand{\versioninfo}{$Revision: 2.0$ - gem\"ass Unterricht Thomas Kneubühler/FS2014}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -22,6 +22,7 @@
 \usetikzlibrary{fit}
 \usetikzlibrary{calc}
 \include{./tikz/styles}
+\usepackage{array} 
 
 % Möglichst keine Ergänzungen hier, sondern in header.tex
 \begin{document}
@@ -45,4 +46,9 @@
 \input{sections/11_ChannelCoding.tex}
 \newpage
 \input{sections/99_UebungsVZ.tex}
+\newpage
+\begin{appendix}
+\input{sections/app_ErrorFunctionQTable.tex}
+\end{appendix}
+
 \end{document}
