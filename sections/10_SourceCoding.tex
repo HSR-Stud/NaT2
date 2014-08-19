@@ -218,15 +218,17 @@ werden.
 	$$ C_s = \max\limits_{\{ P(x_i) \}}{I (X; Y)} $$
 	$$ C = r_b C_s $$
 	$$ r_s H(X) \leq C$$
+	$$ r_b = r_s \cdot n_i$$
 \end{minipage}
 \begin{minipage}[c]{10cm}
 	$C_s$ Kanalkapazität pro Symbol, $[C_s]$ = b/Symbol \\
 	$C$ Kanalkapazität pro Sekunde, $[C]$ = b/s \\
 	$r_s$ Symbolrate Quelle, $r_b$ Bitrate Kanal, $[r]$ = Symbol/s \\
-	Bedingung für eine (theoretisch) fehlerfreie Übertragung
+	Bedingung für eine (theoretisch) fehlerfreie Übertragung \\
+	$n_i$ mittlere Codelänge
 \end{minipage}
 
-\subsubsection{Kanalkapazitätien spezieller Kanäle}
+\subsubsection{Kanalkapazitäten spezieller Kanäle}
 
 	\renewcommand{\arraystretch}{2}
 	\begin{tabular}{| p{3.5cm} | p{7.5cm} | p{6.5cm} |}
@@ -265,6 +267,7 @@ Gilt für eine DMS mit endlicher Entropie.
 	\abovedisplayskip=-15pt % Hack um den überflüssigen Whitespace zu entfernen.
 	\begin{align*}
 		L 		 &= \sum\limits_{i=1}^m P(x_i) n_i \geq H(X)\\
+		L_{fix}	 &= floor(\log_2(n))\\
 		\eta	 & = \frac{L_{min}}{L} = \frac{H(X)}{L}  \\
 		R_c(X) &  = L - H(X) \\
 		\gamma_c &  = 1-\eta \\
@@ -273,14 +276,16 @@ Gilt für eine DMS mit endlicher Entropie.
 	
 	\begin{tabular}{lll}
 		$L$ 		& Mittlere Codelänge & $[L]$ = b/Symbol \\
+		$L_{fix}$	& Codelänge bei fixed code	& $[L]$ = b/Symbol \\
 		$L_{min}$ 	& kleinstmögliche mittlere Codelänge &  \\
 		$P(x_i)$	& Auftretens-WSK des Symbols \\
 		$n_i$ 		& Symbollänge & $[n_i] = $ Bits \\
 		$m$ 		& Anzahl Symbole des Codes \\
-		$\eta$ 		& Effizienz \\
+		$\eta$ 		& Effizienz & $[\%]$\\
 		$\gamma_c$  & Code-Redundanz  & \\
 		$R_c(X)$    & Redundanz der Codierung & $[R_c(X)] = $ b/Symbol\\
-		$H(X)$ 		& Entropie &  $[H(X)] = $ b/Symbol 
+		$R_q(X)$    & Redundanz der Quelle & $[R_q(X)] = $ b/Symbol\\
+		$H(X)$ 		& Entropie &  $[H(X)] = $ b/Symbol
 	\end{tabular}
 \end{multicols}
 
@@ -425,5 +430,6 @@ steigern.
 	\begin{itemize}
 	  \item Maximale Effizienz
 	  \item Keine reduntante Bits (vgl. Prüfung Aug. 2010)
+	  \item Präfix frei
 	\end{itemize}
 \end{multicols}
