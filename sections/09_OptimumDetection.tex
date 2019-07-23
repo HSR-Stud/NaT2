@@ -125,9 +125,10 @@ Mit ($P(s_2) = P(s_1) = 0.5$) und ($\lambda_0 = \dfrac{a_1 + a_2}{2}$) gilt für
 	\begin{minipage}{14cm}
 		Mit $E_d$ als Energie des Differenzsignals $s(t) = s_1(t) - s_2(t)$ ; $ E_d = \int\limits_{0}^{T}[s_1(t) - s_2(t)]^2 \; dt$ \\
 		
-		Fehler- WSK des ML-Detektors: $P_e = Q\left(\frac{a_1 - a_2}{2\sigma_{n_o}}\right)  = Q\left(\sqrt{\frac{E_d}{2 \eta}} \right)$
+		Fehler-WSK des ML-Detektors: $P_e = Q\left(\frac{a_1 - a_2}{2\sigma_{n_o}}\right)  = Q\left(\sqrt{\frac{E_d}{2 \eta}} \right)$
 	\end{minipage}
  	
+ 	Graphische Konstruktion der Impulsantwort $h(t)$ des Matched Filters: \skript{189}
 
 \subsubsection{Variante zum Matched-Filter: Korrelator} \label{09_korrelator}
 Für den Sample Zeitpunkt ($t=T$) sind die Eigenschaften eines \textbf{Matched-Filters} und diejenigen eines
@@ -138,15 +139,15 @@ h_{MatchedFilter}(t)} \int_0^t r(\tau) s[T - (t - \tau)] d\tau \overbrace{=}^{t 
 r(\tau)s(\tau) \; d\tau}_{\text{Korrelator}}$$
 
 	\begin{center}
-		\begin{minipage}[c]{4.5cm}
-			\includegraphics[width=4.5cm]{../NaT2/bilder/09_matched_filter.png}
+		\begin{minipage}[c]{3.5cm}
+			\includegraphics[width=3.5cm]{../NaT2/bilder/09_matched_filter.png}
 			\centering Matched Filter
 		\end{minipage}
 		\begin{minipage}[c]{2cm}		
 			$$\Longleftrightarrow $$
 		\end{minipage}
-		\begin{minipage}[c]{4.5cm}
-			\includegraphics[width=4.5cm]{../NaT2/bilder/09_correlator.png}
+		\begin{minipage}[c]{3.5cm}
+			\includegraphics[width=3.5cm]{../NaT2/bilder/09_correlator.png}
 			\centering Korrelator
 		\end{minipage}
 	\end{center}
