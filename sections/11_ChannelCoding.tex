@@ -73,7 +73,7 @@ gegeben. \\
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}[c]{ p{5.5cm}  p{13cm} }
 	Anzahl \textbf{detektierbare} Fehler & $t_d = d_{min} - 1$ \\
-	Anzahl \textbf{korrigierbare} Fehler & $t_c = \frac12 (d_{min} - 1) = \frac12 t_d$
+	Anzahl \textbf{korrigierbare} Fehler & $t_c = floor(\frac12 (d_{min} - 1)) = floor(\frac12 t_d) $
 \end{tabular}
 \renewcommand{\arraystretch}{1} \\
 
@@ -87,10 +87,10 @@ gegeben. \\
 	eindeutig feststellen, zu welchem ``Kreis'' das empfangene Zeichen gehört - Abb. (b).
 \end{minipage} 
 
-\subsection{Systematische Codes \skript{210-218}}
+\subsubsection{Systematische Blockcodes \skript{210-218}}
 \begin{minipage}{5.5cm}
 	\includegraphics[width=5cm]{../NaT2/bilder/11_systematic_code.png}
-	\centering geordnet-systematischer Code
+	\centering \textbf{geordnet-systematischer Code}
 \end{minipage}
 \begin{minipage}{12.8cm}
 	Ein Code gilt als systematisch, sobald alle \textbf{Datenbits} $d_i$ an irgendeiner Stelle des Codes $c_i$
@@ -100,20 +100,20 @@ gegeben. \\
     	\item CRC (Cyclic Redundancy Check) bei MP3, JPEG, \ldots
     	\item Parity Check bei RS232
   	\end{itemize}	
-	Die Coderate $R_C$ Ist das Verhältnis zwischen Codelänge und Nutzdaten: $\frac{k}{n}$
+	Die Coderate ist das Verhältnis zwischen Codelänge und Nutzdaten: $R_C = \frac{k}{n}$
 \end{minipage} 
 
 \subsubsection{Generatormatrix G}
 Mittels der \textbf{Generatormatrix} $G$ kann das jeweilige \textbf{Codewort} $\vec{c}$ aus dem \textbf{Datenwort} $\vec{d}$
 generiert werden. Dimensionen: $\textcolor{blue}{[H\times B]}$
-$$ \vec{c}\textcolor{blue}{_{[1 \times n]}} = \begin{bmatrix} c_1 & c_2 & \ldots & c_n \end{bmatrix} =
+$$ \vec{c}\textcolor{blue}{_{[1 \times n]}} =
 \vec{d}\textcolor{blue}{_{[1 \times k]}} \cdot G\textcolor{blue}{_{[k \times n]}} =
-                \begin{bmatrix} d_1 & d_2 & \ldots & d_k \end{bmatrix} 
+                \begin{bmatrix} d_0 & d_1 & \ldots & d_{k-1} \end{bmatrix} 
 				\cdot \begin{bmatrix} 
-					1 & 0 & \ldots & 0 & p_{11} & p_{21} & \ldots & p_{m1} \\              
-					0 & 1 & \ldots & 0 & p_{12} & p_{22} & \ldots & p_{m2} \\
+					1 & 0 & \ldots & 0 & p_{00} & p_{10} & \ldots & p_{m-1 \;\; 0} \\              
+					0 & 1 & \ldots & 0 & p_{01} & p_{11} & \ldots & p_{m-1 \;\; 1} \\
 					\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
-					0 & 0 & \ldots & 1 & p_{1k} & p_{2k} & \ldots & p_{mk} \\
+					0 & 0 & \ldots & 1 & p_{0 \;\; k-1} & p_{1 \;\; k-1} & \ldots & p_{m-1 \;\; k-1} \\
 				\end{bmatrix} \overset{\textcolor{red}{*}}{=} \vec{d} \cdot [I\textcolor{blue}{_{[k \times k]}} \;
 				P^T\textcolor{blue}{_{[k \times (n-k)]}}] $$ Bei $P^T$ handelt es sich um die transponierte
 				Paritätsmatrix $P$, bei $I_k$ um die $[k \times k]$-Einheitsmatrix (\emph{I}dentität). \\
@@ -173,32 +173,27 @@ empfangene Codewort $c_r$ \textbf{korrigiert} werden. \\
 \subsection{Zyklische Blockcodes \skript{218-226}}
 Coder und Decoder von gewissen \textbf{linearen Blockcodes} sind ab einem Umfang von $n \gg 1$ und
 $k \gg 1$ sehr \textbf{aufwendig} zu realisieren. \\
-\textbf{Abhilfe} schaffen die zyklischen Blockcodes - eine \textbf{Untergruppe} der linearen Blockcodes -
-welche es erlauben mit einem \textbf{kleinen Hardwareaufwand} Coder und Decoder zu realisieren. 
+\textbf{Abhilfe} schaffen die zyklischen Blockcodes - eine \textbf{Untergruppe} der linearen Blockcodes - welche es erlauben mit einem \textbf{kleinen Hardwareaufwand} Coder und Decoder zu realisieren.\\
+Wenn die \textbf{zyklische Verschiebung} $\sigma (c)$ eines Codeworts $\vec{c} = (c_0, c_1, \ldots, c_{n-1})$ wiederum ein \textbf{gültiges Codewort} $\vec{c}$ ergibt, so handelt es sich bei dem Code um einen linearen Blockcode.
 $$ \text{1-fache: }\sigma(\vec{c}) = \vec{c}^{(1)} = (c_{n-1}, c_0, c_1, \ldots, c_{n-2}) \qquad 
- \text{2-fache }\sigma^2(\vec{c}) = \sigma\{\sigma(\vec{c})\}= \vec{c}^{(2)} = (c_{n-2}, c_{n-1}, c_0, \ldots, c_{n-3}) \qquad
- \text{n-fache }\sigma^n(\vec{c}) = \vec{c} $$
-Wenn die \textbf{zyklische Verschiebung} $\sigma (c)$ eines Codeworts $\vec{c} = (c_0, c_1, \ldots,
-c_{n-1})$ wiederum ein \textbf{gültiges Codewort} $\vec{c}$ ergibt, so handelt es sich bei dem Code um
-einen linearen Blockcode.
+\text{2-fache }\sigma^2(\vec{c}) = \sigma\{\sigma(\vec{c})\}= \vec{c}^{(2)} = (c_{n-2}, c_{n-1}, c_0, \ldots, c_{n-3}) \qquad
+\text{n-fache }\sigma^n(\vec{c}) = \vec{c} $$
 
 
 \subsubsection{Code-Polynom c(x), Modulo-2-Polynom Arithmetik}
 Zur mathematischen Behandlung werden zyklische Codes als Polynome dargestellt, wobei die
 Koeffizienten $c_i$ jeweils der binären Menge $K=\{0,1\}$ angehören.
 $$ \vec{c} = (c_0, c_1, c_2, \ldots,
-c_{n-1}) \quad \Longleftrightarrow \quad c(x) = c_0 + c_1 x + c_2 x^2 + \ldots + c_{n-1} x^{n-1} 
+c_{n-1}) \quad \Longrightarrow \quad c(x) = c_0 + c_1 x + c_2 x^2 + \ldots + c_{n-1} x^{n-1} 
 \qquad \qquad \text{Bsp.: } \vec{c} = (1, 0, 0, 1, 1, 0) \quad \Longleftrightarrow \quad c(x) = 1 + x^3 +
 x^4$$
 
-\textit{Addition, Subtraktion, Multiplikation:} \\
-Die Polynome können auf die \textbf{übliche} Weise \textbf{multipliziert} und \textbf{addiert} werden,
-\textbf{ausser} bei \textbf{gleichem Exponenten} ergibt eine \textbf{Addition Null}.
-Im binären Fall sind die Modulo-2-\textbf{Addition} und
+\textbf{\textit{Addition, Subtraktion, Multiplikation:}} \\
+Die Polynome können auf die \textbf{übliche} Weise \textbf{multipliziert} und \textbf{addiert} werden, aber bei \textbf{gleichem Exponenten} ergibt eine \textbf{Addition Null}. Im binären Fall sind die Modulo-2-\textbf{Addition} und
 -\textbf{Subtraktion identische} Operationen. 
 $$ mod2(x^k + x^k) = 0 \qquad mod2(x^k - x^k) = 0 \qquad mod2(0 + x^k) = x^k \qquad mod2(0 - x^k) = x^k$$
 
-\textit{Division:}\\
+\textbf{\textit{Division:}}\\
 Die Modulo-2-Division stellt eine etwas \textbf{spezielle} Rechnung dar.
 Eine Divison von \boldmath$f(x)$ durch $h(x)$ ergibt den Quotienten $q(x)$ mit Rest $r(x)$
 \unboldmath . 
@@ -223,7 +218,7 @@ Das \textbf{Rest-Polynom} $r(x)$ ist immer dasjenige mit dem \textbf{kleinsten G
 $\PolyGrad[r \left(x \right) ] < \PolyGrad[f \left( x \right)]$).
 \\
 
-\textit{Zyklische Verschiebung} \\
+\textbf{\textit{Zyklische Verschiebung:}} \\
 Eine $i$-\textbf{fache zyklische Verschiebung} eines Polynoms erfolgt in drei Schritten:
 $$ c^{(i)}(x) = c(x) x^i \mod{(1+x^n)}$$
 \begin{enumerate}
