@@ -4,8 +4,7 @@
 \end{center}
 
 Mit der Kanalcodierung können \textbf{Übertragungsfehler erkannt} und \textbf{beseitigt} werden.
-Dies geschieht durch Beifügen geeigneter \textbf{Redundanz}. \\
-Je nachdem wieviel Redundanz im Code vorhanden ist, handelt es sich um einen \textit{error-detecting
+Dies geschieht durch Beifügen geeigneter \textbf{Redundanz}. Je nachdem wieviel Redundanz im Code vorhanden ist, handelt es sich um einen \textit{error-detecting
 code} oder sogar um einen \textit{error-correcting code}.
 
 \subsection{Kanalcodierungstheorem \skript{207}}
@@ -86,6 +85,14 @@ gegeben. \\
 	Abstand (Hamming-Distanz) jedoch unter dem doppelten Radius ($< 2$), so kann der Decoder nicht mehr
 	eindeutig feststellen, zu welchem ``Kreis'' das empfangene Zeichen gehört - Abb. (b).
 \end{minipage} 
+
+\subsubsection{Restfehlerwahrscheinlichkeit \skript{214-215}}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}[c]{ p{0.5\linewidth} p{0.3\linewidth} }
+$P_{u_c} = \sum\limits_{i=1}^{n}n_{\omega_i} \cdot {p_e}^i \cdot (1-p_e)^{n-i} = \sum\limits_{i=d_{min}}^{n}n_{\omega_i} \cdot {p_e}^i \cdot (1-p_e)^{n-i}$
+&$n_{\omega_i}$ = Anzahl gültige Codeworte mit Hamminggewicht $\omega(\vec{c}) = i$\\
+\end{tabular}
+\renewcommand{\arraystretch}{1}
 
 \subsubsection{Systematische Blockcodes \skript{210-218}}
 \begin{minipage}{5.5cm}

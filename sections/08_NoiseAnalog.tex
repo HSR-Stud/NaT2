@@ -85,7 +85,7 @@ Das Rauschsignal am Eingang des Demodulators ist wie folgt definiert
   \hspace*{0.3cm} $Y_o(t) = A_c X(t) + n_c(t) = X_o(t) + n_o(t)$
 \end{minipage}\\ \\
 Ein Mass für die Effizienz des Demodulators ist der sogenannte Detektor-Gewinn: \\
-$$ \alpha_{d_{DSB-SC}} = \dfrac{\text{SNR}_{out}}{\text{SNR}_{in}} = 2 \approx 3 dB
+$$ \alpha_{d_{DSB-SC}} = \dfrac{\text{SNR}_{out}}{\text{SNR}_{in}} = \frac{\frac{S_i}{\eta \cdot B} \cdot cos^2\varphi}{\frac{S_i}{2\eta \cdot B}} = 2cos^2(\varphi) \leq 2 \approx 3 dB
 \qquad \qquad
  \alpha_{d_{SSB}} = \dfrac{\text{SNR}_{out}}{\text{SNR}_{in}} = 1
 $$
@@ -112,8 +112,7 @@ Somit haben im Endeffekt SSB und DSB-SC \textbf{dieselbe Rausch-Performance} wie
 $$ \left(\dfrac{S}{N}\right)_0 =
 \dfrac{\mu^2 S_x}{1 + \mu^2 S_x} \left(\dfrac{S_i}{\eta B}\right) = \dfrac{\mu^2 S_x}{1 + \mu^2
 S_x} \gamma \underbrace{\leq \dfrac{\gamma}{2}}_{\text{daher weniger geeignet als DSB-SC}} \qquad \qquad
-\alpha_{d_{AM}} = \dfrac{2 \mu^2 S_x}{1 + \mu^2 S_x} \leq 1$$
-
+\alpha_{d_{AM}} = \dfrac{2 \mu^2 S_x \cdot cos^2\varphi}{1 + \mu^2 S_x} \leq 1$$
 
 \textbf{Enveloppe Detektor} \\
 Für \boldmath$ \textbf{SNR}_i \gg 1 $ gelten dieselben Formeln wie beim \textbf{synchronen
@@ -264,7 +263,7 @@ Kneubuehler})}
 \\[0.5cm]
 \textbf{Wichtige Anmerkung}  \\
 \begin{itemize}
-  \item $S_X = (\frac{X_{pk}}{c})^2$
+  \item $S_X = (\frac{X_{pk}}{C})^2$
   \item Die Formeln der Tabelle gelten für dimensionslose, stationäre und mittelwertfreie Signale.
   \item Der Zufallsprozess liegt zudem in normierter Form vor, wie aus der Tabelle hervorgeht.
   \item Soll die SNR für konkrete, physikalisch vorliegende Signale berechnet werden,
