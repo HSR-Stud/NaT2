@@ -267,7 +267,7 @@ Gilt für eine DMS mit endlicher Entropie.
 	\abovedisplayskip=-15pt % Hack um den überflüssigen Whitespace zu entfernen.
 	\begin{align*}
 		L 		 &= \sum\limits_{i=1}^m P(x_i) n_i \geq H(X)\\
-		L_{fix}	 &= floor(\log_2(n))\\
+		L_{fix}	 &= ceil(\log_2(n))\\
 		\eta	 & = \frac{L_{min}}{L} = \frac{H(X)}{L}  \\
 		R_c(X) &  = L - H(X) \\
 		\gamma_c &  = 1-\eta \\
