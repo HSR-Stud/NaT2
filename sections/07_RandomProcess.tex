@@ -1,4 +1,4 @@
-\section{Zufallsprozesse \schaum{165-7}}
+\section{Zufallsprozesse \skript{145-6}}
 \begin{minipage}{10.3cm}
 	\includegraphics[width=10cm]{../NaT2/bilder/07_zufallsprozess.png}
 \end{minipage}
@@ -25,13 +25,13 @@ Beispiele von Zufallsprozessen:
   Pulsformen vorbestimmt.
   \item \textbf{Manchester-Puls mit Rauschen:} Am Empfänger ist den Bitpulsen \textbf{thermisches Rauschen}
   überlagert. Da man den zeitlichen Verlauf der Rauschspannung nicht vorhersagen kann, existiert
-  eine \textbf{unendliche Anzahl Ergebnise} $\lambda$. \\
-  Eine deterministische Berechnung des zeitlichen Verlaufs ist nicht möglich, jedoch kann man die
+  eine \textbf{unendliche Anzahl Ergebnisse} $\lambda$. \\
+  Eine deterministische Berechnung des zeitlichen Verlaufs ist nicht möglich, jedoch können die
   \textbf{statistischen Eigenschaften} der Rauschquellen aufgrund des physikalischen Modells exakt berechnet
   werden.
 \end{itemize}
 
-\subsection{Statistische Mittelwerte (Scharmittel) \schaum{166-7.3.B}}
+\subsection{Statistische Mittelwerte (Scharmittel) \skript{147-149}}
 Die statistischen Mittelwerte sind eine Funktion der Zeit $t$, da es sich um Mittelwerte über das
 Ensemble (ganzer Ergebnisraum) handelt. Hierbei werden alle deterministischen Funktionen zu einem
 bestimmten Zeitpunkt $t$ gemittelt. 
@@ -51,7 +51,7 @@ bestimmten Zeitpunkt $t$ gemittelt.
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
-\subsection{Zeitliche Mittelwerte (Zeitmittel) \schaum{168-7.3.D}}
+\subsection{Zeitliche Mittelwerte (Zeitmittel) \skript{151-152}}
 Hierbei werden die jeweiligen deterministischen Funktionen (Musterfunktionen) zeitlich gemittelt.
 Wird das zeitliche Mittel über den gesamten Zufallsprozess berechnet, so handelt es sich bei den
 zeitlichen Mittelwerten um \textbf{Zufallsvariablen}, d.h. die folgenden zwei Ausdrücke sind
@@ -81,14 +81,14 @@ abhängig davon (darum Index $_i$), welche Funktion genutzt wird.
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
-\subsection{Stationarität \schaum{167-7.3.C}}
+\subsection{Stationarität \skript{149-151}}
 Ein stationärer Prozess verändert seine statistischen Eigenschaften über die
 Zeit nicht. Wenn ein Prozess ergodisch ist, ist er auch stationär (nicht
 umgekehrt).
 
 \subsubsection{Streng Stationär (SSS - Strict Sense Stationary)}
 % TODO genaue beschreibung streng, schwach stationär
-Bei einem streng stationären Prozess bleiben die n-dimensionale WSK-Dichten über die
+Bei einem streng stationären Prozess bleiben die n-dimensionalen WSK-Dichten über die
 Zeit konstant. D.h. die \textbf{statistischen Eigenschaften} und somit auch die WSK-Dichten sind zu 
 \textbf{allen Zeitpunkten dieselben}.
 \vspace{-0.2cm}
@@ -100,7 +100,7 @@ $$ f_X(x_1, x_2, \ldots, x_n; t_1, t_2, \ldots, t_n) =
 % $$E[X(t)] = \mu_{X} \qquad \qquad
 % R_{XX}(t_{1},t_{2}) = R_{XX}(\tau),\quad \text{ mit } \tau = t_{2} - t_{1} \qquad \qquad
 % C_{XX}(t_{1},t_{2}) = R_{XX}(\tau) - \mu_{X}^{2}$$ 
-Jeder streng stationäre Prozess ist auch schwach stationär, daher besitzt er die gleichen Eigenschaften wie ein WSS-Prozess
+Jeder streng stationäre Prozess ist auch schwach stationär, daher besitzt er die gleichen Eigenschaften wie ein WSS-Prozess.
 
 \subsubsection{Schwach Stationär (WSS - Wide Sense Stationary) - Stationarität 2. Ordnung}
 Bei einem schwach stationären Prozess sind die statistischen Eigenschaften zwar
@@ -126,9 +126,8 @@ $$ f_X(x_1, x_2; t_1, t_2) = f_X(x_1, x_2; t_1+c, t_2+c) \qquad \forall (c \in \
 \end{tabular}
 \renewcommand{\arraystretch}{1}
  
-Bei einem Zufallsprozess handelt es sich immer um ein WSS-Prozess, sobald der Erwartungswert
-für jede Zeit $t$ konstant bleibt und die Autokorrelationsfunktion nur eine Funktion von $\tau$ ist,
-d.h. beide statistischen Kennwerte bzgl. einer zeitlichen Verschiebung unabhängig sind.    
+Ein Zufallsprozess ist ein WSS-Prozess, sobald der Erwartungswert
+für jede Zeit $t$ konstant bleibt und die Autokorrelationsfunktion nur eine Funktion von $\tau$ ist, d.h. beide stat. Kennwerte bzgl. einer zeitlichen Verschiebung unabhängig sind.    
         
 %   \item Zwei Zufallsprozesse heissen Verbund-schwach-station\"ar, wenn jeder Prozess f\"ur sich 
 %         schwach-station\"ar ist und zudem gilt:  
@@ -143,9 +142,9 @@ d.h. beide statistischen Kennwerte bzgl. einer zeitlichen Verschiebung unabhäng
 
 %TODO verbund schwach stationär
 
-\subsection{Ergodizität \schaum{168-7.3.D}}
+\subsection{Ergodizität \skript{152-153}}
 Ein stationärer Prozess ist zudem noch ergodisch, wenn \textbf{\textcolor{red}{alle} zeitlichen
-Mittelwerten} (Zeitmittelwert und zeitlich gemittelte Autokorrelation) den \textbf{statistischen
+Mittelwerte} (Zeitmittelwert und zeitlich gemittelte Autokorrelation) den \textbf{statistischen
 Mittelwerten} (Erwartungswert und statistisch gemittelte Autokorrelation)
 \textbf{entsprechen}. Jeder ergodische Zufallsprozess ist auch stationär, aber
 nicht umgekehrt.
@@ -182,10 +181,9 @@ nicht umgekehrt.
 \subsection{Vergleich Stationär - Ergodisch}
 \subsubsection{Mückenschwarm}
 \textbf{Ergodisch:} Fliegen alle Mücken zusammen in einem Schwarm, so fliegt jede Mücke über die
-ganze Zeit gemittelt (Zeitmittel) so schnell wie der ganze Schwarm im Mitel (Scharmittel), ansonsten
+ganze Zeit gemittelt (Zeitmittel) so schnell wie der ganze Schwarm im Mittel (Scharmittel), ansonsten
 würde der Schwarm nicht zusammenhalten können. \\
-\textbf{Stationär:} Ist eine Mücke krank und kann mit dem Schwarm nicht mithalten, so fliegt sie
-alleine und v.a. langsamer. Somit ist ihre Durchschnittsgeschwindigkeit (Zeitmittel) nicht gleich
+\textbf{Stationär:} Eine kranke Mücke kann mit dem Schwarm nicht mithalten, sie fliegt alleine und v.a. langsamer. Somit ist ihre Durchschnittsgeschw. (Zeitmittel) nicht gleich
 derjenigen des Schwarms (Scharmittel), also kommt sie später am Ziel an. \\
 \textbf{Weder noch:} Fliegen die Mücken nach dem Start immer langsamer, so ist die
 durchschnittliche Geschwindigkeit des Schwarms (Scharmittel) nicht konstant.
@@ -201,7 +199,7 @@ unterschiedlich starke Schüler mit unterschiedlichen Zeugnisnoten (Zeitmittel).
 Dies ist bei gleichbleibender Temperatur \textbf{ergodisch}.
 
 
-\subsection{Korrelationen und Leistungsspektren von WSS-Prozessen \schaum{169-7.4}}
+\subsection{Korrelationen und Leistungsspektren von stationären Prozessen \skript{153-156}}
 Formeln in diesem Abschnitt gelten auch für \textbf{schwach stationäre} Prozesse. \\
 
 \renewcommand{\arraystretch}{1.6}
@@ -255,7 +253,7 @@ Formeln in diesem Abschnitt gelten auch für \textbf{schwach stationäre} Prozes
 	\parbox{4cm}{$R_{XX}(\tau)=\sum p_{xx_i} \cdot A_i^2$, dabei Fallunterscheidung mit $\tau$}
 	
 
-\subsubsection{Spektrale Leistung \schaum{170-7.4.E,F}}
+\subsubsection{Spektrale Leistung}
 Autokorrelationsfunktion $R_{XX}(\tau)$ und Leistungsspektraldichte $S_{XX}(\omega)$ bilden ein
 Fourier-\textbf{Transformationspaar}. \\ Die Leistungsspektraldichte kann als \textbf{mittlere Leistung pro Frequenzband }aufgefasst werden, sie ist
 wie folgt definiert:                             
@@ -276,7 +274,7 @@ S_{XY}(\tau)$) bilden ein Fourier-Transformationspaar.
 
 \newpage
 
-\subsection{Übertragung von Zufallsprozessen durch LTI-Systeme \schaum{171-7.5}}
+\subsection{Übertragung von Zufallsprozessen durch LTI-Systeme \skript{156-157}}
 Ein Zufallsprozess wird durch ein LTI-System übertragen. \hspace{2cm} $Y(t) = L[X(t)] \Rightarrow
 Y(t) = h(t) \ast X(t)$ \vspace{0.3cm}\\
 \renewcommand{\arraystretch}{1.5}
@@ -305,19 +303,19 @@ So gilt für alle WSS-Prozesse:\\
 	\textbf{Spektrale Leistung}
 		& $S_{YY}(\omega)=\int\limits_{-\infty}^{+\infty} R_{YY}(\tau)\cdot e^{-j\omega\tau} \; d\tau =  H^{\ast}(\omega) H(\omega) S_{XX}(\omega)
 			= |H(\omega)|^{2} S_{XX}(\omega)$  \\
-	\textbf{Autokolleration}
+	\textbf{Autokorrelation}
 			& $R_{YY}(\tau)=\frac{1}{2 \pi} \int\limits_{-\infty}^{+\infty} S_{YY}\cdot e^{j\omega\tau} \; d\omega= \frac{1}{2 \pi} \int\limits_{-\infty}^{+\infty} |H(\omega)|^2 S_{XX}(\omega)\cdot e^{j\omega\tau} \; d\omega$\\	
 	\textbf{Mittlere Leistung}
 		& $E[Y^2(t)] = R_{YY}(0) = \frac{1}{2 \pi}\int\limits_{-\infty}^{+\infty} |H(\omega)|^2 S_{XX}(\omega) \; d\omega$\\
 	\hline
 \end{tabular}
 \renewcommand{\arraystretch}{1} \\
-\textcolor{red}{*} = Es ist viel einfacher die Autokorrelation aus der Spektralen Leistung
+\textcolor{red}{*} = Es ist viel einfacher die Autokorrelation aus der spektralen Leistung
 (Transformationspaar) - anstatt aus diesem höllischen Integral - auszurechnen. \\
 
 
-\subsection{Spezielle Zufallsprozesse \schaum{172-7.6}}
-\subsubsection{Gauss'scher Zufallsprozess \schaum{172-7.6.A}}
+\subsection{Spezielle Zufallsprozesse \skript{157-159}}
+\subsubsection{Gauss'scher Zufallsprozess}
 Bei diesem Prozess ist die \textbf{Zufallsvariable} $X(t_{i})$ zu \textbf{jedem Zeitpunkt} $t_{i}$
 \textbf{gaussverteilt}. Bsp.: thermisches Rauschen. \\
 Zweidimensionaler Fall (gauss'sche Verbunddichte): 
@@ -326,12 +324,12 @@ Zweidimensionaler Fall (gauss'sche Verbunddichte):
                                       e^{-\frac{(x_{2}-\mu_{x_{2}})^{2}}{2 \sigma^{2}_{x_{2}}}}$$ \\
 Für unkorrelierte $X(t_{1})$ und $X(t_{2})$  ($C_{XX}(t_{1},t_{2})=0$) gilt:
         $$f_{X}(x_{1},x_{2}; t_{1},t_{2}) = f_{X}(x_{1};t_{1}) \cdot f_{X}(x_{2};t_{2}) \text{, also unabhängig} $$
-$\mu_{X}(t)$ und $R_{XX}(t_{1}, t_{2})$ charakterisisieren einen gauss'schen Zufallsprozess
+$\mu_{X}(t)$ und $R_{XX}(t_{1}, t_{2})$ charakterisieren einen gauss'schen Zufallsprozess
         vollst\"andig. \\
 Ist ein gauss'scher Prozess WSS ist er zugleich auch SSS. Zudem ist ein gauss'scher
-Zufallsprozess $X(t)$ am Ausgang eines LTI Systems $Y(t)$ wiederum gaussisch.
+Zufallsprozess $X(t)$ am Ausgang eines LTI-Systems $Y(t)$ wiederum gaussisch.
 
-\subsubsection{Weisses, gauss'sches Rauschen  \schaum{173-7.6.B}}
+\subsubsection{Weisses, gauss'sches Rauschen}
 \begin{center}
 	\begin{minipage}{8cm}
 		$S_{XX}(\omega) = \dfrac{\eta}{2} \qquad R_{XX}(\tau) = \dfrac{\eta}{2} \cdot \delta(\tau)$ \\ mit $\eta = \frac{N}{B}$ \qquad $N = (\overline{\sigma}_{WS})^2$\\ \\
@@ -380,7 +378,7 @@ Zufallsprozess $X(t)$ am Ausgang eines LTI Systems $Y(t)$ wiederum gaussisch.
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
-\subsubsection{Bandbeschränktes Rauschen \schaum{174-7.6.C}}
+\subsubsection{Bandbeschränktes, weisses Rauschen}
 \begin{center}
 	\begin{minipage}{8cm}
 		$S_{XX}(\omega) = \begin{cases}
@@ -396,7 +394,7 @@ Zufallsprozess $X(t)$ am Ausgang eines LTI Systems $Y(t)$ wiederum gaussisch.
   	\end{minipage}
 \end{center}
 
-\subsubsection{Schmalbandiger Zufallsprozess \schaum{174-7.6.D}}
+\subsubsection{Schmalbandiger Zufallsprozess}
 \label{schmalbandiger_zufallsprozess}
 	\begin{minipage}{9.5cm}
 		\includegraphics[width=9cm]{../NaT2/bilder/07_schmalbandiger_zufallsprozess.png}
@@ -404,7 +402,7 @@ Zufallsprozess $X(t)$ am Ausgang eines LTI Systems $Y(t)$ wiederum gaussisch.
 	\begin{minipage}{8.8cm}
 		Hierbei handelt es sich um einen WSS-Prozess mit \textbf{sehr kleiner Bandbreite} $2W$ verglichen mit der
 		Mittenfrequenz $\omega_c$. \\
-		Dies ist beispielsweise der Fall wenn \textbf{thermisches Widerstandrauschen} durch ein schmalbandiges
+		Dies ist beispielsweise der Fall wenn \textbf{thermisches Widerstandsrauschen} durch ein schmalbandiges
 		Bandpass gefiltert wird. \\
 		Im \textbf{Zeitbereich} manifestiert sich diese Funktion als \textbf{sinusförmiges} Signal mit
 		zufälliger Amplitude und Phase. \\

@@ -1,14 +1,13 @@
-\section{Kanalcodierung \schaum{282-11}} 
+\section{Kanalcodierung \skript{207-228}} 
 \begin{center}
 	\includegraphics[width=11cm]{../NaT2/bilder/11_channel_coding_blockdiag.png}
 \end{center}
 
 Mit der Kanalcodierung können \textbf{Übertragungsfehler erkannt} und \textbf{beseitigt} werden.
-Dies geschieht durch beifügen geeigneter \textbf{Redundanz}. \\
-Je nachdem wieviel Redundanz in dem Code beinhaltet ist, handelt es sich um einen \textit{error-detecting
+Dies geschieht durch Beifügen geeigneter \textbf{Redundanz}. Je nachdem wieviel Redundanz im Code vorhanden ist, handelt es sich um einen \textit{error-detecting
 code} oder sogar um einen \textit{error-correcting code}.
 
-\subsection{Kanalkodierungstheorem - Shannon \schaum{282-11.2B}}
+\subsection{Kanalcodierungstheorem \skript{207}}
 Gegeben seien DMS mit Entropie $H(X)$ und DMC mit Kanalkapazität $C_s$. 
 
 \begin{itemize}
@@ -22,10 +21,10 @@ Bitfehler in der Übertragung verunmöglichen einen zuverlässigen Informationsa
 sondern beschränken die nutzbare Übertragungsrate - je mehr Fehler desto mehr Übertragungsrate
 wird für die Fehlerkorrektur benötigt. \\
 
-\subsection{Blockcodes}
-Hierbei wird aus (relativ kleinen) Datenblöcken mit \boldmath$k$ \textbf{Eingangssymbolen} Codes mit
+\subsection{Blockcodes \skript{208-210}}
+Hierbei werden aus (relativ kleinen) Datenblöcken mit \boldmath$k$ \textbf{Eingangssymbolen} Codes mit
 je $n$ \unboldmath \textbf{Ausgangssymbolen} (mit $n > k$) generiert. Wobei jeder dieser Blöcke
-separat Codiert wird. Man spricht dann auch von einem $(n,k)$-Code. Beispielsweise handelt es
+separat codiert wird. Man spricht dann auch von einem $(n,k)$-Code. Beispielsweise handelt es
 sich bei einer RS232-Übertragung mit 8 Daten- und 1 Paritätsbit um einen $(9,8)$-Code. \\
 \hspace*{0.5cm} \parbox[c][1cm]{5cm}{\textbf{Coderate} $R_c = \frac{k}{n}$}\\
 In unserem Fall (binär) kann ein Symbol zwei Zustände aufweisen. Diese Zustände sind in der binären
@@ -38,7 +37,7 @@ Folgende mathematische Operatoren werden auf diese Menge angewendet:
 \end{itemize}
 
 
-\subsection{Lineare Blockcodes \formelbuch{283-11.4}}
+\subsubsection{Lineare Blockcodes}
 Ein Code gilt als linear, falls die Summe jeder beliebigen Codeworte ($\vec{a},\vec{b}$) wiederum auch ein
 Codewort ($\vec{c}$) ist. 
 $$\vec{a} = (a_1, a_2, \ldots, a_n) \quad \text{ und } \quad \vec{b} = (b_1, b_2, \ldots, b_n) \quad
@@ -48,7 +47,7 @@ Wegen: $\quad \vec{a} \oplus \vec{a} = \vec{b} \oplus \vec{b} = 0 = (0,0,\ldots,
 zu jedem linearen Code der \textbf{Nullvektor} $\vec{0}$ gehört. Jeder Code der mit einer Generatormatrix
 gebildet werden kann ist ein linearer Code.
 
-\subsubsection{Hamming-Gewicht, (minimale) Hamming-Distanz \formelbuch{283-11.4.C,D}}
+\subsubsection{Hamming-Gewicht, (minimale) Hamming-Distanz}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}[c]{ p{5.0cm}  p{5.0cm} p{9cm} }
 	\textbf{Hamming-Distanz}:
@@ -56,7 +55,7 @@ gebildet werden kann ist ein linearer Code.
 	& \textbf{Anzahl unterschiedliche Stellen} zweier Codeworte \\
 	\textbf{Minimale Hamming-Distanz}\textcolor{red}{*}:
 	& $d_{min} = \min[d(\vec{a},\vec{b})] \underbrace{= \min{[w(\vec{c})]}}_{\text{wenn lin. Code C}}$
-	& \parbox[c]{9cm}{\textbf{Minimum} der Distanz aller mög. Codewort-Paarte\\
+	& \parbox[c]{9cm}{\textbf{Minimum} der Distanz aller mögl. Codewort-Paare\\
 	Bei lin. Code: \textbf{Kleinstes} Hamming-Gewicht aller Codeworte} \\
 	\textbf{Hamming-Gewicht}: 
 	& $w(\vec{c}) = d(\vec{c},0)$
@@ -67,13 +66,13 @@ gebildet werden kann ist ein linearer Code.
 \verweiskurz{paritycheckmatrix} berechnet werden.
 
 
-\subsubsection{Fehlererkennung- und Fehlerkorrektur-Möglichkeiten}
+\subsubsection{Fehlererkennungs- und Fehlerkorrektur-Möglichkeiten}
 Durch die minimale Hamming-Distanz ist die Anzahl korrigierbarer und detektierbarer Fehler
 gegeben. \\
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}[c]{ p{5.5cm}  p{13cm} }
 	Anzahl \textbf{detektierbare} Fehler & $t_d = d_{min} - 1$ \\
-	Anzahl \textbf{korrigierbare} Fehler & $t_c = \frac12 (d_{min} - 1) = \frac12 t_d$
+	Anzahl \textbf{korrigierbare} Fehler & $t_c = floor(\frac12 (d_{min} - 1)) = floor(\frac12 t_d) $
 \end{tabular}
 \renewcommand{\arraystretch}{1} \\
 
@@ -87,41 +86,49 @@ gegeben. \\
 	eindeutig feststellen, zu welchem ``Kreis'' das empfangene Zeichen gehört - Abb. (b).
 \end{minipage} 
 
-\subsection{Systematische Codes}
+\subsubsection{Restfehlerwahrscheinlichkeit \skript{214-215}}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}[c]{ p{0.5\linewidth} p{0.3\linewidth} }
+$P_{u_c} = \sum\limits_{i=1}^{n}n_{\omega_i} \cdot {p_e}^i \cdot (1-p_e)^{n-i} = \sum\limits_{i=d_{min}}^{n}n_{\omega_i} \cdot {p_e}^i \cdot (1-p_e)^{n-i}$
+&$n_{\omega_i}$ = Anzahl gültige Codeworte mit Hamminggewicht $\omega(\vec{c}) = i$\\
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\subsubsection{Systematische Blockcodes \skript{210-218}}
 \begin{minipage}{5.5cm}
 	\includegraphics[width=5cm]{../NaT2/bilder/11_systematic_code.png}
-	\centering geordnet-systematischer Code
+	\centering \textbf{geordnet-systematischer Code}
 \end{minipage}
 \begin{minipage}{12.8cm}
-	Ein Code gilt als systematisch, sobald alle \textbf{Datenbits} $d_i$ an irgend einer Stelle des Codes $c_i$
+	Ein Code gilt als systematisch, sobald alle \textbf{Datenbits} $d_i$ an irgendeiner Stelle des Codes $c_i$
 	\textbf{unmodifiziert} vorkommen. Die nötigen Prüfzeichen werden meist am Ende
-	der Datenbits angefügt und können wenn gewünscht ausgewertet werden. Anwendungsbeispiele:
+	der Datenbits angefügt und können, wenn gewünscht, ausgewertet werden.\\ Anwendungsbeispiele:
 	\begin{itemize}
-    	\item CRC (Cycle Redundancy Check) bei MP3, JPEG, \ldots
+    	\item CRC (Cyclic Redundancy Check) bei MP3, JPEG, \ldots
     	\item Parity Check bei RS232
   	\end{itemize}	
-	Die Coderate $R_C$ Ist das Verhältnis zwischen Codelänge und Nutzdaten: $\frac{k}{n}$
+	Die Coderate ist das Verhältnis zwischen Codelänge und Nutzdaten: $R_C = \frac{k}{n}$
 \end{minipage} 
 
-\subsubsection{Generatormatrix G \schaum{285-11.4.F}}
+\subsubsection{Generatormatrix G}
 Mittels der \textbf{Generatormatrix} $G$ kann das jeweilige \textbf{Codewort} $\vec{c}$ aus dem \textbf{Datenwort} $\vec{d}$
 generiert werden. Dimensionen: $\textcolor{blue}{[H\times B]}$
-$$ \vec{c}\textcolor{blue}{_{[1 \times n]}} = \begin{bmatrix} c_1 & c_2 & \ldots & c_n \end{bmatrix} =
+$$ \vec{c}\textcolor{blue}{_{[1 \times n]}} =
 \vec{d}\textcolor{blue}{_{[1 \times k]}} \cdot G\textcolor{blue}{_{[k \times n]}} =
-                \begin{bmatrix} d_1 & d_2 & \ldots & d_k \end{bmatrix} 
+                \begin{bmatrix} d_0 & d_1 & \ldots & d_{k-1} \end{bmatrix} 
 				\cdot \begin{bmatrix} 
-					1 & 0 & \ldots & 0 & p_{11} & p_{21} & \ldots & p_{m1} \\              
-					0 & 1 & \ldots & 0 & p_{12} & p_{22} & \ldots & p_{m2} \\
+					1 & 0 & \ldots & 0 & p_{00} & p_{10} & \ldots & p_{m-1 \;\; 0} \\              
+					0 & 1 & \ldots & 0 & p_{01} & p_{11} & \ldots & p_{m-1 \;\; 1} \\
 					\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
-					0 & 0 & \ldots & 1 & p_{1k} & p_{2k} & \ldots & p_{mk} \\
+					0 & 0 & \ldots & 1 & p_{0 \;\; k-1} & p_{1 \;\; k-1} & \ldots & p_{m-1 \;\; k-1} \\
 				\end{bmatrix} \overset{\textcolor{red}{*}}{=} \vec{d} \cdot [I\textcolor{blue}{_{[k \times k]}} \;
-				P^T\textcolor{blue}{_{[k \times (n-k)]}}] $$ Bei $P^T$ handelt es sich um die trasponierte
-				Paritätsmatrix $P$, bei $I_k$ um die $[k \times k]$- Einheitsmatrix (\emph{I}dentität). \\
+				P^T\textcolor{blue}{_{[k \times (n-k)]}}] $$ Bei $P^T$ handelt es sich um die transponierte
+				Paritätsmatrix $P$, bei $I_k$ um die $[k \times k]$-Einheitsmatrix (\emph{I}dentität). \\
 \textcolor{red}{*}: Das letzte Gleichheitszeichen gilt nur, falls
 es sich um einen systematischen Code handelt. Ansonsten ist auch der linke Teil der Generatormatrix
 nicht genau mit der Einheitsmatrix ``gefüllt''.
 
-\subsubsection{Paritätsprüfmatrix H \schaum{285-11.4.G}} \label{paritycheckmatrix}
+\subsubsection{Paritätsprüfmatrix H} \label{paritycheckmatrix}
 Die Paritätsprüfmatrix $H$ dient zur \textbf{Erkennung von Übertragungsfehlern}. 
 $$H\textcolor{blue}{_{[(n-k) \times n]}} = \begin{bmatrix}P & I_{n-k}\end{bmatrix} \Rightarrow
 H^T\textcolor{blue}{_{[n \times (n-k)]}} =
@@ -133,14 +140,14 @@ G \cdot H^T = \begin{bmatrix}I_k & P^T\end{bmatrix} \cdot
 	\vec{c} \cdot H^T = \vec{d} \cdot G \cdot H^T = \vec{0}
 	 $$
 Die Multiplikation der Generatormatrix mit der transportierten Paritätsprüfmatrix ergibt eine 
-$[k \times (n-k)]$-\textbf{Nullmatrix}. Somit ergibt die Multiplikation von einem
-\textbf{gültigen Codewort} und der transportierte Paritätsprüfmatrix immer ein $[1
+$[k \times (n-k)]$-\textbf{Nullmatrix}. Somit ergibt die Multiplikation eines
+\textbf{gültigen Codeworts} und der transportierten Paritätsprüfmatrix immer ein $[1
 \times (n-k)]$-\textbf{Nullvektor}. \\
-Die \textbf{minimale Hamming-Distanz} $d_{min}$ vom Code $C$ entspricht genau der minimalen
-nötige Anzahl irgendwelcher Zeilen von $H^T$, sodass deren \textbf{Linearkombination Null} ergibt.
+Die \textbf{minimale Hamming-Distanz} $d_{min}$ des Codes $C$ entspricht genau der minimal
+nötigen Anzahl irgendwelcher Zeilen von $H^T$, sodass deren \textbf{Linearkombination Null} ergibt.
 
 
-\subsubsection{Auswertung des Fehlersyndroms s \schaum{286-11.4.H}}
+\subsubsection{Auswertung des Fehlersyndroms}
 Das \textbf{Fehlersyndrom} $s$ erlaubt die Erkennung und eventuelle Korrektur von Übertragungsfehlern.
 Angenommen das empfangene Codewort $c_r$ ist mit einem \textbf{Fehlermuster} $e$ versehen.
 $$\vec{c}_r = \vec{c} \oplus \vec{e} \qquad \qquad \vec{s}\textcolor{blue}{_{[1 \times (n-k)]}} = \vec{c}_r \cdot H^T = \vec{c}
@@ -161,7 +168,7 @@ empfangene Codewort $c_r$ \textbf{korrigiert} werden. \\
 	und $k$ die nebenstehende Ungleichung erfüllen. Diese Bedingung ist notwendig aber \textbf{nicht
 	hinreichend}. Massgebend sind die Linearität und die minimale Hamming-Distanz. \\
 	Gilt das Gleichheitszeichen, so handelt es sich um einen sog. \textbf{perfekten Code}. \\
-	Einzelfehler korrigierende perfekte Codes nennt man \textbf{Hamming-Codes}.
+	Einzelfehler korrigierende, perfekte Codes nennt man \textbf{Hamming-Codes}.
 \end{minipage} 
 \begin{minipage}{7cm}
 	$$ \qquad 2^{n-k} \geq \sum\limits_{i=0}^{t} \binom{n}{i} \quad$$ \\
@@ -170,35 +177,30 @@ empfangene Codewort $c_r$ \textbf{korrigiert} werden. \\
 
 \newpage
 
-\subsection{Zyklische Blockcodes \schaum{286-11.5}}
+\subsection{Zyklische Blockcodes \skript{218-226}}
 Coder und Decoder von gewissen \textbf{linearen Blockcodes} sind ab einem Umfang von $n \gg 1$ und
 $k \gg 1$ sehr \textbf{aufwendig} zu realisieren. \\
-\textbf{Abhilfe} schaffen die zyklischen Blockcodes - eine \textbf{Untergruppe} der linearen Blockcodes -
-welche es erlauben mit einem \textbf{kleinen Hardwareaufwand} Coder und Decoder zu realisieren. 
-$$ \text{einfache: }\sigma(\vec{c}) = \vec{c}^{(1)} = (c_{n-1}, c_0, c_1, \ldots, c_{n-2}) \qquad 
- \text{2-fache }\sigma^2(\vec{c}) = \sigma\{\sigma(\vec{c})\}= \vec{c}^{(2)} = (c_{n-2}, c_{n-1}, c_0, \ldots, c_{n-3}) \qquad
- \text{n-fache }\sigma^n(\vec{c}) = \vec{c} $$
-Wenn die \textbf{zyklische Verschiebung} $\sigma (c)$ eines Codeworts $\vec{c} = (c_0, c_1, \ldots,
-c_{n-1})$ wiederum ein \textbf{gültiges Codewort} $\vec{c}$ ergibt, so handelt es sich bei dem Code um
-einen linearen Blockcode.
+\textbf{Abhilfe} schaffen die zyklischen Blockcodes - eine \textbf{Untergruppe} der linearen Blockcodes - welche es erlauben mit einem \textbf{kleinen Hardwareaufwand} Coder und Decoder zu realisieren.\\
+Wenn die \textbf{zyklische Verschiebung} $\sigma (c)$ eines Codeworts $\vec{c} = (c_0, c_1, \ldots, c_{n-1})$ wiederum ein \textbf{gültiges Codewort} $\vec{c}$ ergibt, so handelt es sich bei dem Code um einen linearen Blockcode.
+$$ \text{1-fache: }\sigma(\vec{c}) = \vec{c}^{(1)} = (c_{n-1}, c_0, c_1, \ldots, c_{n-2}) \qquad 
+\text{2-fache }\sigma^2(\vec{c}) = \sigma\{\sigma(\vec{c})\}= \vec{c}^{(2)} = (c_{n-2}, c_{n-1}, c_0, \ldots, c_{n-3}) \qquad
+\text{n-fache }\sigma^n(\vec{c}) = \vec{c} $$
 
 
-\subsubsection{Code-Polynom c(x), Modulo-2-Polynom Arithmetik \schaum{287-11.5.B}}
+\subsubsection{Code-Polynom c(x), Modulo-2-Polynom Arithmetik}
 Zur mathematischen Behandlung werden zyklische Codes als Polynome dargestellt, wobei die
 Koeffizienten $c_i$ jeweils der binären Menge $K=\{0,1\}$ angehören.
 $$ \vec{c} = (c_0, c_1, c_2, \ldots,
-c_{n-1}) \quad \Longleftrightarrow \quad c(x) = c_0 + c_1 x + c_2 x^2 + \ldots + c_{n-1} x^{n-1} 
+c_{n-1}) \quad \Longrightarrow \quad c(x) = c_0 + c_1 x + c_2 x^2 + \ldots + c_{n-1} x^{n-1} 
 \qquad \qquad \text{Bsp.: } \vec{c} = (1, 0, 0, 1, 1, 0) \quad \Longleftrightarrow \quad c(x) = 1 + x^3 +
 x^4$$
 
-\textit{Addition, Subtraktion, Multiplikation:} \\
-Die Polynome können auf die \textbf{übliche} Weise \textbf{multipliziert} und \textbf{addiert} werden,
-\textbf{ausser} bei \textbf{gleichem Exponent} ergibt eine \textbf{Addition Null}.
-Im binären Fall sind die Modulo-2-\textbf{Addition} und
+\textbf{\textit{Addition, Subtraktion, Multiplikation:}} \\
+Die Polynome können auf die \textbf{übliche} Weise \textbf{multipliziert} und \textbf{addiert} werden, aber bei \textbf{gleichem Exponenten} ergibt eine \textbf{Addition Null}. Im binären Fall sind die Modulo-2-\textbf{Addition} und
 -\textbf{Subtraktion identische} Operationen. 
 $$ mod2(x^k + x^k) = 0 \qquad mod2(x^k - x^k) = 0 \qquad mod2(0 + x^k) = x^k \qquad mod2(0 - x^k) = x^k$$
 
-\textit{Division:}\\
+\textbf{\textit{Division:}}\\
 Die Modulo-2-Division stellt eine etwas \textbf{spezielle} Rechnung dar.
 Eine Divison von \boldmath$f(x)$ durch $h(x)$ ergibt den Quotienten $q(x)$ mit Rest $r(x)$
 \unboldmath . 
@@ -216,14 +218,14 @@ Gleichung 2 soll ausdrücken, dass beide Polynome $a(x), b(x)$ durch $h(x)$ divi
 Rest ergeben. \\
 Gleichung 3 will sagen, dass (für ein beliebiges $n$) $x^n$ durch $(1 + x^n)$ geteilt, denn Rest
 $1$ ergibt. \\
-Somit ist das \textbf{Chaos} perfekt. Folgendes ist zu beachten um Klarheit zu schaffen:\\
-Generell steht der Modulo Operator \textbf{immer} auf der \textbf{rechten Seite der Gleichung}. 
+Somit ist das \textbf{Chaos} perfekt. Folgendes ist zu beachten, um Klarheit zu schaffen:\\
+Generell steht der Modulo-Operator \textbf{immer} auf der \textbf{rechten Seite der Gleichung}. 
 Das \textbf{Rest-Polynom} $r(x)$ ist immer dasjenige mit dem \textbf{kleinsten Grad
 }($\PolyGrad[r \left( x \right)] < \PolyGrad[h \left(x \right)]$ und
 $\PolyGrad[r \left(x \right) ] < \PolyGrad[f \left( x \right)]$).
 \\
 
-\textit{Zyklische Verschiebung} \\
+\textbf{\textit{Zyklische Verschiebung:}} \\
 Eine $i$-\textbf{fache zyklische Verschiebung} eines Polynoms erfolgt in drei Schritten:
 $$ c^{(i)}(x) = c(x) x^i \mod{(1+x^n)}$$
 \begin{enumerate}
@@ -232,7 +234,7 @@ $$ c^{(i)}(x) = c(x) x^i \mod{(1+x^n)}$$
   \item Divisionsrest $r(x)$ entspricht gerade $c^{(i)}(x)$
 \end{enumerate}
 
-\subsubsection{Generator-Polynom g(x) \schaum{287-11.5.C}}
+\subsubsection{Generator-Polynom g(x)}
 Jeder $[n,k]$ zyklische Code kann mit Hilfe des Generator-Polynoms $g(x)$ (vom Grade $(n-k)$)
 durch Multiplikation mit dem Daten-Polynom $d=d_0 + d_1x + \ldots + d_{k-1}x^{k-1}$ gebildet werden.
 $$ g(x) = \textcolor{blue}{g_0} + g_1 x + g_2 x^2 + \ldots + \textcolor{blue}{g_{n-k}} x^{n-k}
@@ -248,7 +250,7 @@ erzeugt werden.
 
 %\subsubsection{Paritätsprüf-Polynom h(x) \schaum{288-11.5.D}}
 
-\subsubsection{Syndrom-Polynom s(x) \schaum{288-11.5.E}}
+\subsubsection{Syndrom-Polynom s(x)}
 \begin{minipage}{13.1cm}
 Das Fehlersyndrom $s(x)$ (vom Grad ($n-k$)) dient zur \textbf{Ermittlung von Übertragungsfehlern}.
 Enthält das empfangene Codewort $c_r(x)$ ein \textbf{Fehlermuster} $e(x)$, so entspricht der
@@ -286,7 +288,7 @@ Für einen zyklischen Code mit minimaler Hamming-Distanz $d_{min}$ hat jedes
 Fehlermuster mit Hamming-Gewicht $< \frac12 d_{min}$ ein ganz \textbf{charakteristisches, eindeutiges Fehlersyndrom}, welches nur vom Fehler $e(x)$
 abhängig ist.
 
-\subsubsection{Codierung - Multiplikation \schaum{289-11.5.F}}
+\subsubsection{Codierung - Multiplikation}
 \begin{minipage}{9cm}
 	\includegraphics[width=9cm]{../NaT2/bilder/11_cyclic_coder_multiplication.png}
 \end{minipage}
@@ -297,7 +299,7 @@ abhängig ist.
 	lediglich die Reihenfolge von $g_i$ getauscht werden.
 \end{minipage}
 
-\subsubsection{Decodierung - Division \schaum{289-11.5.F}}
+\subsubsection{Decodierung - Division}
 \begin{minipage}{9.4cm}
 	\includegraphics[width=9cm]{../NaT2/bilder/11_cyclic_decoder_division.png}
 \end{minipage}
@@ -311,13 +313,13 @@ abhängig ist.
 
 \subsubsection{Realisierung eines systematischen Codes}
 Ein zyklischer Blockcode kann immer in eine systematische Form gebracht werden, ohne dass die
-Hamming-Distanz verändert wird oder die zyklische Eigenschaft verloren geht.
+Hamming-Distanz verändert wird oder die zyklischen Eigenschaften verloren gehen.
 Die Matrix G eines nicht-systematischen zyklischen Codes kann durch die Zeilen $g(x), x\cdot g(x), \ldots, x^{k-1}\cdot g(x)$ gebildet werden. 
-$\Rightarrow$ Durch Zeilenkombination (Additionen) kann G in eine systematisch Form gebracht werden. Oft ist es üblich den systematischen Teil (Einheitsmatrix) im rechten Teil der Matrix G unterzubringen.\\
+$\Rightarrow$ Durch Zeilenkombination (Additionen) kann G in eine systematische Form gebracht werden. Oft ist es üblich den systematischen Teil (Einheitsmatrix) im rechten Teil der Matrix G unterzubringen.\\
 \hspace*{0.5cm}$ c(x) = p(x) + x^{n-k}\cdot d(x)$\\
 \includegraphics[width = 12cm]{./bilder/11_cyc_hw_imp_sys_code}
 
-\subsection{Faltungscodes \schaum{290-11.6}}
+\subsection{Faltungscodes}
 \textit{Nicht prüfungsrelevant!}\\ \\
-Hierbei werden ganze Daten Streams codiert. Der Code hängt hier nicht nur vom aktuellen Datenblock
+Hierbei werden ganze Daten-Streams codiert. Der Code hängt hier nicht nur vom aktuellen Datenblock
 ab, denn der Codierer bezieht auch noch einige vorgängige Blöcke in die Codierung mit ein.

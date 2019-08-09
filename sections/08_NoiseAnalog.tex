@@ -1,15 +1,15 @@
-\section{Rauschen in analogen Kommunikationssystemen \schaum{202-8}}
+\section{Rauschen in analogen Kommunikationssystemen \skript{169-182}}
 \textbf{Rauschen} \textbf{verschlechtert} die \textbf{Performance}. Bei \textbf{analogen} Systemen
 macht sich dies beim \textbf{Signal-Rausch-Abstand (SNR)} bemerkbar.
-\subsection{Gemeinsame Charakteristik: gauss'scher Kanal}
+\subsection{Gemeinsame Charakteristik: gauss'scher Kanal \skript{170}}
 \begin{figure}[!ht]
 \begin{center}
 	\include{./tikz/noise_blockdiagramm}
 \end{center}
 \end{figure}
 
-Die Voraussetzungen für eine einfache Berechnung mit Hilfe von diesem Modell (gauss'scher Kanal)
-sind die folgenden:
+Die Voraussetzungen für eine einfache Berechnung mit Hilfe dieses Modells (gauss'scher Kanal)
+sind die Folgenden:
 \begin{itemize}
   \item $n(t)$ ist \textbf{mittelwertfreies} ($E[n] = 0$) gauss'sches Rauschen mit $S_{nn}(\omega) = \eta/2$
   \item $n(t)$ ist mit $X \left( t \right)$ \textbf{unkorreliert} $\left( Cov
@@ -23,7 +23,7 @@ werden: $S_{i_{dB}} = S_{t_{dB}} - A_{dB}$
 
 
 
-\subsection{Referenzmodell: Basisband \schaum{203-8.3}}
+\subsection{Referenzmodell: Basisband \skript{170-172}}
 Die Berechnungen im Basisband gelten als \textbf{Referenz}, für den \textbf{Vergleich} mit
 \textbf{anderen Systemen}. \\
 
@@ -58,7 +58,7 @@ Neben einem idealen LPF kann auch ein Equalizer (z.B. RC-Filter) eingesetzt werd
 \textbf{Allgemein:} $N_{o_{eq}} = \frac{1}{2\pi}\int\limits_{-\infty}^{+\infty} \underbrace{\frac{\eta}{2}}_{S_{nn}(\omega)}\cdot|H_{eq}(\omega)|^2 \cdot d\omega$  \hspace{1cm}
 \textbf{RC-Filter} mit $H_{eq} = H_{RC} = \frac{1}{1+j\frac{\omega}{2\pi f_c}} \Rightarrow N{o_{RC}} = \eta\cdot f_c \cdot \frac{\pi}{2}$ 
 
-\subsection{Amplitudenmodulation \schaum{204-8.4}}
+\subsection{Amplitudenmodulation \skript{172-176}}
 \begin{figure}[!ht]
 \begin{center}
 	\include{./tikz/cw_communication_system}
@@ -73,7 +73,7 @@ Das Rauschsignal am Eingang des Demodulators ist wie folgt definiert
 
 
 
-\subsubsection{DSB-SC, (SSB) \schaum{205-8.4.A.1,2}}
+\subsubsection{DSB-SC, (SSB) \skript{172-174}}
 \textbf{DSB-SC mit synchronem Detektor}\\
 \begin{minipage}{7.5cm}
 	\includegraphics[width = 7cm]{./bilder/08_Sync_Detektor_DSB}
@@ -81,11 +81,11 @@ Das Rauschsignal am Eingang des Demodulators ist wie folgt definiert
 \begin{minipage}{11cm}
   $\bullet$ Am Eingang des Demodulators:\\ 
   \hspace*{0.3cm}$Y_i(t) = A_c X(t) \cos (\omega_c t) + n_i(t) = [A_c X(t) + n_c(t)]\cos(\omega_c t) - n_s(t)\sin(\omega_c t)$\\
-  $\bullet$ Am Ausgang des Demodulator:\\ 
+  $\bullet$ Am Ausgang des Demodulators:\\ 
   \hspace*{0.3cm} $Y_o(t) = A_c X(t) + n_c(t) = X_o(t) + n_o(t)$
 \end{minipage}\\ \\
 Ein Mass für die Effizienz des Demodulators ist der sogenannte Detektor-Gewinn: \\
-$$ \alpha_{d_{DSB-SC}} = \dfrac{\text{SNR}_{out}}{\text{SNR}_{in}} = 2 \approx 3 dB
+$$ \alpha_{d_{DSB-SC}} = \dfrac{\text{SNR}_{out}}{\text{SNR}_{in}} = \frac{\frac{S_i}{\eta \cdot B} \cdot cos^2\varphi}{\frac{S_i}{2\eta \cdot B}} = 2cos^2(\varphi) \leq 2 \approx 3 dB
 \qquad \qquad
  \alpha_{d_{SSB}} = \dfrac{\text{SNR}_{out}}{\text{SNR}_{in}} = 1
 $$
@@ -96,7 +96,7 @@ Somit haben im Endeffekt SSB und DSB-SC \textbf{dieselbe Rausch-Performance} wie
 	$$ \left(\dfrac{S}{N}\right)_0 =
 	\dfrac{A_c^2 S_x}{2 \eta B} = \dfrac{\frac12 A_c^2 S_x}{\eta B} = \dfrac{S_i}{\eta B} = \gamma $$
 
-\subsubsection{Gewöhnliche AM \schaum{206-8.4.A.3}}
+\subsubsection{Gewöhnliche AM \skript{174-176}}
 
 \textbf{Synchroner Detektor}\\
 \begin{minipage}{7.5cm}
@@ -105,15 +105,14 @@ Somit haben im Endeffekt SSB und DSB-SC \textbf{dieselbe Rausch-Performance} wie
 \begin{minipage}{11cm}
   $\bullet$ Am Eingang des Demodulators:\\ 
   \hspace*{0.3cm}$Y_i(t) = A_c(1 + \mu X(t)) \cos (\omega_c t) + n_i(t)$ \qquad mit $\mu \leq 1$ und $X(t) \leq 1$\\
-  $\bullet$ Am Ausgang des Demodulator:\\ 
+  $\bullet$ Am Ausgang des Demodulators:\\ 
   \hspace*{0.3cm} $Y_o(t) = A_c\mu X(t) + n_c(t) = X_o(t) + n_o(t)$
 \end{minipage}\\ \\
 
 $$ \left(\dfrac{S}{N}\right)_0 =
 \dfrac{\mu^2 S_x}{1 + \mu^2 S_x} \left(\dfrac{S_i}{\eta B}\right) = \dfrac{\mu^2 S_x}{1 + \mu^2
 S_x} \gamma \underbrace{\leq \dfrac{\gamma}{2}}_{\text{daher weniger geeignet als DSB-SC}} \qquad \qquad
-\alpha_{d_{AM}} = \dfrac{2 \mu^2 S_x}{1 + \mu^2 S_x} \leq 1$$
-
+\alpha_{d_{AM}} = \dfrac{2 \mu^2 S_x \cdot cos^2\varphi}{1 + \mu^2 S_x} \leq 1$$
 
 \textbf{Enveloppe Detektor} \\
 Für \boldmath$ \textbf{SNR}_i \gg 1 $ gelten dieselben Formeln wie beim \textbf{synchronen
@@ -123,12 +122,12 @@ Der \textbf{Übergang} zwischen \textbf{ausreichender} Übertragungsqualität un
 Übertragung beginnt ab \unboldmath$ \text{SNR}_{i_{dB}} \approx 10 \text{dB} $ und erfolgt
 \textbf{sehr schnell}.
 
-\subsection{Winkelmodulierte Systeme \schaum{208-8.5}}
+\subsection{Winkelmodulierte Systeme \skript{176-181}}
 \begin{minipage}{10cm}
 	\includegraphics[height=1.3cm]{../NaT2/bilder/08_noise_anglemod.png}
 \end{minipage}
 \begin{minipage}{9cm}
-	Signal am Eingang des Detektor:\\
+	Signal am Eingang des Detektors:\\
 	\hspace*{0.3cm} $Y_i(t) = A_c \cos(\omega_c t + \phi(t)) + n_i(t)$ \qquad mit \quad $S_i = \frac{1}{2} A_c^2$ \\
 	\hspace*{0.6cm} \textbf{PM:} \quad $\phi = k_p X(t)$\\
 	\hspace*{0.6cm} \textbf{FM:} \quad $\phi = k_f \int\limits_{-\infty}^{t} X(\tau) \; d\tau$ \\
@@ -148,12 +147,12 @@ Im Falle von (CNR $\ll 1$) tritt ein ähnlicher Effekt auf wie bei AM (SNR $\ll 
 sodass das demodulierte Signal nicht mehr brauchbar wird. Der \textbf{Übergang} zwischen \textbf{ausreichender} Übertragungsqualität und \textbf{unbrauchbarer}  
 Übertragung beginnt bei kleiner Deviation ($D \approx 2$) ab einer \unboldmath$ \text{SNR}_{i}$ von $(C/N)_i \approx 10 \text{dB} $ und erfolgt \textbf{sehr schnell}. Bei grösserer Deviation D setzt der Schwellwert Effekt schon bei höherer $SNR_i$ ein.
 
-\subsubsection{Ausgang bei PM $(C/N \gg 1)$ \schaum{210-8.5.B}}
+\subsubsection{Ausgang bei PM $(C/N \gg 1)$ \skript{178-179}}
 $$ Y_o(t) = \theta(t) = k_p X(t) + \frac{n_s(t)}{A_c}$$ 
 $$ \left(\dfrac{S}{N}\right)_0 =
 \dfrac{k_p^2 A_c^2 S_x}{2 \eta B} = k_p^2 S_x \gamma $$
 
-\subsubsection{Ausgang bei FM $(C/N \gg 1)$ \schaum{210-8.5.C}}
+\subsubsection{Ausgang bei FM $(C/N \gg 1)$ \skript{178-179}}
 $$ Y_o(t) = \frac{d \theta (t)}{dt} = k_f X(t) + \frac{n_s'(t)}{A_c}$$
 $$ \left(\dfrac{S}{N}\right)_0 =
 3 \left(\dfrac{k_f^2 S_x}{W^2}\right) \left(\dfrac{Ac^2}{2 \eta B}\right)
@@ -264,11 +263,11 @@ Kneubuehler})}
 \\[0.5cm]
 \textbf{Wichtige Anmerkung}  \\
 \begin{itemize}
-  \item $S_X = (\frac{X_{pk}}{c})^2$
+  \item $S_X = (\frac{X_{pk}}{C})^2$
   \item Die Formeln der Tabelle gelten für dimensionslose, stationäre und mittelwertfreie Signale.
   \item Der Zufallsprozess liegt zudem in normierter Form vor, wie aus der Tabelle hervorgeht.
-  \item Soll die SNR für konkrete physikalisch vorliegende Signale berechnet werden,
-		müssen für die Amplituden und Leistungen am Eingang des Empfängers geeignete Saklierungsfaktoren
+  \item Soll die SNR für konkrete, physikalisch vorliegende Signale berechnet werden,
+		müssen für die Amplituden und Leistungen am Eingang des Empfängers geeignete Skalierungsfaktoren
 		verwendet werden.
   \item Handelt es sich beim Empfänger zudem um einen aktiven Schaltungsblock,
 		ist das Signal (sowie der Rauschanteil) am Ausgang des Empfängers ebenfalls mit den Parametern

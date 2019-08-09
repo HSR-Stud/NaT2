@@ -1,12 +1,12 @@
-\section{Optimaler Detektor - Rauschen in digitalen Kommunikationssys. \schaum{227-9}}
+\section{Digitale Datenübertragung über einen AWGN-Kanal \skript{183-191}}
 \textbf{Rauschen} \textbf{verschlechtert} die \textbf{Performance}, bei \textbf{digitalen} Systemen zeigt sich dies in der
 \textbf{Bitfehlerrate} $P_e$. \\
 Dieses Kapitel behandelt digitale Signale, welche über einen verzerrungsfreien Kanal gesendet werden
 und mit einem Additiven Weissen Gauss'schen Rauschen (AWGN) versetzt werden. 
 
-\subsection{Binäres Übertragungssystem \schaum{226-9.2}}
+\subsection{Binäres Übertragungssystem \skript{184-185}}
 Ein \textbf{binäres Signal} $s_i(t)$ \verweiskurz{09_binary_signals_error} wird
-über einen verzerrungsfreien (auch ohne Intersymbol Interferenz) Kanal gesendet. \\
+über einen verzerrungsfreien (auch ohne Intersymbol-Interferenz) Kanal gesendet. \\
 \begin{minipage}{10cm}
  	\includegraphics[width=9.5cm]{bilder/09_digital_signal_detection.png}
 \end{minipage}
@@ -31,21 +31,21 @@ Ein \textbf{binäres Signal} $s_i(t)$ \verweiskurz{09_binary_signals_error} wird
 		\verweiskurz{09_matched_filter} oder der Korrelator
 		\verweiskurz{09_korrelator}.
   \item Anschliessend wird das Signal \textbf{zeitdiskretisiert}, also immer nach einer konstanten Zeit
-  		(Samplingzeit $t = T$) abgetastet. In der Praxis ist der opimale Abtastzeitpunktpunkt bei der maximalen SNR. Im Modell wird die SNR zum Zeitpunkt $nT$ maximiert. Dadurch resultiert: $z(nT) = a_i(nT) + n_o(nT)$, wobei $a_i(nT)$
+  		(Samplingzeit $t = T$) abgetastet. In der Praxis ist der opimale Abtastzeitpunkt bei der maximalen SNR. Im Modell wird die SNR zum Zeitpunkt $nT$ maximiert. Dadurch resultiert: $z(nT) = a_i(nT) + n_o(nT)$, wobei $a_i(nT)$
   		dem Signalanteil und $n_o(nT)$ dem Rauschanteil entspricht. \\
   		Dies entspricht zwei Normalverteilungen, welche um die Mittelwerte ($a_1, a_2$) angeordnet sind.
   \item Schlussendlich wird mit dem Schwellwertdetektor entschieden, welches Signal
-  		höchstwahrscheinlich gesendet wurde. Man unterscheidet die zwei verschiedenen Arten von
+  		höchstwahrscheinlich gesendet wurde. Man unterscheidet zwei verschiedene Arten von
   		Detektoren: \\ \textbf{Hard-Decision:} Das Resultat des Detektors ist eine endgültige
   		Entscheidung (0 oder 1). Die Entscheidung wird mit Hilfe des Schwellwerts $\lambda_0$ gefällt.\\ 
   		\textbf{Soft-Decision:} Für 0 und 1 werden Wahrscheinlichkeiten bestimmt und verarbeitet.
 \end{enumerate}
 
-\subsection{Optimaler Detektor}
-\subsubsection{Hypothesen und Fehlerwahrscheinlichkeit \schaum{227-9.2,3.A}}
+\subsection{Fehlerwahrscheinlichkeit und Maximum-Likelihood Entscheidung \skript{185-187}}
+\subsubsection{Hypothesen und Fehlerwahrscheinlichkeit}
 	Für die Entscheidung existieren zwei \textbf{Hypothesen} ($H_1 \Rightarrow s_1$ wurde gesendet, 
 	$H_2 \Rightarrow s_2$ wurde gesendet): \\ 
-	Im binären Fall erfolt die Entscheidung mit einem Schwellwert $\lambda$: \qquad \parbox[c]{10cm}{
+	Im binären Fall erfolgt die Entscheidung mit einem Schwellwert $\lambda$: \qquad \parbox[c]{10cm}{
 	Hypothese $H_1$ (falls $z(nT) > \lambda$): \quad $s_1$ wurde gesendet \\
 	Hypothese $H_2$ (falls $z(nT) < \lambda$): \quad $s_2$ wurde gesendet}\\
 
@@ -73,12 +73,12 @@ Ein \textbf{binäres Signal} $s_i(t)$ \verweiskurz{09_binary_signals_error} wird
 	P(s_2)$$
 \end{minipage} 
 
-\subsubsection{Maximum Likelihood Detektor \schaum{227-9.3.B}}
-Bei einem Maximum Likelihood Detektor ist der Schwellwert $\lambda_0$ genau so gewählt, dass die
-\textbf{Fehler-WSK }$P_e$ \textbf{minimal} wird. \\
+\subsubsection{Maximum-Likelihood Detektor}
+Bei einem Maximum-Likelihood Detektor ist der Schwellwert $\lambda_0$ genau so gewählt, dass die
+\textbf{Fehler-WSK} $P_e$ \textbf{minimal} wird. \\
 Konkret kann dies berechnet werden, indem man das \textbf{Minimum} von $P_e$ bestimmt, also: $\qquad
 \dfrac{d P_e}{d \lambda_0} = 0 \qquad$ setzt. \\ 
-Der Maximum Likelihood Detector entscheidet wie folgt: \qquad \parbox[c]{9cm}{Hypothese $H_1$: \quad falls $f(z|s_1)\cdot P(s_1) > f(z|s_2)\cdot P(s_2)$\\
+Der Maximum Likelihood Detektor entscheidet wie folgt: \qquad \parbox[c]{9cm}{Hypothese $H_1$: \quad falls $f(z|s_1)\cdot P(s_1) > f(z|s_2)\cdot P(s_2)$\\
 Hypothese $H_2$: \quad falls $f(z|s_1)\cdot P(s_1) < f(z|s_2)\cdot P(s_2)$}\\
 
 \begin{minipage}[c]{9.5cm}
@@ -108,7 +108,8 @@ Mit ($P(s_2) = P(s_1) = 0.5$) und ($\lambda_0 = \dfrac{a_1 + a_2}{2}$) gilt für
 
 
 
-\subsection{Optimales Lineares Filter: Matched Filter \schaum{229-9.4.A}}
+\subsection{Optimaler Detektor \skript{187-181}}
+\subsubsection{Matched-Filter}
 \label{09_matched_filter}
 	\textbf{Ziel: } Maximierung von $(a_1 - a_2)$ bei gleichzeitiger Minimierung
 	von $n_0$.
@@ -124,12 +125,13 @@ Mit ($P(s_2) = P(s_1) = 0.5$) und ($\lambda_0 = \dfrac{a_1 + a_2}{2}$) gilt für
 	\begin{minipage}{14cm}
 		Mit $E_d$ als Energie des Differenzsignals $s(t) = s_1(t) - s_2(t)$ ; $ E_d = \int\limits_{0}^{T}[s_1(t) - s_2(t)]^2 \; dt$ \\
 		
-		Fehler- WSK des ML-Detektors: $P_e = Q\left(\frac{a_1 - a_2}{2\sigma_{n_o}}\right)  = Q\left(\sqrt{\frac{E_d}{2 \eta}} \right)$
+		Fehler-WSK des ML-Detektors: $P_e = Q\left(\frac{a_1 - a_2}{2\sigma_{n_o}}\right)  = Q\left(\sqrt{\frac{E_d}{2 \eta}} \right)$
 	\end{minipage}
  	
+ 	Graphische Konstruktion der Impulsantwort $h(t)$ des Matched Filters: \skript{189}
 
-\subsubsection{Variante zum Matched-Filter: Korrelator \schaum{230-9.4.B}} \label{09_korrelator}
-Für den Sample Zeitpunkt ($t=T$) sind die Eigenschaften eines \textbf{Matched-Filter} und diejenigen eines
+\subsubsection{Variante zum Matched-Filter: Korrelator} \label{09_korrelator}
+Für den Sample Zeitpunkt ($t=T$) sind die Eigenschaften eines \textbf{Matched-Filters} und diejenigen eines
 \textbf{Korrelators} \textbf{identisch}. Somit können beide für den selben Zweck eingesetzt werden.
 
 $$ z(t) = r(t) \ast h(t) = \int_0^t r(\tau) h(t-\tau) d\tau \overbrace{=}^{h(t) =
@@ -137,27 +139,26 @@ h_{MatchedFilter}(t)} \int_0^t r(\tau) s[T - (t - \tau)] d\tau \overbrace{=}^{t 
 r(\tau)s(\tau) \; d\tau}_{\text{Korrelator}}$$
 
 	\begin{center}
-		\begin{minipage}[c]{4.5cm}
-			\includegraphics[width=4.5cm]{../NaT2/bilder/09_matched_filter.png}
+		\begin{minipage}[c]{3.5cm}
+			\includegraphics[width=3.5cm]{../NaT2/bilder/09_matched_filter.png}
 			\centering Matched Filter
 		\end{minipage}
 		\begin{minipage}[c]{2cm}		
 			$$\Longleftrightarrow $$
 		\end{minipage}
-		\begin{minipage}[c]{4.5cm}
-			\includegraphics[width=4.5cm]{../NaT2/bilder/09_correlator.png}
+		\begin{minipage}[c]{3.5cm}
+			\includegraphics[width=3.5cm]{../NaT2/bilder/09_correlator.png}
 			\centering Korrelator
 		\end{minipage}
 	\end{center}
 
-\subsubsection{Unmatched RC-Filter \schaum{238-Prob.9.9}}
+\subsubsection{Unmatched RC-Filter}
 Hierbei wird an Stelle eines Matched Filters ein RC-Tiefpassfilter verwendet. \\
 $$H(\omega) = \dfrac{1}{1 + j \omega R C} \qquad \qquad
  \left(\dfrac{S}{N}\right)_{0_{max}} = (0.815)\dfrac{2 A^2 T}{\eta}$$
 
-\subsection{Fehlerwahrscheinlichkeit verschiedener binären
-Übertragungen \schaum{231-9.5}}\label{09_binary_signals_error}
-$E_b$ bezeichnet die mittlere Signalenergie pro Bit. Werte für Q-Funktion hinten im Schaum (S.326).
+\subsection{Fehlerwahrscheinlichkeit verschiedener binärer Übertragungen}\label{09_binary_signals_error}
+$E_b$ bezeichnet die mittlere Signalenergie pro Bit. Werte für Q-Funktion im Anhang in Tabelle \ref{tab:ErrorFunctionQTable}, Seite \pageref{tab:ErrorFunctionQTable}.
 
 \renewcommand{\arraystretch}{2}
 	\begin{tabular}{ p{6cm} p{2.5cm} p{9cm} }

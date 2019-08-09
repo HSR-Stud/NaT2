@@ -1,9 +1,9 @@
-\section{Informationstheorie und Quellencodierung \schaum{245-10}}
+\section{Informationstheorie und Quellencodierung \skript{193-206}}
 \textbf{Irrelevanz:} bedeutungslose Informationen. $\Rightarrow$ Muss daher nicht gesendet werden. \\
 \textbf{Redundanz:} mehrfach vorhandene Information. \\
-\textbf{Reduktion der Redundanz:} \parbox[t]{14cm}{Symbole mit hoher Auftretungswahrscheinlichkeit werden mit wenigen Bits, seltene Symbole mit mehr Bits codiert.}
-\subsection{DMS - Discrete Memoryless Source}
-Eine Informations\textbf{quelle} ist ein Objekt welches \textbf{Ereignise}, welche zufällig aus einer
+\textbf{Reduktion der Redundanz:} \parbox[t]{14cm}{Symbole mit hoher Auftretenswahrscheinlichkeit werden mit wenigen Bits, seltene Symbole mit mehr Bits codiert.}
+\subsection{DMS - Discrete Memoryless Source \skript{194}}
+Eine Informations\textbf{quelle} ist ein Objekt welches \textbf{Ereignisse}, welche zufällig aus einer
 WSK-Dichtefunktion ausgewählt werden, \textbf{generiert}. \\ 
 Eine diskrete Quelle hat einen endlichen \textbf{Satz an Symbolen}, welcher auch \textbf{Alphabet}
 genannt wird. Die Elemente dieses Satzes nennt man \textbf{Symbole} oder \textbf{Zeichen}. \\
@@ -16,7 +16,7 @@ gedächtnisfreie Quelle). Eine solche wird mit folgenden Eigenschaften charakter
   \item Symbolrate 
 \end{itemize} 
 
-\subsubsection{Informationsgehalt, Binary Unit, Entropie, Informationsrate \schaum{246-10.2-B.1,2,3}}
+\subsubsection{Informationsgehalt, Binary Unit, Entropie, Informationsrate \skript{194-196}}
 Mathematisch gesehen kann man sagen, je \textbf{unwahrscheinlicher} das \textbf{Eintreten} eines \textbf{spezifischen
 Ereignisses} ist, desto \textbf{grösser} ist dessen \textbf{Informationsgehalt}.
 
@@ -61,7 +61,7 @@ werden.
   	& $I(x_i) =  \log_{base} \frac{1}{P(x_i)} = - \log_{base} P(x_i)$
   	& \parbox[c]{10cm}{
   		$I(x_i) > I(x_k)$, falls $P(x_i) < 	P(x_k)$ \\
-  		$I(x_i x_k) = I(x_i) + I(x_k)$, falls $x_i$ und $x_k$ unabh.
+  		$I(x_i x_k) = I(x_i) + I(x_k)$, falls $x_i$ \& $x_k$ unabh.
   	} \\
   
   	\textbf{Entropie:}
@@ -76,7 +76,7 @@ werden.
 	
 \end{tabular}
 
-\subsection{DMC - Discrete Memoryless Channels \schaum{247-10.3}}
+\subsection{DMC - Discrete Memoryless Channels \skript{194,196-201}}
 \begin{minipage}{9.5cm}
 	\begin{center}
 		\includegraphics[width=7.5cm]{../NaT2/bilder/10_DMC.png}
@@ -92,7 +92,7 @@ werden.
 	probabilities) $P(y_j | x_i)$ definiert.
 \end{minipage}
 
-\subsubsection{Darstellung in Matritzenform}
+\subsubsection{Darstellung in Matrizenform}
 \begin{minipage}[t]{9cm}
 	\textbf{Kanalmatrix}\\
 	Die Kanalmatrix gibt für jedes gesendete $x_i$ die bedingte Wahrscheinlichkeit $P(y_j|x_i)$ an, dass der Empfänger ein $y_j$ detektiert.
@@ -129,10 +129,10 @@ werden.
 	$\sum $ aller Elemente von $[P(Y,X)] = 1$
 \end{minipage}
 
-\subsubsection{Spezielle Kanäle \schaum{248-10.3.C}}
+\subsubsection{Spezielle Kanäle}
 \textbf{Verlustfreier (lossless) Kanal} \\
 \begin{minipage}{14cm}
-	Auf jeder Spalte der Kanalmatrix gibt es jeweils nur ein  Element $\neq 0$. \\
+	In jeder Spalte der Kanalmatrix gibt es jeweils nur ein  Element $\neq 0$. \\
 
 	$$ [P(Y | X)] = \begin{bmatrix}
               \frac34 & \frac14 & 0 & 0 & 0 \\
@@ -197,32 +197,32 @@ werden.
 \end{center}
 \end{minipage}
 
-\subsubsection{Bedingte Entropien , Gegenseitige Information \schaum{250-10.4}}
+\subsubsection{Bedingte Entropien, Gegenseitige Information}
 	\textbf{Bedingte Entropie $H(Y|X)$}\\
 	$\bullet$ Informationsbedarf um aus gesendetem X empfangenes Y zu bestimmen: $H(Y|X)	=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j) log_2(P(y_j|x_i))$ \\
 	\textbf{Bedingte Entropie $H(X|Y)$}\\
-	$\bullet$ Informationsbedarf um aus empfangenes Y gesendetem X zu bestimmen: $H(X|Y)	=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j) log_2(P(x_i|y_j))$ \\
+	$\bullet$ Informationsbedarf um aus empfangenem Y gesendetes X zu bestimmen: $H(X|Y)	=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j) log_2(P(x_i|y_j))$ \\
 	\textbf{Verbund-Entropie $H(X,Y)$} \\
-	$\bullet$ Information des gesamten Kommunikationskanal:  $H(X,Y)	=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j) log_2(P(x_i,y_j))$ \qquad \parbox{6cm}{
+	$\bullet$ Information des gesamten Kommunikationskanals:  $H(X,Y)	=- \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{m} P(x_i,y_j) log_2(P(x_i,y_j))$ \qquad \parbox{6cm}{
 		$H(X,Y) = H(X|Y) + H(Y)$ \\
 		$H(X,Y) = H(Y|X) + H(X)$
 	} \\
 	\textbf{Gegenseitige (mutual) Information} in b/(Symbol)\\
-	$\bullet$ Information, welche vom Eingang zum Ausgang des Kanales transferiert wird: $I(X;Y) = H(X)-H(X|Y)$\\
+	$\bullet$ Information, welche vom Eingang zum Ausgang des Kanals transferiert wird: $I(X;Y) = H(X)-H(X|Y)$\\
 	\hspace*{0.5cm} Eigenschaften: \quad \parbox{12cm}{
 	$I(X;Y) = H(X)-H(X|Y) = H(Y)-H(Y|X) = I(Y;X)$ \\
 	$I(X;Y) = H(X)+H(Y)-H(X,Y)$}
 
-\subsection{Kanalkapazität \schaum{251-10.5}}
+\subsection{Kanalkapazität \skript{197-198}}
 \begin{minipage}[c]{8cm}
-	$$ C_s = \max\limits_{\{ P(x_i) \}}{I (X; Y)} $$
 	$$ C = r_b C_s $$
+	$$ C_s = \max\limits_{\{ P(x_i) \}}{I (X; Y)} $$
 	$$ r_s H(X) \leq C$$
 	$$ r_b = r_s \cdot n_i$$
 \end{minipage}
 \begin{minipage}[c]{10cm}
-	$C_s$ Kanalkapazität pro Symbol, $[C_s]$ = b/Symbol \\
 	$C$ Kanalkapazität pro Sekunde, $[C]$ = b/s \\
+	$C_s$ Kanalkapazität pro Symbol, $[C_s]$ = b/Symbol \\
 	$r_s$ Symbolrate Quelle, $r_b$ Bitrate Kanal, $[r]$ = Symbol/s \\
 	Bedingung für eine (theoretisch) fehlerfreie Übertragung \\
 	$n_i$ mittlere Codelänge
@@ -259,15 +259,15 @@ Wobei $B$ der Bandbreite des Kanals entspricht; $ m =$ Anzahl Symbole von $X$ ; 
 % \subsection{AWGN-Channel \schaum{252-10.6}}
 % \textbf{TODO}
 
-\subsection{Quellencodierung \schaum{253-10.7}}
+\subsection{Quellencodierung \skript{201-206}}
  Der Quellencoder wandelt das Nachrichtensignal einer diskreten Quelle in eine Symbolfolge mit \textbf{möglichst kleiner Redundanz} um.
-\subsubsection{Code-Länge, -Effizienz, -Redundanz \schaum{253-10.7.A/B}}
+\subsubsection{Code-Länge, -Effizienz, -Redundanz \skript{202-203}}
 Gilt für eine DMS mit endlicher Entropie.
 \begin{multicols}{2}
 	\abovedisplayskip=-15pt % Hack um den überflüssigen Whitespace zu entfernen.
 	\begin{align*}
 		L 		 &= \sum\limits_{i=1}^m P(x_i) n_i \geq H(X)\\
-		L_{fix}	 &= floor(\log_2(n))\\
+		L_{fix}	 &= ceil(\log_2(n))\\
 		\eta	 & = \frac{L_{min}}{L} = \frac{H(X)}{L}  \\
 		R_c(X) &  = L - H(X) \\
 		\gamma_c &  = 1-\eta \\
@@ -289,14 +289,14 @@ Gilt für eine DMS mit endlicher Entropie.
 	\end{tabular}
 \end{multicols}
 
-\subsubsection{Klassifizierung von Codes \schaum{254-10.7.C}}
+\subsubsection{Klassifizierung von Codes}
 	\renewcommand{\arraystretch}{2}
 	\begin{tabular}{| p{6cm} | p{12cm} |}
 		\hline
     	\textbf{Bezeichnung} & \textbf{Eigenschaften}  \\
 		\hline  
     	\begin{minipage}[c]{6cm}  
-	    	\textbf{Fixed Lengh Code} \\
+	    	\textbf{Fixed-Length Code} \\
 	    	feste Länge 
       	\end{minipage}
     	& \begin{minipage}[c]{12cm}    
@@ -306,7 +306,7 @@ Gilt für eine DMS mit endlicher Entropie.
     	\\
 		\hline
     	\begin{minipage}[c]{6cm}    
-    		\textbf{Variable Lengh Code} \\
+    		\textbf{Variable-Length Code} \\
     		variable Länge 
       	\end{minipage}
     	& \begin{minipage}[c]{12cm}    
@@ -359,7 +359,7 @@ Gilt für eine DMS mit endlicher Entropie.
  	\end{tabular}
 	\renewcommand{\arraystretch}{1}
 
-\subsubsection{Kraft'sche Ungleichung \schaum{255-10.7.D}}
+\subsubsection{Kraft'sche Ungleichung}
 Wenn diese Ungleichung erfüllt ist, besagt sie, dass ein \textbf{eindeutig} und \textbf{sofort
 decodierbarer} Code gefunden werden kann. \\
 Gegeben ist eine Quelle mit \textbf{Alphabet $x_i$} der \textbf{Länge $m$}, wobei jedem
@@ -367,11 +367,11 @@ Gegeben ist eine Quelle mit \textbf{Alphabet $x_i$} der \textbf{Länge $m$}, wob
 $$ K = \sum\limits_{i=1}^{m} 2 ^{-n_i} \leq 1$$ 
 Die Kraft'sche Ungleichung hilft jedoch zum Auffinden dieses Codes nicht weiter.
 
-\subsection{Entropie Codierung \schaum{255-10.8}}
+\subsection{Entropie Codierung \skript{204-206}}
 \textbf{Ziel:} Durchschnittliche Codelänge an Entropie annähern $ \Rightarrow $ Wirkungsgrad
 steigern.
 
-\subsubsection{Shannon - Fano Codierung \schaum{255-10.8.A}}
+\subsubsection{Shannon-Fano Codierung}
 \begin{multicols}{2}
 	\begin{tabular}{|c|c|c|c|c|c|l|}
 		\hline
@@ -397,21 +397,21 @@ steigern.
 	\begin{enumerate}
 		\item Symbole nach \textbf{absteigender} Wahrscheinlichkeit anordnen.
 		\item Trennung in \textbf{2 Teilmengen} mit möglichst gleicher WSK.
-		\item \textbf{Obere} Teilmenge Symbol \textbf{0}, \textbf{unterer} Teilmenge Symbol \textbf{1}
+		\item \textbf{Oberer} Teilmenge Symbol \textbf{0}, \textbf{unterer} Teilmenge Symbol \textbf{1}
 		  zuordnen.
 		\item Weiterhin unterteilen gemäss obigen Schritten, bis keine Teilung mehr möglich ist.
 	\end{enumerate}
 	
 	\textbf{Eigenschaften:}
 	\begin{itemize}
-  		\item Präfix frei
+  		\item präfixfrei
   		\item letzter Teilungsschrit liefert immer gerade Anzahl Codewörter 
 	\end{itemize}
 \end{multicols}
 
 
 
-\subsubsection{Huffman Codierung \schaum{256-10.8.B}}
+\subsubsection{Huffman Codierung}
 \begin{multicols}{2}
   \adjustbox{width=0.95\linewidth, frame}{\input{./tikz/10_codierung_huffman}}
   
@@ -422,14 +422,14 @@ steigern.
 	  \item Symbole nach \textbf{absteigender} Wahrscheinlichkeit anordnen.
 	  \item \textbf{Unterste 2} Symbole als Gruppe zusammenfassen.
 	  \item Beide Schritte wiederholen, bis nur noch zwei Gruppen vorliegen.
-	  \item \textbf{Grössere} WSK \textbf{0}, \textbf{kleinere} WSK \textbf{1} zuordnen.
-	  \item Reduktion rückgägngig machen und vorheriger Schritt für alle Teilschritte wiederholen.
+	  \item \textbf{Grösserer} WSK \textbf{0}, \textbf{kleinerer} WSK \textbf{1} zuordnen.
+	  \item Reduktion rückgängig machen und vorherigen Schritt für alle Teilschritte wiederholen.
 	\end{enumerate}	
 	
 	\textbf{Eigenschaften:}
 	\begin{itemize}
 	  \item Maximale Effizienz
-	  \item Keine reduntante Bits (vgl. Prüfung Aug. 2010)
-	  \item Präfix frei
+	  \item Keine redundanten Bits (vgl. Prüfung Aug. 2010)
+	  \item präfixfrei
 	\end{itemize}
 \end{multicols}
