@@ -4,10 +4,10 @@ Stand: FS2019
 
 [![Build Status](https://travis-ci.org/n04hk/NaT2.svg?branch=master)](https://travis-ci.org/n04hk/NaT2)
 
-## licenses
+## License
 CC by-nc-sa
 
-## Erlaubte Hilfsmittel (nach MSP FS2013)
+## Erlaubte Hilfsmittel (nach MSP FS2018)
  * Unterlagen ohne Einschränkungen
  * Taschenrechner
 
