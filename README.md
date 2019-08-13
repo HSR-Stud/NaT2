@@ -2,8 +2,7 @@
 
 Stand: FS2019
 
-[![Build Status](https://travis-ci.org/n04hk/NaT2.svg?branch=master)](https://travis-ci.org/n04hk/NaT2)
-
+[![Build Status](https://travis-ci.org/HSR-Stud/NaT2.svg?branch=master)](https://travis-ci.org/HSR-Stud/NaT2)
 ## License
 CC by-nc-sa
 
